@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/04 12:06:42 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/05 20:57:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_block
+{
+	unsigned int	size;
+}					t_block;
 
 int					ft_atoi(const char *str);
 int					ft_atoi_part(const char *str, int i);
