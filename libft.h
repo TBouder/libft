@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/05 20:57:04 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 00:52:24 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_lstlen(t_list *begin_list);
 void				ft_lstprint(t_list *begin_list);
 int					ft_lstcontentsize(t_list *begin_list);
+char				*ft_lsttostr(t_list **list);
 
 /*
 ** Extra

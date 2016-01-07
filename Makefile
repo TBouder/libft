@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/01/04 11:59:53 by tbouder          ###   ########.fr        #
+#    Updated: 2016/01/08 00:52:22 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC 		= 	ft_atoi.c ft_atoi_part.c ft_itoa.c \
 				ft_lstnew.c ft_lstadd.c ft_lstclr.c ft_lstdelone.c \
 				ft_lstdel.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
 				ft_lststart.c ft_lstend.c ft_lstlen.c ft_lstprint.c \
-				ft_lstcontentsize.c \
+				ft_lstcontentsize.c ft_lsttostr.c\
 				\
 				ft_rand.c
 
