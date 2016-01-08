@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:07:14 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/03 15:36:49 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 14:44:44 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char			*ft_strtrim(char const *s)
 	if (s == NULL)
 		return (NULL);
 	spaces = count_spaces_st(s) + count_spaces_nd(s);
-	str = (char *)malloc(sizeof(char) * ft_strlen(s) - spaces);
+	str = ft_strnew(ft_strlen(s) - spaces);
 	str = ft_strsub(s, count_spaces_st(s), ft_strlen(s) - count_spaces_nd(s));
 	str[ft_strlen(s) - spaces] = '\0';
 	return (str);
