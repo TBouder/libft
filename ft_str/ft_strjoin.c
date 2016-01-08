@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:37:27 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 14:53:06 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:23:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The strjoin() function appends the string s2 to the end of s1 in a new
+** The ft_strjoin() function appends the string s2 to the end of s1 in a new
 ** string str.
 */
 

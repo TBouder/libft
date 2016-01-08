@@ -6,9 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 19:14:18 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 14:47:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:10:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strtrim_char() function returns the string s without the custom char
+** c at the beginning and at the end.
+*/
 
 #include "../libft.h"
 #include <stdlib.h>

@@ -6,9 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:07:03 by tbouder           #+#    #+#             */
-/*   Updated: 2015/11/28 16:06:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:13:05 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strsub() function returns a part of s, starting at start and with
+** a length len.
+*/
 
 #include "../libft.h"
 #include <stdlib.h>

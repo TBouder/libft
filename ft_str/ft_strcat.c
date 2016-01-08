@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** The ft_strcat() functions append a copy of the null-terminated string s2
+** The ft_strcat() function append a copy of the null-terminated string s2
 ** to the end of the null-terminated string s1, then add a terminating `\0'.
 ** The string s1 must have sufficient space to hold the result.
 */

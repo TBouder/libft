@@ -6,13 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/22 12:09:59 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/30 12:18:47 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:17:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_lstclr() clears the list by the adress given as begin_list to the
-** end.
+** The list function ft_lstclr() clears the list by the adress given as
+** begin_list to the end.
 */
 
 #include "../libft.h"

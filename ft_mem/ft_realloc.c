@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:21:57 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 14:18:00 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:22:50 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_memrealloc() function tries to change the size of the allocation
+** The ft_realloc() function tries to change the size of the allocation
 ** pointed to by ptr to size, and returns ptr. If ptr is NULL, ft_realloc()
 ** is identical to a call to malloc() for size bytes.
 */

@@ -6,13 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 11:57:01 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/04 12:00:06 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:17:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_lstsize() gives us the total len of all the content_size of the
-** list.
+** The list function ft_lstsize() gives us the total len of all the
+** content_size of the list.
 */
 
 #include "../libft.h"

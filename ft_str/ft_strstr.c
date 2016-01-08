@@ -6,9 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:06:53 by tbouder           #+#    #+#             */
-/*   Updated: 2015/11/28 16:06:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:03:46 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strstr() function locates the first occurrence of the
+** null-terminated string little in the null-terminated string big.
+*/
 
 #include "../libft.h"
 

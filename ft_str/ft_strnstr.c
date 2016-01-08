@@ -6,9 +6,16 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:05:56 by tbouder           #+#    #+#             */
-/*   Updated: 2015/11/28 16:06:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 14:58:40 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strnstr() function locates the first occurrence of the
+** null-terminated string little in the string big, where not more than n
+** characters are searched. Characters that appear after a `\0' character are
+** not searched.
+*/
 
 #include "../libft.h"
 

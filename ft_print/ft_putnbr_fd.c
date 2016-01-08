@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** The ft_putnbr_fd() functions print the number nb to the output stream
+** The ft_putnbr_fd() function print the number nb to the output stream
 ** pointed to by fd.
 */
 

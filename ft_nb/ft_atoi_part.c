@@ -6,13 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/20 01:06:43 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/04 11:36:23 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:22:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_atoi() function converts a portion of the string pointed to by str
-** from the index i to int representation.
+** The ft_atoi_part() function converts a portion of the string pointed to
+** by str from the index i to int representation.
 */
 
 #include "../libft.h"

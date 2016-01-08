@@ -6,17 +6,16 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 10:54:04 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 14:24:20 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:22:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** The ft_rand() fonction gives you a random number between 0 and (max - 1).
+*/
+
 #include <stdlib.h>
 #include "../libft.h"
-#include <stdio.h>
-
-/*
-** The rand() fonction gives you a random number between 0 and (max - 1)
-*/
 
 static int		ft_rev_nb(int nb)
 {

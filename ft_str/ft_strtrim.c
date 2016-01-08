@@ -6,9 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:07:14 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 14:44:44 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:09:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strtrim() function returns the string s without the white space at
+** the beginning and at the end.
+*/
 
 #include "../libft.h"
 #include <stdlib.h>

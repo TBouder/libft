@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** The ft_strcmp() functions lexicographically compare the null-terminated
+** The ft_strcmp() function lexicographically compare the null-terminated
 ** strings s1 and s2.
 */
 

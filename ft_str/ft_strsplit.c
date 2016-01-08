@@ -6,9 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:06:19 by tbouder           #+#    #+#             */
-/*   Updated: 2015/11/28 16:30:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:02:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The ft_strsplit() function allocates and returns a table of strings (clean
+** they end with \0) where each part results of the split of s according to c.
+*/
 
 #include "../libft.h"
 #include <stdlib.h>

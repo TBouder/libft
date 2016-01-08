@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:53:17 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 14:14:31 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:22:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_nbrendl() prints the number s followed by a \n.
+** The ft_nbrendl() function prints the number s followed by a \n.
 */
 
 #include "../libft.h"

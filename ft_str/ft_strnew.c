@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:54:18 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/30 12:17:51 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 15:23:53 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The function ft_strnew() malloc a char buffer and use the ft_bzero()
+** The ft_strnew() function malloc a char buffer and use the ft_bzero()
 ** function to initialize it.
 */
 
