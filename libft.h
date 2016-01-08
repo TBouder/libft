@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 00:52:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/08 13:52:03 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ typedef struct		s_block
 	unsigned int	size;
 }					t_block;
 
-int					ft_atoi(const char *str);
-int					ft_atoi_part(const char *str, int i);
-char				*ft_itoa(int n);
-
 /*
 ** Conditions
 */
@@ -46,7 +42,6 @@ int					ft_isprint(int c);
 int					ft_isnumber(int c);
 int					ft_isspace(int c);
 int					ft_isprime(int nb);
-int					ft_next_prime(int nb);
 
 /*
 ** Mem
@@ -54,13 +49,15 @@ int					ft_next_prime(int nb);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memalloc(size_t size);
-void				*ft_realloc(void *ptr, size_t size);
+void				*ft_memrealloc(void *ptr, size_t size);
 void				ft_memdel(void **ap);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
+
+void				ft_bzero(void *s, size_t n);
 
 /*
 ** Len
@@ -73,6 +70,10 @@ int					ft_linelen(const char *str, int i);
 /*
 ** Strings
 */
+
+char				*ft_strnew(size_t size);
+void				ft_strdel(char **as);
+void				ft_strclr(char *s);
 
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
@@ -93,16 +94,13 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-char				*ft_strnew(size_t size);
-void				ft_strdel(char **as);
-void				ft_strclr(char *s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				*ft_strtrim_char(char const *s, char c);
 char				**ft_strsplit(char const *s, char c);
 
-void				ft_bzero(void *s, size_t n);
+char				*ft_itoa(int n);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -110,8 +108,11 @@ int					ft_tolower(int c);
 ** Numbers
 */
 
+int					ft_atoi(const char *str);
+int					ft_atoi_part(const char *str, int i);
 int					ft_nbrsmallest(int *nbr);
 int					ft_nbrlargest(int *nbr);
+int					ft_next_prime(int nb);
 
 /*
 ** Prints
