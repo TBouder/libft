@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/01/09 16:42:34 by tbouder          ###   ########.fr        #
+#    Updated: 2016/01/30 04:19:05 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ FT_MEM		=	ft_mem/ft_memccpy.c ft_mem/ft_memchr.c ft_mem/ft_memcmp.c \
 
 FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c ft_nb/ft_nbrsmallest.c \
 				ft_nb/ft_nbrlargest.c ft_nb/ft_next_prime.c \
-				ft_nb/ft_rand.c
+				ft_nb/ft_rand.c ft_nb/ft_nbrnew.c
 
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
