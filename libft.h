@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/30 04:18:45 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/30 20:00:11 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,13 @@ int					ft_lstcontentsize(t_list *begin_list);
 char				*ft_lsttostr(t_list **list);
 
 /*
-** Extra
+** Math
 */
 
 int					ft_rand(int max);
+int					ft_power(int nb, int power);
+int					ft_factorial(int nb);
+int					ft_fibonacci(int nb);
+int					ft_sqrt(int nb);
 
 #endif

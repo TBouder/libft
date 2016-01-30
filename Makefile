@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/01/30 04:19:05 by tbouder          ###   ########.fr        #
+#    Updated: 2016/01/30 19:59:07 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ FT_MEM		=	ft_mem/ft_memccpy.c ft_mem/ft_memchr.c ft_mem/ft_memcmp.c \
 
 FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c ft_nb/ft_nbrsmallest.c \
 				ft_nb/ft_nbrlargest.c ft_nb/ft_next_prime.c \
-				ft_nb/ft_rand.c ft_nb/ft_nbrnew.c
+				ft_nb/ft_nbrnew.c
 
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
@@ -58,9 +58,12 @@ FT_STR		=	ft_str/ft_itoa.c ft_str/ft_itoa_base.c \
 				ft_str/ft_strsplit.c \
 				ft_str/ft_tolower.c ft_str/ft_toupper.c
 
+FT_MATH		=	ft_math/ft_factorial.c ft_math/ft_fibonacci.c \
+				ft_math/ft_power.c ft_math/ft_sqrt.c ft_math/ft_rand.c
+
 OBJ			=	$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
-				$(FT_STR:.c=.o)
+				$(FT_STR:.c=.o) $(FT_MATH:.c=.o)
 
 HEADER 		= 	./libft.h
 
@@ -82,6 +85,8 @@ $(NAME):
 	mv *.o ft_print/
 	$(CC) $(CFLAGS) -c $(HEADER) $(FT_STR)
 	mv *.o ft_str/
+	$(CC) $(CFLAGS) -c $(HEADER) $(FT_MATH)
+	mv *.o ft_math/
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
