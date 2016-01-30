@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/09 16:41:32 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/30 04:15:22 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,8 @@ int					ft_tolower(int c);
 
 int					ft_atoi(const char *str);
 int					ft_atoi_part(const char *str, int i);
-int					ft_nbrsmallest(int *nbr);
-int					ft_nbrlargest(int *nbr);
+int					ft_nbrsmallest(int *nbr, int len);
+int					ft_nbrlargest(int *nbr, int len);
 int					ft_next_prime(int nb);
 
 /*
