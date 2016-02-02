@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/02/02 16:52:35 by tbouder          ###   ########.fr        #
+#    Updated: 2016/02/02 17:18:19 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,9 @@ FT_MEM		=	ft_mem/ft_memccpy.c ft_mem/ft_memchr.c ft_mem/ft_memcmp.c \
 				ft_mem/ft_memalloc.c ft_mem/ft_memdel.c ft_mem/ft_bzero.c \
 				ft_mem/ft_realloc.c
 
-FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c ft_nb/ft_nbrsmallest.c \
-				ft_nb/ft_nbrlargest.c ft_nb/ft_next_prime.c \
-				ft_nb/ft_nbrnew.c
+FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c  ft_nb/ft_atoi_hexa.c \
+				ft_nb/ft_nbrsmallest.c ft_nb/ft_nbrlargest.c \
+				ft_nb/ft_next_prime.c ft_nb/ft_nbrnew.c
 
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
