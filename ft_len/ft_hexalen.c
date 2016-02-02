@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprime.c                                       :+:      :+:    :+:   */
+/*   ft_hexalen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:37:28 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/02 16:49:39 by tbouder          ###   ########.fr       */
+/*   Created: 2016/02/02 16:50:18 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/02 16:51:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_isprime() function tests is a number c is prime.
+** The ft_hexalen() function computes the length of the line str, until a non-
+** hexadecimal character.
 */
 
 #include "../libft.h"
 
-int		ft_isprime(int c)
+int			ft_hexalen(char *str)
 {
 	int		i;
 
-	if (c <= 0 || c == 1)
-		return (0);
-	i = 2;
-	while (i < c)
-	{
-		if (c % i == 0)
-			return (0);
+	i = 0;
+	while (str[i] && ft_ishexa(str[i]))
 		i++;
-	}
-	return (1);
+	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/30 20:00:11 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/02 16:52:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int					ft_isalnum(int c);
 int					ft_isprint(int c);
 int					ft_isnumber(int c);
 int					ft_isspace(int c);
-int					ft_isprime(int nb);
+int					ft_isprime(int c);
+int					ft_ishexa(int c);
 
 /*
 ** Mem
@@ -66,6 +67,7 @@ void				ft_bzero(void *s, size_t n);
 size_t				ft_strlen(const char *s);
 int					ft_nbrlen(int n);
 int					ft_linelen(const char *str, int i);
+int					ft_hexalen(char *str);
 
 /*
 ** Strings
