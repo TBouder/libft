@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_hexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 17:15:21 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/02 17:45:45 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/04 14:06:21 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int		ft_convert_base(char *str)
 	return (r_value);
 }
 
-int					ft_atoi_hexa(const char *str)
+int				ft_atoi_hexa(const char *str)
 {
 	int		result;
 	int		sign;
