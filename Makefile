@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/02/02 17:18:19 by tbouder          ###   ########.fr        #
+#    Updated: 2016/02/04 13:10:55 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,6 +95,8 @@ $(NAME):
 clean:
 	rm -f $(OBJ)
 	rm -f *.gch
+	rm -f .DS_Store
+	rm -f */.DS_Store
 
 .SILENT : fclean
 fclean: clean

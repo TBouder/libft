@@ -1,3 +1,4 @@
+*/.DS_Store
 .DS_Store
 a.out
 *.gch
@@ -5,3 +6,4 @@ test*
 *.pdf/
 "Icon\r"
 README.md
+libft.a
