@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/09 16:40:59 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/05 10:55:41 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 
 void		ft_putstr_fd(char const *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
