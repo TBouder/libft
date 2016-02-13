@@ -13,9 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define RED	"\033[31m"
-# define GREEN	"\033[32m"
-
 # include <string.h>
 
 typedef struct		s_list
