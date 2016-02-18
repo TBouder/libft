@@ -6,7 +6,7 @@
 #    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/02/04 13:10:55 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/02/18 17:14:19 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,11 +62,13 @@ FT_STR		=	ft_str/ft_itoa.c ft_str/ft_itoa_base.c \
 FT_MATH		=	ft_math/ft_factorial.c ft_math/ft_fibonacci.c \
 				ft_math/ft_power.c ft_math/ft_sqrt.c ft_math/ft_rand.c
 
+GNL			=	get_next_line/get_next_line.c
+
 OBJ			=	$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
-				$(FT_STR:.c=.o) $(FT_MATH:.c=.o)
+				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
 
-HEADER 		= 	./libft.h
+HEADER 		= 	./libft.h ./get_next_line/get_next_line.h
 
 all: $(NAME)
 
@@ -88,6 +90,8 @@ $(NAME):
 	mv *.o ft_str/
 	$(CC) $(CFLAGS) -c $(HEADER) $(FT_MATH)
 	mv *.o ft_math/
+	$(CC) $(CFLAGS) -c $(HEADER) $(GNL)
+	mv *.o get_next_line/
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
