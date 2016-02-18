@@ -6,11 +6,19 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 11:59:39 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/04 18:57:13 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/18 19:50:02 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+/*
+** The get_next_line() function stores a string ended by \n | EOF from the file
+** descriptor FD. Each call to this function will read one line until the end
+** of the file.
+** The function returns 1 if something was read, 0 if nothing was read and -1
+** if an error occurs (bad file descriptor or bad storing parameters LINE).
+*/
 
 static int		ft_freestr(t_list **str, int rv, t_list *tmp)
 {
