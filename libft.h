@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/18 17:12:55 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/21 00:21:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string.h>
 # include "get_next_line/get_next_line.h"
+
+# define PI 3.141592653589793
 
 typedef struct		s_list
 {
@@ -154,9 +156,12 @@ char				*ft_lsttostr(t_list **list);
 */
 
 int					ft_rand(int max);
-int					ft_power(int nb, int power);
-int					ft_factorial(int nb);
+double				ft_power(double nb, double power);
+double				ft_factorial(double nb);
 int					ft_fibonacci(int nb);
 int					ft_sqrt(int nb);
+double				ft_sin(double nb);
+double				ft_cos(double nb);
+double				ft_tan(double nb);
 
 #endif

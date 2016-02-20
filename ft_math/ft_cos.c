@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_sin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/30 19:48:38 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/02/21 00:14:03 by tbouder          ###   ########.fr       */
+/*   Created: 2016/02/20 11:49:27 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/20 23:58:32 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_sqrt() function returns the square of nb.
+** The ft_cos() function computes the cosine of x (measured in degree)
 */
 
 #include "../libft.h"
 
-int		ft_sqrt(int nb)
+double		ft_cos(double nb)
 {
-	int		base;
-
-	base = 1;
-	while ((base * base) < nb)
-		base++;
-	if ((base * base) == nb)
-		return (base);
-	else
-		return (0);
+	double		taylor;
+	double		square_nb;
+	int			i;
+	
+	i = 2;
+	square_nb = ((nb * PI / 180) * (nb * PI / 180));
+	nb = 1;
+	taylor = 1;
+	while (i <= 20)
+	{
+		nb = -nb * (square_nb);
+		taylor += nb / ft_factorial(i);
+		i += 2;
+	}
+	return (taylor);
 }

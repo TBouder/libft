@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/02/18 17:14:19 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/02/21 00:21:21 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ FT_STR		=	ft_str/ft_itoa.c ft_str/ft_itoa_base.c \
 				ft_str/ft_tolower.c ft_str/ft_toupper.c
 
 FT_MATH		=	ft_math/ft_factorial.c ft_math/ft_fibonacci.c \
-				ft_math/ft_power.c ft_math/ft_sqrt.c ft_math/ft_rand.c
+				ft_math/ft_power.c ft_math/ft_sqrt.c ft_math/ft_rand.c \
+				ft_math/ft_sin.c ft_math/ft_cos.c ft_math/ft_tan.c
 
 GNL			=	get_next_line/get_next_line.c
 

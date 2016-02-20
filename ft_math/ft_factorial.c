@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 19:47:06 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/01/30 19:55:59 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/20 23:56:27 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 #include "../libft.h"
 
-int		ft_factorial(int nb)
+double		ft_factorial(double nb)
 {
-	if (nb < 0 || nb > 12)
+	if (nb < 0)
 		return (0);
 	if (nb == 1)
 		return (nb);

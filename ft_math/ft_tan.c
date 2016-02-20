@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_tan.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/30 19:48:38 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/02/21 00:14:03 by tbouder          ###   ########.fr       */
+/*   Created: 2016/02/21 00:16:48 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/21 00:21:02 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_sqrt() function returns the square of nb.
+** The ft_tan() function computes the tangent of x (measured in degree).
 */
 
 #include "../libft.h"
 
-int		ft_sqrt(int nb)
+double		ft_tan(double nb)
 {
-	int		base;
-
-	base = 1;
-	while ((base * base) < nb)
-		base++;
-	if ((base * base) == nb)
-		return (base);
-	else
-		return (0);
+	return (ft_sin(nb) / ft_cos(nb));
 }

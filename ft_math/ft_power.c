@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 19:47:17 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/01/30 19:56:09 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/20 23:56:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "../libft.h"
 
-int		ft_power(int nb, int power)
+double		ft_power(double nb, double power)
 {
 	if (power < 0)
 		return (0);
