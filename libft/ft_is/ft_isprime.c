@@ -6,26 +6,26 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 16:37:28 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/20 16:33:35 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/02 16:49:39 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_isprime() function tests is a number nb is prime.
+** The ft_isprime() function tests is a number c is prime.
 */
 
 #include "../libft.h"
 
-int		ft_isprime(int nb)
+int		ft_isprime(int c)
 {
 	int		i;
 
-	if (nb <= 0 || nb == 1)
+	if (c <= 0 || c == 1)
 		return (0);
 	i = 2;
-	while (i < nb)
+	while (i < c)
 	{
-		if (nb % i == 0)
+		if (c % i == 0)
 			return (0);
 		i++;
 	}

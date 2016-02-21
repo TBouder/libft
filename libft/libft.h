@@ -6,17 +6,17 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 13:52:03 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/21 00:21:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define RED	"\033[31m"
-# define GREEN	"\033[32m"
-
 # include <string.h>
+# include "get_next_line/get_next_line.h"
+
+# define PI 3.141592653589793
 
 typedef struct		s_list
 {
@@ -41,7 +41,8 @@ int					ft_isalnum(int c);
 int					ft_isprint(int c);
 int					ft_isnumber(int c);
 int					ft_isspace(int c);
-int					ft_isprime(int nb);
+int					ft_isprime(int c);
+int					ft_ishexa(int c);
 
 /*
 ** Mem
@@ -56,7 +57,6 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
-
 void				ft_bzero(void *s, size_t n);
 
 /*
@@ -66,6 +66,7 @@ void				ft_bzero(void *s, size_t n);
 size_t				ft_strlen(const char *s);
 int					ft_nbrlen(int n);
 int					ft_linelen(const char *str, int i);
+int					ft_hexalen(char *str);
 
 /*
 ** Strings
@@ -101,6 +102,7 @@ char				*ft_strtrim_char(char const *s, char c);
 char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
+char				*ft_itoa_base(int n, int base);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -110,9 +112,11 @@ int					ft_tolower(int c);
 
 int					ft_atoi(const char *str);
 int					ft_atoi_part(const char *str, int i);
-int					ft_nbrsmallest(int *nbr);
-int					ft_nbrlargest(int *nbr);
+int					ft_atoi_hexa(const char *str);
+int					ft_nbrsmallest(int *nbr, int len);
+int					ft_nbrlargest(int *nbr, int len);
 int					ft_next_prime(int nb);
+int					*ft_nbrnew(size_t size);
 
 /*
 ** Prints
@@ -125,6 +129,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
+void				ft_putnbr_base(int nb, int base);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_nbrendl(int s);
 
@@ -147,9 +152,16 @@ int					ft_lstcontentsize(t_list *begin_list);
 char				*ft_lsttostr(t_list **list);
 
 /*
-** Extra
+** Math
 */
 
 int					ft_rand(int max);
+double				ft_power(double nb, double power);
+double				ft_factorial(double nb);
+int					ft_fibonacci(int nb);
+int					ft_sqrt(int nb);
+double				ft_sin(double nb);
+double				ft_cos(double nb);
+double				ft_tan(double nb);
 
 #endif

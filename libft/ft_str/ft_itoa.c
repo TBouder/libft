@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:28:57 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/20 16:37:09 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/05 10:55:28 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ char		*ft_itoa(int n)
 	n < 0 ? n = -n : 0;
 	n < 0 ? len++ : 0;
 	j = (sign < 0) ? len + 1 : len;
-	if (!(nb = (char *)malloc(sizeof(char) * len + 2)))
-		return (NULL);
+	nb = ft_strnew(len + 2);
 	if (n < -2147483647 || n == 0)
 		return (except(n, nb));
 	nb[j--] = '\0';

@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:34:25 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 14:21:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:40:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putnbr_fd() function print the number nb to the output stream
+** The ft_putnbr_fd() function prints the number nb to the output stream
 ** pointed to by fd.
 */
 

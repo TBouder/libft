@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 11:07:30 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/28 20:13:35 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/05 10:55:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		return (NULL);
 	new = f(lst);
 	if (lst->next)
-	{
 		new->next = ft_lstmap(lst->next, f);
-	}
 	return (new);
 }

@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:34:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:22:46 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:40:32 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putnbr() function print the number nb to STDIN.
+** The ft_putnbr() function prints the number nb to STDIN.
 */
 
 #include "../libft.h"
