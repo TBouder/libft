@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rand.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 10:54:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:22:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/24 12:38:48 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ static int		ft_rand_max_odd(int max)
 	return (nb);
 }
 
-int				ft_rand(int max)
+int				ft_rand(int nb)
 {
 	unsigned int	result;
 
-	if (max % 2 != 0)
+	if (nb % 2 != 0)
 	{
-		result = ft_rand_max_odd(max);
+		result = ft_rand_max_odd(nb);
 	}
 	else
 	{
-		max++;
-		result = ft_rand_max_peer(max);
+		nb++;
+		result = ft_rand_max_peer(nb);
 	}
 	return (result);
 }
