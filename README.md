@@ -3,7 +3,7 @@
 [Libft](https://mega.nz/#!hpRxmLBJ!SB90oAfdoSDAZ3TWidffhGqtWfeTZI0_gyTGzE9uvPU)
 
 # ft_is
-* int		ft_isalnum(int c)
+* int		ft_isalnum(int c) : The ft_isalnum() function tests for any character for which ft_isalpha or ft_isdigit is true.
 * int		ft_isalpha(int c)
 * int		ft_isascii(int c)
 * int		ft_isdigit(int c)
