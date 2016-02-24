@@ -80,7 +80,7 @@
 # ft_str
 * char		*ft_itoa(int n)
 * char		*ft_itoa_base(int n, int base)
-* char		*ft_strcat(char *s1, const char *s2)
+* char		\*ft_strcat(char *s1, const char *s2)
 * char		*ft_strchr(const char *s, int c)
 * void		ft_strclr(char *s)
 * int		ft_strcmp(const char *s1, const char *s2)
