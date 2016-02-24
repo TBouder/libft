@@ -56,8 +56,70 @@
 * void		*ft_memset(void *b, int c, size_t len)
 * void		*ft_realloc(void *ptr, size_t size)
 
-
 # ft_nb
+* int		ft_atoi(const char *str)
+* int		ft_atoi_hexa(const char *str)
+* int		ft_atoi_part(const char *str, int i)
+* int		ft_nbrlargest(int *nbr, int len)
+* int		ft_nbrsmallest(int *nbr, int len)
+* int		*ft_nbrnew(size_t size)
+* int		ft_next_prime(int nb)
+
 # ft_print
+* void		ft_nbrendl(int nb)
+* void		ft_putchar(char c)
+* void		ft_putchar_fd(char c, int fd)
+* void		ft_putendl(char const *str)
+* void		ft_putendl_fd(char const *str, int fd)
+* void		ft_putnbr(int nb)
+* void		ft_putnbr_fd(int nb, int fd)
+* void		ft_putnbr_base(int nb, int base)
+* void		ft_putstr(char const *str)
+* void		ft_putstr_fd(char const *str, int fd)
+
 # ft_str
+* char		*ft_itoa(int n)
+* char		*ft_itoa_base(int n, int base)
+* char		*ft_strcat(char *s1, const char *s2)
+* char		*ft_strchr(const char *s, int c)
+* void		ft_strclr(char *s)
+* int		ft_strcmp(const char *s1, const char *s2)
+* char		*ft_strcpy(char *dst, const char *src)
+* void		ft_strdel(char **as)
+* char		*ft_strdup(const char *s1)
+* int		ft_strequ(char const *s1, char const *s2)
+* void		ft_striter(char *s, void (*f)(char *))
+* void		ft_striteri(char *s, void (*f)(unsigned int, char *))
+* char		*ft_strjoin(char const *s1, char const *s2)
+* size_t	ft_strlcat(char *dst, const char *src, size_t size)
+* char		*ft_strmap(char const *s, char (*f)(char))
+* char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+* char		*ft_strncat(char *s1, const char *s2, size_t n)
+* int		ft_strncmp(const char *s1, const char *s2, size_t n)
+* char		*ft_strncpy(char *dst, const char *src, size_t n)
+* int		ft_strnequ(char const *s1, char const *s2, size_t n)
+* char		*ft_strnew(size_t size)
+* char		*ft_strnstr(const char *s1, const char *s2, size_t n)
+* char		*ft_strrchr(const char *s, int c)
+* char		**ft_strsplit(char const *s, char c)
+* char		*ft_strstr(const char *s1, const char *s2)
+* char		*ft_strsub(char const *s, unsigned int start, size_t len)
+* char		*ft_strtrim(char const *s)
+* char		*ft_strtrim_char(char const *s, char c)
+* int		ft_tolower(int c)
+* int		ft_toupper(int c)
+
+
 # GNL
+* int		get_next_line(int const fd, char **line)
+
+
+
+
+
+
+
+
+
+
+
