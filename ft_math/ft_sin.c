@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/20 11:49:27 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/21 00:16:21 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/09 15:21:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double		ft_sin(double nb)
 	double		taylor;
 	double		square_nb;
 	int			i;
-	
+
 	i = 3;
 	nb *= PI / 180;
 	taylor = nb;
