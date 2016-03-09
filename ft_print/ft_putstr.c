@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:34:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/05 10:55:45 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/02/24 12:47:49 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr() function prints the string s to STDIN.
+** The ft_putstr() function prints the string str to STDIN.
 */
 
 #include "../libft.h"
 #include <unistd.h>
 
-void		ft_putstr(char const *s)
+void		ft_putstr(char const *str)
 {
-	if (s)
-		write(1, s, ft_strlen(s));
+	if (str)
+		write(1, str, ft_strlen(str));
 }
