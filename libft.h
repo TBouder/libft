@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/21 00:21:11 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/10 17:34:51 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,5 +163,6 @@ int					ft_sqrt(int nb);
 double				ft_sin(double nb);
 double				ft_cos(double nb);
 double				ft_tan(double nb);
+int					ft_pgcd(int nb1, int nb2);
 
 #endif
