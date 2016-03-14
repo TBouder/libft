@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:33:57 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 14:25:35 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:34:58 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "../libft.h"
 
-void	ft_putnbr_base(int nb, int base, int maj)
+void	ft_putnbr_base(long nb, int base, int maj)
 {
 	char	*str;
 
