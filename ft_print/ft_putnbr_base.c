@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:33:57 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/09 16:40:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/14 13:02:08 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 #include "../libft.h"
 
-void	ft_putnbr_base(int nb, int base)
+void	ft_putnbr_base(int nb, int base, int maj)
 {
 	char	*str;
 
-	str = "0123456789ABCDEF";
+	str = maj ? "0123456789abcdef" : "0123456789ABCDEF";
 	if (nb < -2147483647)
 		ft_putstr("-2147483648");
 	else
@@ -35,8 +35,8 @@ void	ft_putnbr_base(int nb, int base)
 			ft_putchar(str[nb]);
 		else
 		{
-			ft_putnbr_base(nb / base, base);
-			ft_putnbr_base(nb % base, base);
+			ft_putnbr_base(nb / base, base, maj);
+			ft_putnbr_base(nb % base, base, maj);
 		}
 	}
 }
