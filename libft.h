@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 14:35:07 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/14 22:49:46 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char				*ft_strtrim_char(char const *s, char c);
 char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
-char				*ft_itoa_base(int n, int base);
+char				*ft_itoa_base(long n, int base);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 

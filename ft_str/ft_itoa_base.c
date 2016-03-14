@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/27 15:52:55 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/14 22:53:12 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "../libft.h"
 
-static void			ft_convert_base(int n, int base, char *s, int *index)
+static void			ft_convert_base(long n, int base, char *s, int *index)
 {
 	char	*str;
 
@@ -34,7 +34,7 @@ static void			ft_convert_base(int n, int base, char *s, int *index)
 	}
 }
 
-static int			ft_nbrlen_base(int n, int base)
+static int			ft_nbrlen_base(long n, int base)
 {
 	int		len;
 
@@ -47,14 +47,12 @@ static int			ft_nbrlen_base(int n, int base)
 	return (len);
 }
 
-char				*ft_itoa_base(int n, int base)
+char				*ft_itoa_base(long n, int base)
 {
 	char	*s;
 	int		len;
 	int		sign;
 
-	if (n == -2147483648)
-		return ("-2147483648");
 	len = ft_nbrlen_base(n, base);
 	sign = n < 0 ? 1 : 0;
 	n = sign == 1 ? -n : n;
