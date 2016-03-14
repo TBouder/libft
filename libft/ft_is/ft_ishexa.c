@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_ishexa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/02/02 16:47:46 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/02 17:04:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
+** The ft_ishexa() function tests if c is a correct hexadecimal number.
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putstr_fd(char const *str, int fd)
+int		ft_ishexa(int c)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F')
+		|| (c >= 'a' && c <= 'f'))
+		return (1);
+	return (0);
 }

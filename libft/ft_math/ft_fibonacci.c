@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/01/30 19:48:28 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/01/30 19:55:15 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
+** The ft_fibonacci() function returns a number according to fibonacci
+** sequence.
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putstr_fd(char const *str, int fd)
+int		ft_fibonacci(int nb)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	if (nb < 0)
+		return (-1);
+	else if (nb == 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	return (ft_fibonacci(nb - 1) + ft_fibonacci(nb - 2));
 }

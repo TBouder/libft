@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_tan.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/02/21 00:16:48 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/21 00:21:02 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
+** The ft_tan() function computes the tangent of x (measured in degree).
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putstr_fd(char const *str, int fd)
+double		ft_tan(double nb)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	return (ft_sin(nb) / ft_cos(nb));
 }

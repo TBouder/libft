@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_conv_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/03/14 16:31:02 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/03/14 23:52:04 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
-*/
+#include "../ft_printf.h"
 
-#include "../libft.h"
-#include <unistd.h>
-
-void		ft_putstr_fd(char const *str, int fd)
+int		ft_conv_u(va_list pa, t_flags flags)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	int		local_pa;
+	long	value;
+
+	local_pa = va_arg(pa, unsigned int);
+	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa;
+	ft_flag_r_justified(&flags, ft_nbrlen(value));
+	ft_put_precision_base(flags, value, 10, 0);
+	ft_flag_l_justified(&flags, ft_nbrlen(value));
+	return (ft_nbrlen(value) + flags.spaces_count);
 }

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/01/30 19:48:38 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/02/21 00:14:03 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
+** The ft_sqrt() function returns the square of nb.
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putstr_fd(char const *str, int fd)
+int		ft_sqrt(int nb)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	int		base;
+
+	base = 1;
+	while ((base * base) < nb)
+		base++;
+	if ((base * base) == nb)
+		return (base);
+	else
+		return (0);
 }

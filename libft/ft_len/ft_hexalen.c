@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_hexalen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/02/02 16:50:18 by tbouder           #+#    #+#             */
+/*   Updated: 2016/02/02 16:51:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
+** The ft_hexalen() function computes the length of the line str, until a non-
+** hexadecimal character.
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putstr_fd(char const *str, int fd)
+int			ft_hexalen(char *str)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	int		i;
+
+	i = 0;
+	while (str[i] && ft_ishexa(str[i]))
+		i++;
+	return (i);
 }

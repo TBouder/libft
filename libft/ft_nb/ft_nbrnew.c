@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_nbrnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:37:54 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:25:21 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/01/30 04:18:19 by tbouder           #+#    #+#             */
+/*   Updated: 2016/01/30 04:20:40 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_strlen() function computes the length of the string str.
+** The ft_nbrnew() function malloc an int buffer and initialize it with 0.
 */
 
 #include "../libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+int		*ft_nbrnew(size_t size)
 {
-	int		i;
+	int			*buffer;
+	size_t		i;
 
 	i = 0;
-	while (str[i])
+	if (!(buffer = (int *)malloc(sizeof(int) * size)))
+		return (NULL);
+	while (i < size)
+	{
+		buffer[i] = 0;
 		i++;
-	return (i);
+	}
+	return (buffer);
 }

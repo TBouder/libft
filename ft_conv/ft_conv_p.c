@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_conv_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:48:04 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/03/14 18:36:54 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_putstr_fd() function prints the string str to the output stream
-** pointed to by fd.
-*/
+#include "../ft_printf.h"
 
-#include "../libft.h"
-#include <unistd.h>
-
-void		ft_putstr_fd(char const *str, int fd)
+int		ft_conv_p(va_list *pa, t_flags flags)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	int		local_pa;
+
+	local_pa = (va_arg(*pa, int));
+	ft_flag_r_justified(&flags, ft_nbrlen(local_pa) + 4);
+	ft_putstr("0x7fff");
+	ft_putnbr_base(local_pa, 16, 0);
+	ft_flag_l_justified(&flags, ft_nbrlen(local_pa) + 4);
+	return (6 + ft_strlen(ft_itoa_base(local_pa, 16)) + flags.spaces_count);
 }
