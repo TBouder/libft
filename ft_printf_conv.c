@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 23:52:03 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 01:29:14 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int		ft_flag_spaces(char *str, int *index)
 
 	i = 0;
 	space = 0;
-	if (ft_isnumber(str[*index]))
+	if (str[*index] > '0' && str[*index] <= '9')
 	{
 		while (i++ < ft_atoi(&str[*index]))
 			space++;
+		*index += ft_nbrlen(ft_atoi(&str[*index]));
 	}
 	else if (str[*index] == '-')
 	{
@@ -32,9 +33,26 @@ int		ft_flag_spaces(char *str, int *index)
 			while (i++ < ft_atoi(&str[*index]))
 				space--;
 		}
+		*index += ft_nbrlen(ft_atoi(&str[*index]));
 	}
-	*index += ft_nbrlen(ft_atoi(&str[*index]));
 	return (space);
+}
+
+int		ft_flag_zero(char *str, int *index)
+{
+	int		i;
+	int		zero;
+
+	i = 0;
+	zero = 0;
+	if (str[*index] == '0')
+	{
+		*index += 1;
+		while (i++ < ft_atoi(&str[*index]))
+			zero++;
+		*index += ft_nbrlen(ft_atoi(&str[*index]));
+	}
+	return (zero);
 }
 
 int		ft_flag_precision(char *str, int *index)
@@ -57,6 +75,7 @@ int		ft_flag_precision(char *str, int *index)
 int		ft_load_flags(char *str, int index, t_flags *flags)
 {
 	flags->spaces = ft_flag_spaces(str, &index);
+	flags->zero = ft_flag_zero(str, &index);
 	flags->precision = ft_flag_precision(str, &index);
 	return (index);
 }
