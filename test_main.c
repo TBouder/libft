@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:34:17 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 23:54:10 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ int		main()
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
 	int		l,k;
-	l = ft_printf("@moulitest: %#.x, %#.0x", 0, 0);
+	l = ft_printf("%jx", 4294967296);
 	printf("\n");
-	k = printf("@moulitest: %#.x, %#.0x", 0, 0);
+	k = printf("%jx", 4294967296);
 	printf("\n");
-	printf("%d vs %d", l, k);
+	printf("%d vs %d\n", l, k);
 /*
 	# 0046 (int)
 	  ft_printf("@moulitest: %#.x", %#.0x, 0, 0);

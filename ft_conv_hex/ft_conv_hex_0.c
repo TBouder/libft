@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_hex_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:29:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 23:55:14 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,24 @@ void		ft_put_preci_hex_ll(t_flags flags, long long local_pa, int maj)
 	ft_putnbr_base_ull(local_pa, 16, maj);
 }
 
+void		ft_put_preci_hex(t_flags flags, long long local_pa, int base, int maj)
+{
+	int		i;
+	int		len;
+
+	i = 0;
+	len = ft_strlen(ft_itoa_base(local_pa, base));
+	while (flags.precision - len > 0)
+	{
+		ft_putchar('0');
+		flags.precision -= 1;
+	}
+	if (ft_itoa_base(local_pa, base)[0] == '0' && flags.precision != -1)
+		ft_putnbr_base(local_pa, base, maj);
+	else if (ft_itoa_base(local_pa, base)[0] != '0')
+		ft_putnbr_base(local_pa, base, maj);
+}
+
 void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
 {
 	if (flags->spaces && flags->spaces - s_local_pa > 0)
@@ -36,6 +54,8 @@ void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
 			flags->spaces_count++;
 			ft_putchar(' ');
 		}
+		(flags->precision == -1) ? ft_putchar(' ') : 0;
+		(flags->precision == -1) ? flags->spaces_count++ : 0;
 	}
 	else if (flags->spaces >= -2 && flags->zero != 0)
 	{
@@ -74,14 +94,14 @@ int			ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index)
 {
 	if (str[index] == 'X')
 	{
-		if (flags.length == 1 || flags.length == 2)
+		if (flags.length == 1 || flags.length == 2 || flags.length == 5)
 			return (ft_conv_X_l(*pa, flags, str + index));
 		else
 			return (ft_conv_X(*pa, flags, str + index));
 	}
 	else if (str[index] == 'x')
 	{
-		if (flags.length == 1 || flags.length == 2)
+		if (flags.length == 1 || flags.length == 2 || flags.length == 5)
 			return (ft_conv_x_l(*pa, flags, str + index));
 		else
 			return (ft_conv_x(*pa, flags, str + index));

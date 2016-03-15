@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_0.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 19:47:09 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 23:35:36 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,11 @@ int		ft_flag_precision(char *str, int *index)
 		{
 			value = ft_atoi(&str[*index]);
 			*index += str[*index] == '0' ? 1 : ft_nbrlen(ft_atoi(&str[*index]));
+			if (value == 0)
+				return (-1);
 		}
+		else
+			return (-1);
 	}
 	return (value);
 }
