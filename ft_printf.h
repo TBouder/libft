@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 14:44:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 16:35:54 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,27 @@ int		ft_flag_diaiz(char *str, int *index);
 
 
 int		ft_conv_percent(t_flags flags);
-
+/*i & d*/
 int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_d_i(va_list pa, t_flags flags, char *str);
 int		ft_conv_d_i_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str);
 
-int		ft_launch_conv_x(va_list *pa, t_flags flags, char *str, int index);
+/*x & X*/
+void	ft_put_preci_hex_ll(t_flags flags, long long local_pa, int maj);
+void	ft_after_hex(t_flags *flags, int s_local_pa);
+int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_x(va_list pa, t_flags flags, char *str);
-int		ft_launch_conv_X(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_x_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_X(va_list pa, t_flags flags, char *str);
+int		ft_conv_X_l(va_list pa, t_flags flags, char *str);
+
+/*u & U*/
+int		ft_conv_u(va_list pa, t_flags flags, char *str);
 
 int		ft_conv_s(va_list pa, t_flags flags, char *str);
 int		ft_conv_c(va_list pa, t_flags flags, char *str);
 int		ft_conv_o(va_list pa, t_flags flags, char *str);
-int		ft_conv_u(va_list pa, t_flags flags, char *str);
 int		ft_conv_p(va_list *pa, t_flags flags, char *str);
 
 

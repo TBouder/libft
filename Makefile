@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 16:00:02 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 16:32:10 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
 				ft_conv/ft_conv_u.c ft_conv/ft_conv_p.c
 
 PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
-PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c
+PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c ft_conv_hex/ft_conv_hex_0.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
@@ -51,7 +51,7 @@ FT_PRINT	=	libft/ft_print/ft_putchar.c libft/ft_print/ft_putchar_fd.c \
 				libft/ft_print/ft_putstr.c libft/ft_print/ft_putstr_fd.c \
 				libft/ft_print/ft_putendl.c libft/ft_print/ft_putendl_fd.c \
 				libft/ft_print/ft_putnbr.c libft/ft_print/ft_putnbr_ull.c \
-				libft/ft_print/ft_putnbr_base.c libft/ft_print/ft_putnbr_base_ull.c \\
+				libft/ft_print/ft_putnbr_base.c libft/ft_print/ft_putnbr_base_ull.c \
 				libft/ft_print/ft_putnbr_fd.c libft/ft_print/ft_nbrendl.c
 
 FT_STR		=	libft/ft_str/ft_itoa.c libft/ft_str/ft_itoa_base.c libft/ft_str/ft_itoa_base_ull.c \
