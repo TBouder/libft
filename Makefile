@@ -6,7 +6,7 @@
 #    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/16 00:19:50 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/16 00:23:04 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,11 @@ CFLAGS		= 	-Wall -Werror -Wextra
 
 PRINTF 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
 
-PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
-				ft_conv/ft_conv_s.c ft_conv/ft_conv_c.c ft_conv/ft_conv_o.c \
-				ft_conv/ft_conv_p.c
-
-PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
+PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_c.c ft_conv/ft_conv_o.c ft_conv/ft_conv_p.c
+PRINTF_d_i	=	ft_conv_d_i/ft_conv_d_i.c
 PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_X.c ft_conv_x_X/ft_conv_hex_0.c
-PRINTF_U	=	ft_conv_u_U/ft_conv_u.c
+PRINTF_u_U	=	ft_conv_u_U/ft_conv_u.c
+PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
@@ -78,7 +76,9 @@ FT_MATH		=	libft/ft_math/ft_factorial.c libft/ft_math/ft_fibonacci.c \
 
 GNL			=	libft/get_next_line/get_next_line.c
 
-OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_DI:.c=.o) $(PRINTF_x_X:.c=.o) $(PRINTF_FLAG:.c=.o) $(PRINTF_U:.c=.o)\
+OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_d_i:.c=.o) \
+				$(PRINTF_x_X:.c=.o) $(PRINTF_FLAG:.c=.o) $(PRINTF_u_U:.c=.o) \
+				$(PRINTF_s_S:.c=.o) \
 				$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
 				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
@@ -110,14 +110,16 @@ $(NAME):
 	mv *.o libft/get_next_line/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_CONV)
 	mv *.o ft_conv/
-	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_DI)
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_d_i)
 	mv *.o ft_conv_d_i/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_x_X)
 	mv *.o ft_conv_x_X/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FLAG)
 	mv *.o ft_flags/
-	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_U)
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_u_U)
 	mv *.o ft_conv_u_U/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_s_S)
+	mv *.o ft_conv_s_S/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)

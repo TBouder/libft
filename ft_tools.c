@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tools.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 17:52:28 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:29:49 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 00:46:28 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,4 @@ void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj)
 		flags.precision -= 1;
 	}
 	ft_putnbr_base(local_pa, base, maj);
-}
-
-void	ft_put_precision_str(t_flags flags, char *local_pa)
-{
-	int		i;
-
-	i = 0;
-	while (i != flags.precision && local_pa[i])
-	{
-		ft_putchar(local_pa[i]);
-		i++;;
-	}
 }

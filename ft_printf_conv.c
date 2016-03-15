@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:28:34 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 00:24:39 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	*r_value += ft_launch_conv_d_i(pa, flags, str, index);
 	*r_value += ft_launch_conv_x_X(pa, flags, str, index);
 	*r_value += ft_launch_conv_u_U(pa, flags, str, index); //ADD U
+	*r_value += ft_launch_conv_s_S(pa, flags, str, index); //ADD S
 
 	// *r_value += str[index] == 'D' ? ft_conv_S(pa) : 0;
-	*r_value += str[index] == 's' ? ft_conv_s(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'S' ? ft_conv_S(pa) : 0;
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags, str + index) : 0;
 	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
