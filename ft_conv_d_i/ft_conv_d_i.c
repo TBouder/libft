@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:26:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 15:51:38 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 17:06:14 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str)
 	int			len;
 
 	local_pa = va_arg(pa, long long);
-
 	sign = local_pa < 0 ? 1 : 0;
 	str[-1] == ' ' ? ft_putchar(' ') : 0;
 	space = str[-1] == ' ' ? 1 : 0;
@@ -83,7 +82,6 @@ int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str)
 	ft_flag_r_justified(&flags, len);
 	ft_put_preci_ll(flags, local_pa);
 	ft_flag_l_justified(&flags, len + sign);
-
 	return (len + flags.spaces_count + sign + space);
 }
 

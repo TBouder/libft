@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 16:38:00 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 16:53:31 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PRINTF 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
 
 PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
 				ft_conv/ft_conv_s.c ft_conv/ft_conv_c.c ft_conv/ft_conv_o.c \
-				ft_conv/ft_conv_u.c ft_conv/ft_conv_p.c
+				ft_conv/ft_conv_p.c
 
 PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
 PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c ft_conv_hex/ft_conv_hex_0.c
@@ -116,6 +116,8 @@ $(NAME):
 	mv *.o ft_conv_hex/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FLAG)
 	mv *.o ft_flags/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_U)
+	mv *.o ft_conv_u_U/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)

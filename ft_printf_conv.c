@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 16:33:13 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 16:59:56 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;
 	*r_value += ft_launch_conv_d_i(pa, flags, str, index);
 	*r_value += ft_launch_conv_x_X(pa, flags, str, index);
+	*r_value += ft_launch_conv_u_U(pa, flags, str, index); //ADD U
+
 	// *r_value += str[index] == 'D' ? ft_conv_S(pa) : 0;
 	*r_value += str[index] == 's' ? ft_conv_s(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'S' ? ft_conv_S(pa) : 0;
@@ -58,7 +60,6 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	// *r_value += str[index] == 'O' ? ft_conv_S(pa) : 0;
 	// *r_value += str[index] == 'x' ? ft_conv_x(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'X' ? ft_conv_X(*pa, flags, str + index) : 0;
-	*r_value += str[index] == 'u' ? ft_conv_u(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'U' ? ft_conv_S(pa) : 0;
 	*r_value -= 1;
 

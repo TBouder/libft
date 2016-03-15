@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 16:35:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 16:59:32 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int		ft_conv_X(va_list pa, t_flags flags, char *str);
 int		ft_conv_X_l(va_list pa, t_flags flags, char *str);
 
 /*u & U*/
-int		ft_conv_u(va_list pa, t_flags flags, char *str);
+int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_u(va_list pa, t_flags flags);
 
 int		ft_conv_s(va_list pa, t_flags flags, char *str);
 int		ft_conv_c(va_list pa, t_flags flags, char *str);

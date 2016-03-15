@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:30:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 16:31:41 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 17:06:28 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ int				ft_conv_X(va_list pa, t_flags flags, char *str)
 int				ft_conv_X_l(va_list pa, t_flags flags, char *str)
 {
 	long long	local_pa;
-	int			sign;
 	int			space;
 
 	local_pa = va_arg(pa, long long);
-	sign = local_pa < 0 ? 1 : 0;
 	str[-1] == ' ' ? ft_putchar(' ') : 0;
 	space = str[-1] == ' ' ? 1 : 0;
 	flags.diaiz == 1 ? ft_putstr("0x") : 0;
