@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 15:14:58 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 16:00:02 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,15 +51,15 @@ FT_PRINT	=	libft/ft_print/ft_putchar.c libft/ft_print/ft_putchar_fd.c \
 				libft/ft_print/ft_putstr.c libft/ft_print/ft_putstr_fd.c \
 				libft/ft_print/ft_putendl.c libft/ft_print/ft_putendl_fd.c \
 				libft/ft_print/ft_putnbr.c libft/ft_print/ft_putnbr_ull.c \
-				libft/ft_print/ft_putnbr_base.c \
+				libft/ft_print/ft_putnbr_base.c libft/ft_print/ft_putnbr_base_ull.c \\
 				libft/ft_print/ft_putnbr_fd.c libft/ft_print/ft_nbrendl.c
 
-FT_STR		=	libft/ft_str/ft_itoa.c libft/ft_str/ft_itoa_base.c \
+FT_STR		=	libft/ft_str/ft_itoa.c libft/ft_str/ft_itoa_base.c libft/ft_str/ft_itoa_base_ull.c \
 				libft/ft_str/ft_strcat.c libft/ft_str/ft_strncat.c libft/ft_str/ft_strlcat.c \
 				libft/ft_str/ft_strcpy.c libft/ft_str/ft_strncpy.c \
 				libft/ft_str/ft_strchr.c libft/ft_str/ft_strrchr.c \
 				libft/ft_str/ft_strstr.c libft/ft_str/ft_strnstr.c \
-				libft/ft_str/ft_strcmp.c	libft/ft_str/ft_strncmp.c \
+				libft/ft_str/ft_strcmp.c libft/ft_str/ft_strncmp.c \
 				libft/ft_str/ft_strdup.c \
 				libft/ft_str/ft_striter.c libft/ft_str/ft_striteri.c \
 				libft/ft_str/ft_strequ.c libft/ft_str/ft_strnequ.c \

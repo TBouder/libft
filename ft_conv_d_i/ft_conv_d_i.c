@@ -6,14 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:26:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 13:59:35 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 15:51:38 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
 
-void	ft_put_preci_ll(t_flags flags, long long local_pa)
+static void		ft_put_preci_ll(t_flags flags, long long local_pa)
 {
 	int		i;
 	int		len;
