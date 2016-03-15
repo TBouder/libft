@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:26:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 17:06:14 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 17:35:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		ft_put_preci_ll(t_flags flags, long long local_pa)
 	}
 	if (local_pa < 0)
 		ft_putchar('-');
-	ft_putnbr_ll(local_pa);
+	ft_putnbr_ull(local_pa);
 }
 
 

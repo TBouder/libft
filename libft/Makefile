@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 15:59:49 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 17:34:35 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c  ft_nb/ft_atoi_hexa.c \
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
 				ft_print/ft_putendl.c ft_print/ft_putendl_fd.c \
-				ft_print/ft_putnbr.c ft_print/ft_putnbr_ull.c \
+				ft_print/ft_putnbr.c ft_print/ft_putnbr_ull.c ft_print/ft_putnbr_ll.c \
 				ft_print/ft_putnbr_base.c ft_print/ft_putnbr_base_ull.c \
 				ft_print/ft_putnbr_fd.c ft_print/ft_nbrendl.c
 
