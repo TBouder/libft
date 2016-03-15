@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 17:56:00 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/16 00:19:50 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
 				ft_conv/ft_conv_p.c
 
 PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
-PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c ft_conv_hex/ft_conv_hex_0.c
+PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_X.c ft_conv_x_X/ft_conv_hex_0.c
 PRINTF_U	=	ft_conv_u_U/ft_conv_u.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c
 
@@ -78,7 +78,7 @@ FT_MATH		=	libft/ft_math/ft_factorial.c libft/ft_math/ft_fibonacci.c \
 
 GNL			=	libft/get_next_line/get_next_line.c
 
-OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_DI:.c=.o) $(PRINTF_HEX:.c=.o) $(PRINTF_FLAG:.c=.o) $(PRINTF_U:.c=.o)\
+OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_DI:.c=.o) $(PRINTF_x_X:.c=.o) $(PRINTF_FLAG:.c=.o) $(PRINTF_U:.c=.o)\
 				$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
 				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
@@ -112,8 +112,8 @@ $(NAME):
 	mv *.o ft_conv/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_DI)
 	mv *.o ft_conv_d_i/
-	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_HEX)
-	mv *.o ft_conv_hex/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_x_X)
+	mv *.o ft_conv_x_X/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FLAG)
 	mv *.o ft_flags/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_U)
