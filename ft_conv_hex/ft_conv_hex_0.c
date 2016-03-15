@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 19:27:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 20:10:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,14 @@ void		ft_after_hex(t_flags *flags, int s_local_pa)
 	int		i;
 
 	i = 0;
+	if (flags->diaiz)
+	{
+		flags->spaces_count -= 2;
+		flags->spaces += 2;
+	}
 	if (flags->spaces + s_local_pa < 0)
 	{
-		while (flags->spaces++ + s_local_pa != 0)
+		while (flags->spaces++ + s_local_pa != -2)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
