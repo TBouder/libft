@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 14:12:14 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 15:37:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_ll(unsigned long long nb);
-void				ft_putnbr_base(long nb, int base, int maj);
+void				ft_putnbr_base(long long nb, int base, int maj);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_nbrendl(int s);
 

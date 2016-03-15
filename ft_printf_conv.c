@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 14:47:02 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 15:28:18 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 int		ft_is_printf(char c)
 {
-	if (c == '%' || c == 'd' || c == 'i' || c == 'x' || c == 'X' || c == 's'
-		|| c == 'p' || c == 'c' || c == 'o' || c == 'u')
+	if (c == '%' || c == 'd' || c == 'D' || c == 'i' || c == 'x' || c == 'X'
+		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
+		|| c == 'O' || c == 'u' || c == 'U' || c == '\0')
 		return (1);
 	return (0);
 }
 
 int		ft_load_flags(char *str, int index, t_flags *flags)
 {
-	while (ft_is_printf(str[index]) == 0)
-	{
+	// while (ft_is_printf(str[index]) == 0)
+	// {
 		flags->diaiz = ft_flag_diaiz(str, &index);
 		flags->spaces = ft_flag_spaces(str, &index);
 		flags->zero = ft_flag_zero(str, &index);
 		flags->precision = ft_flag_precision(str, &index);
 		flags->length = ft_flag_length(str, &index);
-	}
+	// }
 	return (index);
 }
 

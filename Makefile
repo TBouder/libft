@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/15 14:51:08 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 15:14:58 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
 
 PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
 PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c
-PRINTF_FLAG	=	ft_flags/ft_flags_0.c;
+PRINTF_FLAG	=	ft_flags/ft_flags_0.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
