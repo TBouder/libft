@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:05:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 20:34:17 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,27 @@ int		main()
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
 	int		l,k;
-
-	l = ft_printf("%#-08x", 42);
+	l = ft_printf("@moulitest: %#.x, %#.0x", 0, 0);
 	printf("\n");
-	k = printf("%#-08x", 42);
+	k = printf("@moulitest: %#.x, %#.0x", 0, 0);
 	printf("\n");
 	printf("%d vs %d", l, k);
+/*
+	# 0046 (int)
+	  ft_printf("@moulitest: %#.x", %#.0x, 0, 0);
+	  1. (   16) -->@moulitest: 0, 0<--
+	  2. (   14) -->@moulitest: , <--
 
+	# 0047 (int)
+	  ft_printf("@moulitest: %.x", %.0x, 0, 0);
+	  1. (   16) -->@moulitest: 0, 0<--
+	  2. (   14) -->@moulitest: , <--
+
+	# 0048 (int)
+	  ft_printf("@moulitest: %5.x", %5.0x, 0, 0);
+	  1. (   24) -->@moulitest:     0,     0<--
+	  2. (   24) -->@moulitest:      ,      <--
+*/
 	// l = ft_printf("%5.2s is a string", "");
 	// printf("\n");
 	// k = printf("%5.2s is a string", "");

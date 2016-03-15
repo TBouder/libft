@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 20:10:00 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 20:29:39 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void		ft_put_preci_hex_ll(t_flags flags, long long local_pa, int maj)
 	}
 	ft_putnbr_base_ull(local_pa, 16, maj);
 }
-
 
 void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
 {
@@ -60,13 +59,10 @@ void		ft_after_hex(t_flags *flags, int s_local_pa)
 
 	i = 0;
 	if (flags->diaiz)
-	{
-		flags->spaces_count -= 2;
 		flags->spaces += 2;
-	}
 	if (flags->spaces + s_local_pa < 0)
 	{
-		while (flags->spaces++ + s_local_pa != -2)
+		while (flags->spaces++ + s_local_pa < 0 - flags->diaiz * 2)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
