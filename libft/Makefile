@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/10 17:34:37 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 12:51:48 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ FT_IS		=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isnumber.c \
 				ft_is/ft_isspace.c ft_is/ft_isprime.c ft_is/ft_ishexa.c
 
-FT_LEN		=	ft_len/ft_nbrlen.c ft_len/ft_strlen.c ft_len/ft_linelen.c \
-				ft_len/ft_hexalen.c
+FT_LEN		=	ft_len/ft_nbrlen.c ft_len/ft_nbrlen_l.c ft_len/ft_nbrlen_ll.c \
+				ft_len/ft_strlen.c ft_len/ft_linelen.c ft_len/ft_hexalen.c
 
 FT_LST		=	ft_lst/ft_lstnew.c ft_lst/ft_lstadd.c ft_lst/ft_lstclr.c \
 				ft_lst/ft_lstdelone.c ft_lst/ft_lstdel.c ft_lst/ft_lstiter.c \
@@ -40,7 +40,8 @@ FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c  ft_nb/ft_atoi_hexa.c \
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
 				ft_print/ft_putendl.c ft_print/ft_putendl_fd.c \
-				ft_print/ft_putnbr.c ft_print/ft_putnbr_base.c \
+				ft_print/ft_putnbr.c ft_print/ft_putnbr_ull.c \
+				ft_print/ft_putnbr_base.c \
 				ft_print/ft_putnbr_fd.c ft_print/ft_nbrendl.c
 
 FT_STR		=	ft_str/ft_itoa.c ft_str/ft_itoa_base.c \

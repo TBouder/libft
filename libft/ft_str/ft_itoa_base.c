@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 22:53:12 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 14:12:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "../libft.h"
 
-static void			ft_convert_base(long n, int base, char *s, int *index)
+static void			ft_convert_base(long long n, int base, char *s, int *index)
 {
 	char	*str;
 
@@ -34,7 +34,7 @@ static void			ft_convert_base(long n, int base, char *s, int *index)
 	}
 }
 
-static int			ft_nbrlen_base(long n, int base)
+static int			ft_nbrlen_base(long long n, int base)
 {
 	int		len;
 
@@ -47,7 +47,7 @@ static int			ft_nbrlen_base(long n, int base)
 	return (len);
 }
 
-char				*ft_itoa_base(long n, int base)
+char				*ft_itoa_base(long long n, int base)
 {
 	char	*s;
 	int		len;

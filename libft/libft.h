@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 22:49:46 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 14:12:14 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void				ft_bzero(void *s, size_t n);
 
 size_t				ft_strlen(const char *s);
 int					ft_nbrlen(int n);
+int					ft_nbrlen_l(long n);
+int					ft_nbrlen_ll(long long n);
 int					ft_linelen(const char *str, int i);
 int					ft_hexalen(char *str);
 
@@ -102,7 +104,7 @@ char				*ft_strtrim_char(char const *s, char c);
 char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
-char				*ft_itoa_base(long n, int base);
+char				*ft_itoa_base(long long n, int base);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -129,6 +131,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
+void				ft_putnbr_ll(unsigned long long nb);
 void				ft_putnbr_base(long nb, int base, int maj);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_nbrendl(int s);

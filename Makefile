@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/14 19:52:41 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/15 14:51:08 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,22 @@ NAME 		= 	libftprintf.a
 CC			= 	gcc
 CFLAGS		= 	-Wall -Werror -Wextra
 
-LIBFT 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
+PRINTF 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
 
-LIBFT_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_d_i.c \
-				ft_conv/ft_conv_s.c ft_conv/ft_conv_c.c ft_conv/ft_conv_o.c ft_conv/ft_conv_x.c\
-				ft_conv/ft_conv_X.c ft_conv/ft_conv_u.c ft_conv/ft_conv_p.c
+PRINTF_CONV	=	ft_conv/ft_conv_percent.c \
+				ft_conv/ft_conv_s.c ft_conv/ft_conv_c.c ft_conv/ft_conv_o.c \
+				ft_conv/ft_conv_u.c ft_conv/ft_conv_p.c
+
+PRINTF_DI	=	ft_conv_d_i/ft_conv_d_i.c
+PRINTF_HEX	=	ft_conv_hex/ft_conv_x.c ft_conv_hex/ft_conv_X.c
+PRINTF_FLAG	=	ft_flags/ft_flags_0.c;
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
 				libft/ft_is/ft_isspace.c libft/ft_is/ft_isprime.c libft/ft_is/ft_ishexa.c
 
-FT_LEN		=	libft/ft_len/ft_nbrlen.c libft/ft_len/ft_strlen.c libft/ft_len/ft_linelen.c \
-				libft/ft_len/ft_hexalen.c
+FT_LEN		=	libft/ft_len/ft_nbrlen.c libft/ft_len/ft_nbrlen_l.c libft/ft_len/ft_nbrlen_ll.c \
+				libft/ft_len/ft_strlen.c libft/ft_len/ft_linelen.c libft/ft_len/ft_hexalen.c
 
 FT_LST		=	libft/ft_lst/ft_lstnew.c libft/ft_lst/ft_lstadd.c libft/ft_lst/ft_lstclr.c \
 				libft/ft_lst/ft_lstdelone.c libft/ft_lst/ft_lstdel.c libft/ft_lst/ft_lstiter.c \
@@ -46,7 +50,8 @@ FT_NB		=	libft/ft_nb/ft_atoi.c libft/ft_nb/ft_atoi_part.c  libft/ft_nb/ft_atoi_h
 FT_PRINT	=	libft/ft_print/ft_putchar.c libft/ft_print/ft_putchar_fd.c \
 				libft/ft_print/ft_putstr.c libft/ft_print/ft_putstr_fd.c \
 				libft/ft_print/ft_putendl.c libft/ft_print/ft_putendl_fd.c \
-				libft/ft_print/ft_putnbr.c libft/ft_print/ft_putnbr_base.c \
+				libft/ft_print/ft_putnbr.c libft/ft_print/ft_putnbr_ull.c \
+				libft/ft_print/ft_putnbr_base.c \
 				libft/ft_print/ft_putnbr_fd.c libft/ft_print/ft_nbrendl.c
 
 FT_STR		=	libft/ft_str/ft_itoa.c libft/ft_str/ft_itoa_base.c \
@@ -72,7 +77,7 @@ FT_MATH		=	libft/ft_math/ft_factorial.c libft/ft_math/ft_fibonacci.c \
 
 GNL			=	libft/get_next_line/get_next_line.c
 
-OBJ			=	$(LIBFT:.c=.o) $(LIBFT_CONV:.c=.o) \
+OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_DI:.c=.o) $(PRINTF_HEX:.c=.o) $(PRINTF_FLAG:.c=.o) \
 				$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
 				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
@@ -102,9 +107,15 @@ $(NAME):
 	mv *.o libft/ft_math/
 	$(CC) $(CFLAGS) -c $(HEADER) $(GNL)
 	mv *.o libft/get_next_line/
-	$(CC) $(CFLAGS) -c $(HEADER) $(LIBFT_CONV)
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_CONV)
 	mv *.o ft_conv/
-	$(CC) $(CFLAGS) -c $(HEADER) $(LIBFT)
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_DI)
+	mv *.o ft_conv_d_i/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_HEX)
+	mv *.o ft_conv_hex/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FLAG)
+	mv *.o ft_flags/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

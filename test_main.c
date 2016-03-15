@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 01:24:23 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 14:48:55 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int		main()
 {
-	int		count = 42;
-	char	*i = "445452";
-	char	c = 'O';
-	int		d = 85;
+	// int		count = 42;
+	// char	*i = "445452";
+	// char	c = 'O';
+	// int		d = 85;
 	/*
 		ft_nbrendl(ft_printf("HELLO YOU %10% !!\n"));				ft_nbrendl(printf("HELLO YOU %10% !!\n"));
 		printf("--------------------\n");
@@ -56,9 +56,10 @@ int		main()
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
 	int		l,k;
-	l = ft_printf("%    d", 42);
+
+	l = ft_printf("%#llx", 9223372036854775807);
 	printf("\n");
-	k = printf("%    d", 42);
+	k = printf("%#llx", 9223372036854775807);
 	printf("\n");
 	printf("%d vs %d", l, k);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 01:07:08 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 14:44:39 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,44 @@ typedef struct		s_flags
 	int				spaces_count;
 	int				precision;
 	int				zero;
+	int				length;
+	int				diaiz;
 }					t_flags;
 
 int		ft_printf(const char * restrict format, ...);
 int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index);
 
+/*Tools*/
 void	ft_flag_r_justified(t_flags *flags, int s_local_pa);
 void	ft_flag_l_justified(t_flags *flags, int s_local_pa);
-void	ft_put_precision_base(t_flags flags, long local_pa, int base, int maj);
+void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj);
 void	ft_put_precision_str(t_flags flags, char *local_pa);
+
+/*Flags*/
+int		ft_flag_spaces(char *str, int *index);
+int		ft_flag_zero(char *str, int *index);
+int		ft_flag_precision(char *str, int *index);
+int		ft_flag_length(char *str, int *index);
+int		ft_flag_diaiz(char *str, int *index);
 
 
 int		ft_conv_percent(t_flags flags);
-int		ft_conv_d_i(va_list pa, t_flags flags);
-int		ft_conv_s(va_list pa, t_flags flags);
-int		ft_conv_c(va_list pa, t_flags flags);
-int		ft_conv_o(va_list pa, t_flags flags);
-int		ft_conv_x(va_list pa, t_flags flags);
-int		ft_conv_X(va_list pa, t_flags flags);
-int		ft_conv_u(va_list pa, t_flags flags);
-int		ft_conv_p(va_list *pa, t_flags flags);
+
+int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_d_i(va_list pa, t_flags flags, char *str);
+int		ft_conv_d_i_l(va_list pa, t_flags flags, char *str);
+int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str);
+
+int		ft_launch_conv_x(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_x(va_list pa, t_flags flags, char *str);
+int		ft_launch_conv_X(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_X(va_list pa, t_flags flags, char *str);
+
+int		ft_conv_s(va_list pa, t_flags flags, char *str);
+int		ft_conv_c(va_list pa, t_flags flags, char *str);
+int		ft_conv_o(va_list pa, t_flags flags, char *str);
+int		ft_conv_u(va_list pa, t_flags flags, char *str);
+int		ft_conv_p(va_list *pa, t_flags flags, char *str);
 
 
 #endif
