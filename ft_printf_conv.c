@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 16:59:56 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/15 18:39:03 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	// while (ft_is_printf(str[index]) == 0)
 	// {
 		flags->diaiz = ft_flag_diaiz(str, &index);
-		flags->spaces = ft_flag_spaces(str, &index);
 		flags->zero = ft_flag_zero(str, &index);
+		flags->spaces = ft_flag_spaces(str, &index);
 		flags->precision = ft_flag_precision(str, &index);
 		flags->length = ft_flag_length(str, &index);
+		if (flags->diaiz == 1)
+			flags->spaces -= 2;
 	// }
 	return (index);
 }
@@ -54,7 +56,7 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	*r_value += str[index] == 's' ? ft_conv_s(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'S' ? ft_conv_S(pa) : 0;
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags, str + index) : 0;
-	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags, str + index) : 0;
+	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
 	// *r_value += str[index] == 'C' ? ft_conv_S(pa) : 0;
 	*r_value += str[index] == 'o' ? ft_conv_o(*pa, flags, str + index) : 0;
 	// *r_value += str[index] == 'O' ? ft_conv_S(pa) : 0;
