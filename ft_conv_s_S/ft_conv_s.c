@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 00:53:20 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 11:24:55 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_conv_s(va_list pa, t_flags flags)
 		flags.precision > 0 && flags.precision < ln ? ln = flags.precision : 0;
 		ft_flag_r_justified(&flags, ln);
 		ft_put_precision_str(flags, local_pa, ln);
-		ft_flag_l_justified(&flags, ln);
+		// ft_flag_l_justified(&flags, ln);
 		return (ln + flags.spaces_count);
 	}
 }
