@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 15:37:45 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 16:07:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void		ft_put_preci_hex(t_flags *flags, long long local_pa, int maj)
 void		ft_before_hex_spaces(t_flags *flags, int s_local_pa)
 {
 	(flags->diaiz == 1) ? flags->spaces -= 2 : 0;
+	ft_printf("%d\n", flags->spaces);
 	while (flags->spaces-- - s_local_pa != 0)
 	{
 		flags->spaces_count++;
@@ -58,9 +59,9 @@ void		ft_before_hex_spaces(t_flags *flags, int s_local_pa)
 void		ft_before_hex_zero(t_flags *flags, int s_local_pa, long long value, int maj)
 {
 	(flags->diaiz == 1) ? flags->zero -= 2 : 0;
+	ft_printf("%d\n", flags->zero);
 	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
 	(maj == 0) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0x") : 0;
-	ft_printf("%d\n", flags->zero);
 	while (flags->zero-- - s_local_pa != 0)
 	{
 		flags->spaces_count++;
