@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 12:23:08 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 12:44:15 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ void	ft_put_precision_oct(t_flags flags, long long local_pa)
 
 void	ft_before_o_O(t_flags *flags, int s_local_pa, int index)
 {
-	flags->spaces_count = 0;
 	if (flags->spaces && flags->spaces - s_local_pa + flags->diaiz > 0)
 	{
-		while (flags->spaces - s_local_pa + flags->diaiz != 0)
+		while (flags->spaces-- - s_local_pa + flags->diaiz != 0)
 		{
-			flags->spaces--;
 			flags->spaces_count++;
 			ft_putchar(' ');
 		}
@@ -60,15 +58,18 @@ void	ft_before_o_O(t_flags *flags, int s_local_pa, int index)
 
 void	ft_after_o_O(t_flags *flags, int s_local_pa)
 {
+	if (flags->diaiz)
+		flags->spaces += 1;
 	if (flags->spaces + s_local_pa < 0)
 	{
-		while (flags->spaces++ + s_local_pa != 0)
+		while (flags->spaces++ + s_local_pa < 0 - flags->diaiz)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
 		}
 	}
 }
+
 
 int		ft_conv_o(va_list pa, t_flags flags)
 {

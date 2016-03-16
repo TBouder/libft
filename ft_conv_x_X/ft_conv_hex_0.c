@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 12:15:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 12:27:53 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
 	}
 	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
 	(maj == 0) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0x") : 0;
-	flags->diaiz == 1 && value != 0 ? flags->spaces_count += 2 : 0;
+	(flags->diaiz == 1) && (value != 0) ? flags->spaces_count += 2 : 0;
 }
 
 void		ft_after_hex(t_flags *flags, int s_local_pa)
