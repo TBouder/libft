@@ -6,36 +6,38 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 12:27:53 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 13:52:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void		ft_put_preci_hex_ll(t_flags flags, long long local_pa, int maj)
+void		ft_put_preci_hex_ll(t_flags *flags, long long local_pa, int maj)
 {
 	int		len;
 
 	len = ft_strlen(ft_itoa_base(local_pa, 16));
-	while (flags.precision - len > 0)
+	while (flags->precision - len > 0)
 	{
 		ft_putchar('0');
-		flags.precision -= 1;
+		flags->spaces_count += 1;
+		flags->precision -= 1;
 	}
 	ft_putnbr_base_ull(local_pa, 16, maj);
 }
 
-void		ft_put_preci_hex(t_flags flags, long long local_pa, int maj)
+void		ft_put_preci_hex(t_flags *flags, long long local_pa, int maj)
 {
 	int		len;
 
 	len = ft_strlen(ft_itoa_base(local_pa, 16));
-	while (flags.precision - len > 0)
+	while (flags->precision - len > 0)
 	{
 		ft_putchar('0');
-		flags.precision -= 1;
+		flags->spaces_count += 1;
+		flags->precision -= 1;
 	}
-	if (ft_itoa_base(local_pa, 16)[0] == '0' && flags.precision != -1)
+	if (ft_itoa_base(local_pa, 16)[0] == '0' && flags->precision != -1)
 		ft_putnbr_base(local_pa, 16, maj);
 	else if (ft_itoa_base(local_pa, 16)[0] != '0')
 		ft_putnbr_base(local_pa, 16, maj);
