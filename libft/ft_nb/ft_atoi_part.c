@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/20 01:06:43 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:22:49 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 13:58:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_atoi_part(const char *str, int i)
 	result = 0;
 	if (ft_strlen(str) == 0 || (str[i] < 32 && !ft_isspace(str[i])))
 		return (0);
-	while (str[i] >= 0 && str[i] <= 32)
+	while (str[i] <= 32)
 		i++;
 	if ((str[i] == '-' || str[i] == '+'))
 	{
