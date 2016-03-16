@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 11:44:57 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 11:51:23 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,11 @@ void	ft_after_str(t_flags *flags, int s_local_pa);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
 
+/*o & O*/
+int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
+int		ft_conv_o(va_list pa, t_flags flags);
+
 int		ft_conv_c(va_list pa, t_flags flags);
-int		ft_conv_o(va_list pa, t_flags flags, char *str);
 int		ft_conv_p(va_list *pa, t_flags flags, char *str);
 
 
