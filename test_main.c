@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 18:34:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:47:13 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/16 14:08:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int		main()
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
 	int		l,k;
-	l = ft_printf("@moulitest: %.10o", 42);
+	l = ft_printf("% d", -42);
 	printf("\n");
-	k = printf("@moulitest: %.10o", 42);
+	k = printf("% d", -42);
 	printf("\n");
 	printf("%d vs %d\n", l, k);
 /*

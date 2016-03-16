@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 16:11:40 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:46:09 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/16 14:04:28 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	int		i;
 
 	i = 0;
-	// while (ft_is_printf(str[index]) == 0)
-	// {
+	while (ft_is_printf(str[index]) == 0)
+	{
 		flags->diaiz = ft_flag_diaiz(str, &index);
 		flags->zero = ft_flag_zero(str, &index);
 		flags->spaces = ft_flag_spaces(str, &index);
 		flags->precision = ft_flag_precision(str, &index);
 		flags->length = ft_flag_length(str, &index);
-	// }
+	}
 	if (flags->diaiz == 1)
 		flags->spaces -= 2;
 	return (index);
