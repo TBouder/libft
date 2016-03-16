@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 14:58:06 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:11:31 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct		s_flags
 {
 	int				spaces;
 	int				spaces_count;
-	int				precision;
+	int				preci;
 	int				zero;
 	int				length;
 	int				diaiz;
@@ -42,7 +42,7 @@ void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj);
 /*Flags*/
 int		ft_flag_spaces(char *str, int *index);
 int		ft_flag_zero(char *str, int *index);
-int		ft_flag_precision(char *str, int *index);
+int		ft_flag_preci(char *str, int *index);
 int		ft_flag_length(char *str, int *index);
 int		ft_flag_diaiz(char *str, int *index);
 int		ft_flag_minus(char *str, int *index);

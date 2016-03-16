@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 15:08:22 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:25:14 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,28 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	flags->diaiz = 0;
 	flags->zero = 0;
 	flags->spaces = 0;
-	flags->precision = 0;
+	flags->preci = 0;
 	flags->length = 0;
 	flags->minus = 0;
 	while (ft_is_printf(str[index]) == 0)
 	{
 		(str[index] == '#') ? flags->diaiz = ft_flag_diaiz(str, &index) : 0;
 		(str[index] == '-') ? flags->minus = ft_flag_minus(str, &index) : 0;
+		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index) : 0;
+		(str[index] == '.') ? flags->preci = ft_flag_preci(str, &index) : 0;
+		if (str[index] > '0' && str[index] <= '9')
+			flags->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j')
 			flags->length = ft_flag_length(str, &index);
-
-		flags->zero = ft_flag_zero(str, &index);
-		flags->spaces = ft_flag_spaces(str, &index);
-		flags->precision = ft_flag_precision(str, &index);
 	}
-	ft_putnbr(flags->minus);
+	(flags->minus == 1) ? flags->spaces = -flags->spaces : 0;
+	// (flags->diaiz == 1) ? flags->spaces -= 2 : 0;
 
 	// ft_nbrendl(flags->diaiz);
 	// ft_nbrendl(flags->zero);
 	// ft_nbrendl(flags->spaces);
-	// ft_nbrendl(flags->precision);
+	// ft_nbrendl(flags->preci);
 	// ft_nbrendl(flags->length);
-	if (flags->diaiz == 1)
-		flags->spaces -= 2;
 	return (index);
 }
 

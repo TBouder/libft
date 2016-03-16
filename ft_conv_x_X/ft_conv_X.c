@@ -28,7 +28,7 @@ int				ft_conv_X(va_list pa, t_flags flags, char *str)
 	ft_before_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), value, 1);
 	ft_put_preci_hex(&flags, value, 1);
 	ft_after_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)));
-	ft_itoa_base(local_pa, 16)[0] == '0' && flags.precision == -1 ? len-- : 0;
+	ft_itoa_base(local_pa, 16)[0] == '0' && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count + space);
 }
 
@@ -45,6 +45,6 @@ int				ft_conv_X_l(va_list pa, t_flags flags, char *str)
 	ft_before_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), local_pa, 1);
 	ft_put_preci_hex_ll(&flags, local_pa, 1);
 	ft_after_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)));
-	ft_itoa_base(local_pa, 16)[0] == '0' && flags.precision == -1 ? len-- : 0;
+	ft_itoa_base(local_pa, 16)[0] == '0' && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count + space);
 }

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 17:52:28 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 15:05:38 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:15:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
 {
-	flags->minus == 1 ? flags->spaces = -flags->spaces : 0;
 	flags->spaces_count = 0;
 	if (flags->spaces && flags->spaces - s_local_pa > 0)
 	{
@@ -57,10 +56,10 @@ void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj)
 
 	i = 0;
 	len = ft_strlen(ft_itoa_base(local_pa, base));
-	while (flags.precision - len > 0)
+	while (flags.preci - len > 0)
 	{
 		ft_putchar('0');
-		flags.precision -= 1;
+		flags.preci -= 1;
 	}
 	ft_putnbr_base(local_pa, base, maj);
 }

@@ -19,10 +19,10 @@ static void		ft_put_preci_ll(t_flags flags, long long local_pa)
 
 	i = 0;
 	len = ft_nbrlen_ll(local_pa);
-	while (flags.precision - len > 0)
+	while (flags.preci - len > 0)
 	{
 		ft_putchar('0');
-		flags.precision -= 1;
+		flags.preci -= 1;
 	}
 	ft_putnbr_base_ull(local_pa, 10, 0);
 }

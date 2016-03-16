@@ -28,7 +28,7 @@ int			ft_conv_s(va_list pa, t_flags flags)
 	else
 	{
 		ln = ft_strlen(local_pa);
-		flags.precision > 0 && flags.precision < ln ? ln = flags.precision : 0;
+		flags.preci > 0 && flags.preci < ln ? ln = flags.preci : 0;
 		ft_before_str(&flags, ln);
 		ft_put_precision_str(flags, local_pa, ln);
 		ft_after_str(&flags, ln);

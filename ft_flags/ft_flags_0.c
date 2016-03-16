@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 14:57:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:12:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,6 @@ int		ft_flag_spaces(char *str, int *index)
 			space++;
 		*index += ft_nbrlen(ft_atoi(&str[*index]));
 	}
-	// else if (str[*index] == '-')
-	// {
-	// 	*index += 1;
-	// 	(str[*index] == '0') ? *index += 1 : 0;
-	// 	if (str[*index] > '0' && str[*index] <= '9')
-	// 	{
-	// 		while (i++ < ft_atoi(&str[*index]))
-	// 			space--;
-	// 	}
-	// 	*index += ft_nbrlen(ft_atoi(&str[*index]));
-	// }
 	return (space);
 }
 
@@ -56,7 +45,7 @@ int		ft_flag_zero(char *str, int *index)
 	return (zero);
 }
 
-int		ft_flag_precision(char *str, int *index)
+int		ft_flag_preci(char *str, int *index)
 {
 	int		value;
 

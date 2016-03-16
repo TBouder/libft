@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:30:07 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:51:28 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:17:19 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int				ft_conv_x(va_list pa, t_flags flags, char *str)
 	ft_before_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), value, 0);
 	ft_put_preci_hex(&flags, value, 0);
 	ft_after_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)));
-	ft_itoa_base(local_pa, 16)[0] == '0' && flags.precision == -1 ? len-- : 0;
+	ft_itoa_base(local_pa, 16)[0] == '0' && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count + space);
 }
 
@@ -45,6 +45,6 @@ int				ft_conv_x_l(va_list pa, t_flags flags, char *str)
 	ft_before_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), local_pa, 0);
 	ft_put_preci_hex_ll(&flags, local_pa, 0);
 	ft_after_hex(&flags, ft_strlen(ft_itoa_base(local_pa, 16)));
-	ft_itoa_base(local_pa, 16)[0] == '0' && flags.precision == -1 ? len-- : 0;
+	ft_itoa_base(local_pa, 16)[0] == '0' && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count + space);
 }
