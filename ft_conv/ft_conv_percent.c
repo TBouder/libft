@@ -12,11 +12,11 @@
 
 #include "../ft_printf.h"
 
-static void		ft_after(t_flags *flags, int s_local_pa)
+static void		ft_after(t_flags *flags, int v_len)
 {
-	if (flags->spaces + s_local_pa < 0)
+	if (flags->spaces + v_len < 0)
 	{
-		while (flags->spaces++ + s_local_pa != 0)
+		while (flags->spaces++ + v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');

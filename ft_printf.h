@@ -35,8 +35,8 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index);
 int		ft_is_printf(char c);
 
 /*Tools*/
-void	ft_flag_r_justified(t_flags *flags, int s_local_pa);
-void	ft_flag_l_justified(t_flags *flags, int s_local_pa);
+void	ft_flag_r_justified(t_flags *flags, int v_len);
+void	ft_flag_l_justified(t_flags *flags, int v_len);
 void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj);
 
 /*Flags*/
@@ -58,8 +58,8 @@ int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str);
 /*x & X*/
 void	ft_put_preci_hex_ll(t_flags *flags, long long local_pa, int maj);
 void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj);
-void	ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj);
-void	ft_after_hex(t_flags *flags, int s_local_pa);
+void	ft_before_x(t_flags *flags, int v_len, long long value, int maj);
+void	ft_after_hex(t_flags *flags, int v_len);
 int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_x(va_list pa, t_flags flags, char *str);
 int		ft_conv_x_l(va_list pa, t_flags flags, char *str);
@@ -72,8 +72,8 @@ int		ft_conv_u(va_list pa, t_flags flags);
 
 /*s & S*/
 void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
-void	ft_before_str(t_flags *flags, int s_local_pa);
-void	ft_after_str(t_flags *flags, int s_local_pa);
+void	ft_before_str(t_flags *flags, int v_len);
+void	ft_after_str(t_flags *flags, int v_len);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
 

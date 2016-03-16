@@ -25,15 +25,15 @@ void	ft_put_precision_str(t_flags flags, char *local_pa, int len)
 	}
 }
 
-void	ft_before_str(t_flags *flags, int s_local_pa)
+void	ft_before_str(t_flags *flags, int v_len)
 {
 	int		i;
 
 	i = 0;
 	flags->spaces_count = 0;
-	if (flags->spaces && flags->spaces - s_local_pa > 0)
+	if (flags->spaces && flags->spaces - v_len > 0)
 	{
-		while (flags->spaces - s_local_pa != 0)
+		while (flags->spaces - v_len != 0)
 		{
 			flags->spaces--;
 			flags->spaces_count++;
@@ -42,15 +42,15 @@ void	ft_before_str(t_flags *flags, int s_local_pa)
 	}
 }
 
-void	ft_after_str(t_flags *flags, int s_local_pa)
+void	ft_after_str(t_flags *flags, int v_len)
 {
 	int		i;
 
 	i = 0;
-	if (flags->spaces + s_local_pa < 0)
+	if (flags->spaces + v_len < 0)
 	{
 		flags->spaces_count = 0;
-		while (flags->spaces++ + s_local_pa != 0)
+		while (flags->spaces++ + v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');

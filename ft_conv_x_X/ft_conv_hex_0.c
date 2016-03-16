@@ -6,16 +6,16 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 16:21:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 16:31:46 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void		ft_before_hex_spaces(t_flags *flags, int s_local_pa)
+void	ft_before_x_spaces(t_flags *flags, int v_len)
 {
 	(flags->diaiz == 1) ? flags->spaces -= 2 : 0;
-	while (flags->spaces-- - s_local_pa != 0)
+	while (flags->spaces-- - v_len != 0)
 	{
 		flags->spaces_count++;
 		ft_putchar(' ');
@@ -24,25 +24,25 @@ void		ft_before_hex_spaces(t_flags *flags, int s_local_pa)
 	(flags->preci == -1) ? flags->spaces_count++ : 0;
 }
 
-void		ft_before_hex_zero(t_flags *flags, int s_local_pa, long long value, int maj)
+void	ft_before_x_zero(t_flags *flags, int v_len, long long value, int maj)
 {
 	(flags->diaiz == 1) ? flags->zero -= 2 : 0;
 	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
 	(maj == 0) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0x") : 0;
-	while (flags->zero-- - s_local_pa != 0)
+	while (flags->zero-- - v_len != 0)
 	{
 		flags->spaces_count++;
 		ft_putchar('0');
 	}
 }
 
-void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
+void	ft_before_x(t_flags *flags, int v_len, long long value, int maj)
 {
-	if (flags->spaces && flags->spaces - s_local_pa > 0)
-		ft_before_hex_spaces(flags, s_local_pa);
-	else if (flags->zero && flags->zero - s_local_pa > 0)
+	if (flags->spaces && flags->spaces - v_len > 0)
+		ft_before_x_spaces(flags, v_len);
+	else if (flags->zero && flags->zero - v_len > 0)
 	{
-		ft_before_hex_zero(flags, s_local_pa, value, maj);
+		ft_before_x_zero(flags, v_len, value, maj);
 		maj = -1;
 	}
 	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
@@ -51,12 +51,12 @@ void		ft_before_hex(t_flags *flags, int s_local_pa, long long value, int maj)
 }
 
 
-void		ft_after_hex(t_flags *flags, int s_local_pa)
+void	ft_after_hex(t_flags *flags, int v_len)
 {
 	(flags->diaiz) ? flags->spaces += 2 : 0;
-	if (flags->spaces + s_local_pa < 0)
+	if (flags->spaces + v_len < 0)
 	{
-		while (flags->spaces++ + s_local_pa < 0)
+		while (flags->spaces++ + v_len < 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
@@ -64,7 +64,7 @@ void		ft_after_hex(t_flags *flags, int s_local_pa)
 	}
 }
 
-int			ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index)
+int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index)
 {
 	if (str[index] == 'X')
 	{

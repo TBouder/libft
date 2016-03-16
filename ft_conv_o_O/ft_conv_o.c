@@ -29,11 +29,11 @@ void	ft_put_precision_oct(t_flags *flags, long long local_pa)
 		ft_putnbr_base(local_pa, 8, 0);
 }
 
-void	ft_before_o_O(t_flags *flags, int s_local_pa, int index)
+void	ft_before_o_O(t_flags *flags, int v_len, int index)
 {
-	if (flags->spaces && flags->spaces - s_local_pa + flags->diaiz > 0)
+	if (flags->spaces && flags->spaces - v_len + flags->diaiz > 0)
 	{
-		while (flags->spaces-- - s_local_pa + flags->diaiz != 0)
+		while (flags->spaces-- - v_len + flags->diaiz != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
@@ -45,7 +45,7 @@ void	ft_before_o_O(t_flags *flags, int s_local_pa, int index)
 	{
 		(flags->diaiz == 1) ? ft_putstr("0") : 0;
 		index = 1;
-		while (flags->zero-- - s_local_pa != 0)
+		while (flags->zero-- - v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar('0');
@@ -55,13 +55,13 @@ void	ft_before_o_O(t_flags *flags, int s_local_pa, int index)
 	(flags->diaiz == 1) ? flags->spaces_count++ : 0;
 }
 
-void	ft_after_o_O(t_flags *flags, int s_local_pa)
+void	ft_after_o_O(t_flags *flags, int v_len)
 {
 	if (flags->diaiz)
 		flags->spaces += 1;
-	if (flags->spaces + s_local_pa < 0)
+	if (flags->spaces + v_len < 0)
 	{
-		while (flags->spaces++ + s_local_pa < 0 - flags->diaiz)
+		while (flags->spaces++ + v_len < 0 - flags->diaiz)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');

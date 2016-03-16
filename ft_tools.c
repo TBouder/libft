@@ -6,18 +6,18 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 17:52:28 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 15:15:29 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 16:25:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
+void	ft_flag_r_justified(t_flags *flags, int v_len)
 {
 	flags->spaces_count = 0;
-	if (flags->spaces && flags->spaces - s_local_pa > 0)
+	if (flags->spaces && flags->spaces - v_len > 0)
 	{
-		while (flags->spaces-- - s_local_pa != 0)
+		while (flags->spaces-- - v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
@@ -25,7 +25,7 @@ void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
 	}
 	else if (flags->spaces == 0 && flags->zero != 0)
 	{
-		while (flags->zero-- - s_local_pa != 0)
+		while (flags->zero-- - v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar('0');
@@ -33,15 +33,15 @@ void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
 	}
 }
 
-void	ft_flag_l_justified(t_flags *flags, int s_local_pa)
+void	ft_flag_l_justified(t_flags *flags, int v_len)
 {
 	int		i;
 
 	i = 0;
-	if (flags->spaces + s_local_pa < 0)
+	if (flags->spaces + v_len < 0)
 	{
 		flags->spaces_count = 0;
-		while (flags->spaces++ + s_local_pa != 0)
+		while (flags->spaces++ + v_len != 0)
 		{
 			flags->spaces_count++;
 			ft_putchar(' ');
