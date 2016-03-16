@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:44:57 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 14:57:50 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ int		ft_flag_spaces(char *str, int *index)
 			space++;
 		*index += ft_nbrlen(ft_atoi(&str[*index]));
 	}
-	else if (str[*index] == '-')
-	{
-		*index += 1;
-		(str[*index] == '0') ? *index += 1 : 0;
-		if (str[*index] > '0' && str[*index] <= '9')
-		{
-			while (i++ < ft_atoi(&str[*index]))
-				space--;
-		}
-		*index += ft_nbrlen(ft_atoi(&str[*index]));
-	}
+	// else if (str[*index] == '-')
+	// {
+	// 	*index += 1;
+	// 	(str[*index] == '0') ? *index += 1 : 0;
+	// 	if (str[*index] > '0' && str[*index] <= '9')
+	// 	{
+	// 		while (i++ < ft_atoi(&str[*index]))
+	// 			space--;
+	// 	}
+	// 	*index += ft_nbrlen(ft_atoi(&str[*index]));
+	// }
 	return (space);
 }
 
@@ -110,6 +110,16 @@ int		ft_flag_length(char *str, int *index)
 int		ft_flag_diaiz(char *str, int *index)
 {
 	if (str[*index] == '#')
+	{
+		*index += 1;
+		return (1);
+	}
+	return (0);
+}
+
+int		ft_flag_minus(char *str, int *index)
+{
+	if (str[*index] == '-')
 	{
 		*index += 1;
 		return (1);

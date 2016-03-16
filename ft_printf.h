@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:51:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 14:58:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ typedef struct		s_flags
 	int				zero;
 	int				length;
 	int				diaiz;
+	int				minus;
 }					t_flags;
 
 int		ft_printf(const char * restrict format, ...);
 int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index);
+int		ft_is_printf(char c);
 
 /*Tools*/
 void	ft_flag_r_justified(t_flags *flags, int s_local_pa);
@@ -43,7 +45,7 @@ int		ft_flag_zero(char *str, int *index);
 int		ft_flag_precision(char *str, int *index);
 int		ft_flag_length(char *str, int *index);
 int		ft_flag_diaiz(char *str, int *index);
-
+int		ft_flag_minus(char *str, int *index);
 
 int		ft_conv_percent(t_flags flags);
 

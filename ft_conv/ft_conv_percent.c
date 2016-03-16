@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:23:27 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 11:09:16 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 15:01:45 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static void		ft_after(t_flags *flags, int s_local_pa)
 {
-	int		i;
-
-	i = 0;
 	if (flags->spaces + s_local_pa < 0)
 	{
 		while (flags->spaces++ + s_local_pa != 0)
