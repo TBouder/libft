@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tools.c                                         :+:      :+:    :+:   */
+/*   ft_conv_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 17:52:28 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 11:30:18 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/14 16:29:36 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/03/16 11:42:45 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
+static void		ft_before_o_O(t_flags *flags, int s_local_pa)
 {
 	int		i;
 
@@ -36,14 +36,13 @@ void	ft_flag_r_justified(t_flags *flags, int s_local_pa)
 	}
 }
 
-void	ft_flag_l_justified(t_flags *flags, int s_local_pa)
+static void		ft_after_o_O(t_flags *flags, int s_local_pa)
 {
 	int		i;
 
 	i = 0;
 	if (flags->spaces + s_local_pa < 0)
 	{
-		flags->spaces_count = 0;
 		while (flags->spaces++ + s_local_pa != 0)
 		{
 			flags->spaces_count++;
@@ -52,17 +51,24 @@ void	ft_flag_l_justified(t_flags *flags, int s_local_pa)
 	}
 }
 
-void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj)
+int				ft_conv_o(va_list pa, t_flags flags, char *str)
 {
-	int		i;
+	long	local_pa;
+	long	value;
 	int		len;
+	int		space;
 
-	i = 0;
-	len = ft_strlen(ft_itoa_base(local_pa, base));
-	while (flags.precision - len > 0)
+	space = 0;
+	if (str[-1] == ' ')
 	{
-		ft_putchar('0');
-		flags.precision -= 1;
+		ft_putchar(' ');
+		space = 1;
 	}
-	ft_putnbr_base(local_pa, base, maj);
+	local_pa = va_arg(pa, long);
+	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa;
+	len = ft_strlen(ft_itoa_base(local_pa, 8));
+	ft_before_o_O(&flags, len);
+	ft_put_precision(flags, value, 8, 0);
+	ft_after_o_O(&flags, len);
+	return (len + flags.spaces_count + space);
 }

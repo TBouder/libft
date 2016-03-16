@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 00:50:37 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 11:44:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ int		ft_flag_diaiz(char *str, int *index);
 
 
 int		ft_conv_percent(t_flags flags);
+
 /*i & d*/
 int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_d_i(va_list pa, t_flags flags, char *str);
 int		ft_conv_d_i_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str);
+
 /*x & X*/
 void	ft_put_preci_hex(t_flags flags, long long local_pa, int base, int maj);
 void	ft_put_preci_hex_ll(t_flags flags, long long local_pa, int maj);
@@ -61,13 +63,17 @@ int		ft_conv_x(va_list pa, t_flags flags, char *str);
 int		ft_conv_x_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_X(va_list pa, t_flags flags, char *str);
 int		ft_conv_X_l(va_list pa, t_flags flags, char *str);
+
 /*u & U*/
 int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_u(va_list pa, t_flags flags);
+
 /*s & S*/
+void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
+void	ft_before_str(t_flags *flags, int s_local_pa);
+void	ft_after_str(t_flags *flags, int s_local_pa);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
-void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
 
 int		ft_conv_c(va_list pa, t_flags flags);
 int		ft_conv_o(va_list pa, t_flags flags, char *str);

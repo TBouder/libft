@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 00:58:41 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/16 11:39:40 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int		main()
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
 	int		l,k;
-	l = ft_printf("%10s is a string", "");
+	l = ft_printf("%#6o", 2500);
 	printf("\n");
-	k = printf("%10s is a string", "");
+	k = printf("%#6o", 2500);
 	printf("\n");
 	printf("%d vs %d\n", l, k);
 /*

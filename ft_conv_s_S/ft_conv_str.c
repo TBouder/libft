@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv_o.c                                        :+:      :+:    :+:   */
+/*   ft_conv_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 16:29:36 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 11:51:36 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/16 11:46:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void		ft_before(t_flags *flags, int s_local_pa)
+void	ft_put_precision_str(t_flags flags, char *local_pa, int len)
+{
+	int		i;
+
+	i = 0;
+	flags.spaces = 0; //to delete
+	while (i < len)
+	{
+		ft_putchar(local_pa[i]);
+		i++;;
+	}
+}
+
+void	ft_before_str(t_flags *flags, int s_local_pa)
 {
 	int		i;
 
@@ -20,29 +33,23 @@ static void		ft_before(t_flags *flags, int s_local_pa)
 	flags->spaces_count = 0;
 	if (flags->spaces && flags->spaces - s_local_pa > 0)
 	{
-		while (flags->spaces-- - s_local_pa != 0)
+		while (flags->spaces - s_local_pa != 0)
 		{
+			flags->spaces--;
 			flags->spaces_count++;
 			ft_putchar(' ');
 		}
 	}
-	else if (flags->spaces == 0 && flags->zero != 0)
-	{
-		while (flags->zero-- - s_local_pa != 0)
-		{
-			flags->spaces_count++;
-			ft_putchar('0');
-		}
-	}
 }
 
-static void		ft_after(t_flags *flags, int s_local_pa)
+void	ft_after_str(t_flags *flags, int s_local_pa)
 {
 	int		i;
 
 	i = 0;
 	if (flags->spaces + s_local_pa < 0)
 	{
+		flags->spaces_count = 0;
 		while (flags->spaces++ + s_local_pa != 0)
 		{
 			flags->spaces_count++;
@@ -51,24 +58,11 @@ static void		ft_after(t_flags *flags, int s_local_pa)
 	}
 }
 
-int				ft_conv_o(va_list pa, t_flags flags, char *str)
+int			ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
 {
-	long	local_pa;
-	long	value;
-	int		len;
-	int		space;
-
-	space = 0;
-	if (str[-1] == ' ')
+	if (str[index] == 's')
 	{
-		ft_putchar(' ');
-		space = 1;
+		return (ft_conv_s(*pa, flags));
 	}
-	local_pa = va_arg(pa, long);
-	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa;
-	len = ft_strlen(ft_itoa_base(local_pa, 8));
-	ft_before(&flags, len);
-	ft_put_precision(flags, value, 8, 0);
-	ft_after(&flags, len);
-	return (len + flags.spaces_count + space);
+	return (0);
 }
