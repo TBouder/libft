@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 18:34:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 19:23:27 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa)
 {
 	(flags->plus == 1) && (local_pa >= 0) ? ft_putchar('+') : 0;
 	(flags->plus == 1) && (local_pa >= 0) ? flags->spaces_count++ : 0;
+	(flags->preci > 0) && (flags->preci > v_len) ? v_len = flags->preci : 0;
+	(flags->preci > 0) && (flags->spaces > flags->preci) && (flags->empty == 1) ? v_len++ : 0;
+	(flags->preci > 0) && (flags->spaces > flags->preci) && (flags->plus == 1) ? v_len++ : 0;
 	if (flags->spaces && flags->spaces - v_len > 0)
 	{
 		(local_pa < 0) ? flags->spaces-- : 0;
