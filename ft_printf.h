@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 15:07:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 17:42:17 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,11 @@ int		ft_flag_empty(char *str, int *index);
 int		ft_conv_percent(t_flags flags);
 
 /*i & d*/
-void	ft_put_preci_int_ll(t_flags flags, long long local_pa);
+void	ft_put_preci_int_ll(t_flags *flags, long long local_pa);
+void	ft_put_preci_int(t_flags *flags, long long local_pa);
 int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa);
-void	ft_after_d_i(t_flags *flags, int v_len);
+void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
 int		ft_conv_d_i(va_list pa, t_flags flags);
 int		ft_conv_d_i_l(va_list pa, t_flags flags);
 int		ft_conv_d_i_ll(va_list pa, t_flags flags);
