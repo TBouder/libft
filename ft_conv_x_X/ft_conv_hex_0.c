@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 11:44:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 13:47:24 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_before_x_spaces(t_flags *flags, int v_len, long long local_pa)
 {
 	(flags->diaiz == 1) ? flags->spaces -= 2 : 0;
-	(v_len < flags->preci) ? v_len += flags->preci : 0;
+	(v_len < flags->preci) ? v_len += flags->preci - v_len : 0;
 	while (flags->spaces-- - v_len > 0)
 	{
 		flags->spaces_count++;

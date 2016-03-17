@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 19:35:21 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 13:27:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 13:47:15 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_put_precision_oct(t_flags *flags, long long local_pa)
 void	ft_before_o_spaces(t_flags *flags, int v_len, long long local_pa)
 {
 	(flags->diaiz == 1) ? flags->spaces-- : 0;
-	(v_len < flags->preci) ? v_len += flags->preci : 0;
+	(v_len < flags->preci) ? v_len += flags->preci - v_len : 0;
 	while (flags->spaces-- - v_len > 0)
 	{
 		flags->spaces_count++;
