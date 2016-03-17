@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 14:35:20 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 15:09:26 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_flag_spaces(char *str, int *index)
 	return (space);
 }
 
-int		ft_flag_zero(char *str, int *index)
+int		ft_flag_zero(char *str, int *index, t_flags *flags)
 {
 	int		i;
 	int		zero;
@@ -38,6 +38,11 @@ int		ft_flag_zero(char *str, int *index)
 	if (str[*index] == '0')
 	{
 		*index += 1;
+		if (str[*index] == '+')
+		{
+			flags->plus = ft_flag_plus(str, index);
+			zero--;
+		}
 		while (i++ < ft_atoi(&str[*index]))
 			zero++;
 		*index += ft_nbrlen(ft_atoi(&str[*index]));

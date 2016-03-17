@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 14:36:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 15:09:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	flags->plus = 0;
 	flags->empty = 0;
 	flags->spaces_count = 0;
+	flags->preci_diff = 0;
 	while (ft_is_printf(str[index]) == 0)
 	{
 		(str[index] == '#') ? flags->diaiz = ft_flag_diaiz(str, &index) : 0;
@@ -41,11 +42,11 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 		(str[index] == '.') ? flags->preci = ft_flag_preci(str, &index) : 0;
 		(str[index] == ' ') ? flags->empty = ft_flag_empty(str, &index) : 0;
 		(str[index] == '+') ? flags->plus = ft_flag_plus(str, &index) : 0;
+		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index, flags) : 0;
 		if (str[index] > '0' && str[index] <= '9')
 			flags->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j')
 			flags->length = ft_flag_length(str, &index);
-		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index) : 0;
 	}
 	if (flags->minus == 1)
 	{
@@ -61,7 +62,7 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 		flags->spaces = flags->zero;
 		flags->zero = 0;
 	}
-	flags->preci_diff = 0;
+	(flags->plus == 1 && flags->empty == 1) ? flags->empty = 0 : 0;
 
 	return (index);
 }
