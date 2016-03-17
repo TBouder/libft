@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 09:47:52 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 14:35:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,26 @@ int		ft_flag_diaiz(char *str, int *index)
 int		ft_flag_minus(char *str, int *index)
 {
 	if (str[*index] == '-')
+	{
+		*index += 1;
+		return (1);
+	}
+	return (0);
+}
+
+int		ft_flag_plus(char *str, int *index)
+{
+	if (str[*index] == '+')
+	{
+		*index += 1;
+		return (1);
+	}
+	return (0);
+}
+
+int		ft_flag_empty(char *str, int *index)
+{
+	if (str[*index] == ' ')
 	{
 		*index += 1;
 		return (1);

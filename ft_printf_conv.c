@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 10:50:34 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 14:36:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_is_printf(char c)
 		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
 		|| c == 'O' || c == 'u' || c == 'U' || c == '\0')
 		return (1);
-	if (c == '+' || c == ' ' || c == 'z')
+	if (c == 'z')
 		return (2);
 	return (0);
 }
@@ -31,12 +31,16 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	flags->preci = 0;
 	flags->length = 0;
 	flags->minus = 0;
+	flags->plus = 0;
+	flags->empty = 0;
 	flags->spaces_count = 0;
 	while (ft_is_printf(str[index]) == 0)
 	{
 		(str[index] == '#') ? flags->diaiz = ft_flag_diaiz(str, &index) : 0;
 		(str[index] == '-') ? flags->minus = ft_flag_minus(str, &index) : 0;
 		(str[index] == '.') ? flags->preci = ft_flag_preci(str, &index) : 0;
+		(str[index] == ' ') ? flags->empty = ft_flag_empty(str, &index) : 0;
+		(str[index] == '+') ? flags->plus = ft_flag_plus(str, &index) : 0;
 		if (str[index] > '0' && str[index] <= '9')
 			flags->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j')
@@ -58,15 +62,7 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 		flags->zero = 0;
 	}
 	flags->preci_diff = 0;
-	// (flags->minus == 1) ? flags->spaces = -flags->spaces : 0;
-	// (flags->minus == 1) ? flags->zero = 0 : 0;
-	// (flags->diaiz == 1) ? flags->spaces -= 2 : 0;
 
-	// ft_nbrendl(flags->diaiz);
-	// ft_nbrendl(flags->zero);
-	// ft_nbrendl(flags->spaces);
-	// ft_nbrendl(flags->preci);
-	// ft_nbrendl(flags->length);
 	return (index);
 }
 
@@ -77,8 +73,6 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
 	t_flags		flags;
 
-	while (ft_isspace(str[index]))
-		index++;
 	index = ft_load_flags(str, index, &flags); //ATTENTION ORDRE ALEATOIRE
 
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;

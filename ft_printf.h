@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 14:10:52 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 14:23:22 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct		s_flags
 	int				length;
 	int				diaiz;
 	int				minus;
+	int				plus;
+	int				empty;
 }					t_flags;
 
 int		ft_printf(const char * restrict format, ...);
@@ -47,15 +49,17 @@ int		ft_flag_preci(char *str, int *index);
 int		ft_flag_length(char *str, int *index);
 int		ft_flag_diaiz(char *str, int *index);
 int		ft_flag_minus(char *str, int *index);
+int		ft_flag_plus(char *str, int *index);
+int		ft_flag_empty(char *str, int *index);
 
 int		ft_conv_percent(t_flags flags);
 
 /*i & d*/
 void	ft_put_preci_int_ll(t_flags flags, long long local_pa);
 int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
-int		ft_conv_d_i(va_list pa, t_flags flags, char *str);
-int		ft_conv_d_i_l(va_list pa, t_flags flags, char *str);
-int		ft_conv_d_i_ll(va_list pa, t_flags flags, char *str);
+int		ft_conv_d_i(va_list pa, t_flags flags);
+int		ft_conv_d_i_l(va_list pa, t_flags flags);
+int		ft_conv_d_i_ll(va_list pa, t_flags flags);
 
 /*x & X*/
 void	ft_put_preci_hex_ll(t_flags *flags, long long local_pa, int maj);
