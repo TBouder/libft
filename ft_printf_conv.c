@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 16:31:42 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 10:50:34 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,17 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 	flags->preci = 0;
 	flags->length = 0;
 	flags->minus = 0;
+	flags->spaces_count = 0;
 	while (ft_is_printf(str[index]) == 0)
 	{
 		(str[index] == '#') ? flags->diaiz = ft_flag_diaiz(str, &index) : 0;
 		(str[index] == '-') ? flags->minus = ft_flag_minus(str, &index) : 0;
-		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index) : 0;
 		(str[index] == '.') ? flags->preci = ft_flag_preci(str, &index) : 0;
 		if (str[index] > '0' && str[index] <= '9')
 			flags->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j')
 			flags->length = ft_flag_length(str, &index);
+		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index) : 0;
 	}
 	if (flags->minus == 1)
 	{
@@ -51,6 +52,12 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 		}
 		flags->spaces = -flags->spaces;
 	}
+	if (flags->preci != 0 && flags->zero != 0)
+	{
+		flags->spaces = flags->zero;
+		flags->zero = 0;
+	}
+	flags->preci_diff = 0;
 	// (flags->minus == 1) ? flags->spaces = -flags->spaces : 0;
 	// (flags->minus == 1) ? flags->zero = 0 : 0;
 	// (flags->diaiz == 1) ? flags->spaces -= 2 : 0;

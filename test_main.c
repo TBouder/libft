@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 16:32:17 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 13:45:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,14 @@ int		main()
 	// ft_printf("%12x\n", 145);
 	// ft_printf("%12.1x\n", 145);
 	// ft_printf("%12.4x\n", 145);
+	// ft_printf("%-5.0x", 2500);
+	// ft_printf("%-5.0o", 2500);
 	int		l,k;
-	l = ft_printf("%#6o", 2500);
+	// l = ft_printf("@moulitest: %6.5o", 2500);
+	l = ft_printf("@moulitest: %6.5o", 2500);
 	printf("\n");
-	k = printf("%#6o", 2500);
+	// k = printf("@moulitest: %6.5o", 2500);
+	k = printf("@moulitest: %6.5o", 2500);
 	printf("\n");
 	printf("%d vs %d\n", l, k);
 /*
