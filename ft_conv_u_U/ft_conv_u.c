@@ -6,13 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:02 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 13:56:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 19:04:05 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void		ft_put_preci_ll(t_flags *flags, long long local_pa)
+void	ft_put_preci_ll(t_flags *flags, long long local_pa)
 {
 	int		i;
 	int		len;
@@ -75,6 +75,21 @@ int		ft_conv_u_l(va_list pa, t_flags flags)
 	long long	value;
 
 	local_pa = va_arg(pa, long);
+	value = (int)local_pa < 0 ? 0 + local_pa : local_pa;
+	len = ft_strlen(ft_itoa_base_ull(value, 10));
+	ft_before_u(&flags, len, local_pa);
+	ft_put_preci_ll(&flags, value);
+	ft_after_u(&flags, len);
+	return (len + flags.spaces_count);
+}
+
+int		ft_conv_u_z(va_list pa, t_flags flags)
+{
+	long long	local_pa;
+	int			len;
+	long long	value;
+
+	local_pa = va_arg(pa, long long);
 	value = (int)local_pa < 0 ? 0 + local_pa : local_pa;
 	len = ft_strlen(ft_itoa_base_ull(value, 10));
 	ft_before_u(&flags, len, local_pa);

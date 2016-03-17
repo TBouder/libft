@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 15:09:35 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 18:19:23 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int		ft_is_printf(char c)
 		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
 		|| c == 'O' || c == 'u' || c == 'U' || c == '\0')
 		return (1);
-	if (c == 'z')
-		return (2);
 	return (0);
 }
 
@@ -45,7 +43,7 @@ int		ft_load_flags(char *str, int index, t_flags *flags)
 		(str[index] == '0') ? flags->zero = ft_flag_zero(str, &index, flags) : 0;
 		if (str[index] > '0' && str[index] <= '9')
 			flags->spaces = ft_flag_spaces(str, &index);
-		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j')
+		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j' || str[index] == 'z')
 			flags->length = ft_flag_length(str, &index);
 	}
 	if (flags->minus == 1)
@@ -77,21 +75,15 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	index = ft_load_flags(str, index, &flags); //ATTENTION ORDRE ALEATOIRE
 
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;
-	*r_value += ft_launch_conv_d_i(pa, flags, str, index);
+	*r_value += ft_launch_conv_d_i(pa, flags, str, index); //ADD D
 	*r_value += ft_launch_conv_x_X(pa, flags, str, index);
 	*r_value += ft_launch_conv_u_U(pa, flags, str, index); //ADD U
 	*r_value += ft_launch_conv_s_S(pa, flags, str, index); //ADD S
 	*r_value += ft_launch_conv_o_O(pa, flags, str, index); //ADD O
 
-	// *r_value += str[index] == 'D' ? ft_conv_S(pa) : 0;
-	// *r_value += str[index] == 'S' ? ft_conv_S(pa) : 0;
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags, str + index) : 0;
 	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
 	// *r_value += str[index] == 'C' ? ft_conv_S(pa) : 0;
-	// *r_value += str[index] == 'O' ? ft_conv_S(pa) : 0;
-	// *r_value += str[index] == 'x' ? ft_conv_x(*pa, flags, str + index) : 0;
-	// *r_value += str[index] == 'X' ? ft_conv_X(*pa, flags, str + index) : 0;
-	// *r_value += str[index] == 'U' ? ft_conv_S(pa) : 0;
 	*r_value -= 1;
 
 	return (index);

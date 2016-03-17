@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 15:09:26 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 18:16:27 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,45 +98,10 @@ int		ft_flag_length(char *str, int *index)
 		*index += 1;
 		return (5);
 	}
-	return (0);
-}
-
-int		ft_flag_diaiz(char *str, int *index)
-{
-	if (str[*index] == '#')
+	if (str[*index] == 'z')
 	{
 		*index += 1;
-		return (1);
-	}
-	return (0);
-}
-
-int		ft_flag_minus(char *str, int *index)
-{
-	if (str[*index] == '-')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
-}
-
-int		ft_flag_plus(char *str, int *index)
-{
-	if (str[*index] == '+')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
-}
-
-int		ft_flag_empty(char *str, int *index)
-{
-	if (str[*index] == ' ')
-	{
-		*index += 1;
-		return (1);
+		return (6);
 	}
 	return (0);
 }

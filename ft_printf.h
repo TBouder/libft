@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 17:42:17 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/17 19:04:18 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <wchar.h>
+# include <limits.h> // ?
 # include "libft/libft.h"
 
 typedef struct		s_flags
@@ -63,6 +64,11 @@ void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
 int		ft_conv_d_i(va_list pa, t_flags flags);
 int		ft_conv_d_i_l(va_list pa, t_flags flags);
 int		ft_conv_d_i_ll(va_list pa, t_flags flags);
+int		ft_conv_d_i_h(va_list pa, t_flags flags);
+int		ft_conv_d_i_hh(va_list pa, t_flags flags);
+int		ft_conv_d_i_j(va_list pa, t_flags flags);
+int		ft_conv_d_i_z(va_list pa, t_flags flags);
+
 
 /*x & X*/
 void	ft_put_preci_hex_ll(t_flags *flags, long long local_pa, int maj);
@@ -81,6 +87,7 @@ void	ft_after_u(t_flags *flags, int v_len);
 int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_u(va_list pa, t_flags flags);
 int		ft_conv_u_l(va_list pa, t_flags flags);
+int		ft_conv_u_z(va_list pa, t_flags flags);
 
 
 /*s & S*/
