@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 13:46:34 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 01:28:59 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,7 @@ int		ft_conv_o(va_list pa, t_flags flags)
 
 int			ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index)
 {
-	if (str[index] == 'o')
-	{
-		// if (flags.length == 1 || flags.length == 2 || flags.length == 5)
-		// 	return (ft_conv_o_l(*pa, flags, str + index));
-		// else
-			return (ft_conv_o(*pa, flags));
-	}
+	if (str[index] == 'o' || str[index] == 'O')
+		return (ft_conv_o(*pa, flags));
 	return (0);
 }

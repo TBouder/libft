@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 18:19:23 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 01:38:03 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags, str + index) : 0;
 	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
-	// *r_value += str[index] == 'C' ? ft_conv_S(pa) : 0;
+	*r_value += str[index] == 'C' ? ft_conv_c(*pa, flags) : 0;
 	*r_value -= 1;
 
 	return (index);

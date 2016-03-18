@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_uni_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 11:44:17 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 19:05:02 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 01:25:05 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,14 @@ int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index)
 	{
 		if (flags.length == 1 || flags.length == 2)
 			return (ft_conv_u_l(*pa, flags));
+		else if (flags.length == 5)
+			return (ft_conv_u_j(*pa, flags));
 		else if (flags.length == 6)
 			return (ft_conv_u_z(*pa, flags));
 		else
 			return (ft_conv_u(*pa, flags));
 	}
+	if (str[index] == 'U')
+		return (ft_conv_u_l(*pa, flags));
 	return (0);
 }
