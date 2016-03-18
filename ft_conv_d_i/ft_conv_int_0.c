@@ -6,64 +6,63 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 01:32:42 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 15:38:16 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_put_preci_int_ll(t_flags *flags, long long local_pa)
-{
-	int		len;
+/*
+** The ft_before_d_i_spaces() functions adds spaces before the output when
+** the conditions are met.
+*/
 
-	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
-	(local_pa < 0) && (flags->preci > 0) ? ft_putchar('-') : 0;
-	while (flags->preci - len > 0)
+static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
+					int i)
+{
+	(value < 0) ? flags->spaces-- : 0;
+	while (flags->spaces-- - v_len != 0)
 	{
-		ft_putchar('0');
-		flags->spaces_count += 1;
-		flags->preci -= 1;
-		flags->preci_diff += 1;
+		flags->spaces_count++;
+		(!flags->display) ? ft_putchar(' ') : 0;
 	}
-	if (local_pa < 0)
+	if (i == 1)
 	{
-		if (flags->zero > 0)
-			local_pa = -local_pa;
-		else if (flags->preci_diff != 0)
-			local_pa = -local_pa;
+		if (flags->plus == 1 && value >= 0 && (!flags->display))
+			ft_putchar('+');
+		(flags->plus == 1) && (value >= 0) ? flags->spaces_count++ : 0;
 	}
-	ft_putnbr_ull(local_pa);
 }
 
-void	ft_put_preci_int(t_flags *flags, long long local_pa)
-{
-	int		len;
+/*
+** The ft_before_d_i_zero() functions adds zeros before the output when
+** the conditions are met.
+*/
 
-	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
-	(local_pa < 0) && (flags->preci > 0) ? ft_putchar('-') : 0;
-	while (flags->preci - len > 0)
+static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
+					int i)
+{
+	(value < 0) && (!flags->display) ? ft_putchar('-') : 0;
+	(value < 0) ? flags->zero-- : 0;
+	(flags->plus == 1) && (value < 0) ? flags->zero++ : 0;
+	while (flags->zero-- - v_len != 0)
 	{
-		ft_putchar('0');
-		flags->preci_diff += 1;
-		flags->spaces_count += 1;
-		flags->preci -= 1;
+		flags->spaces_count++;
+		(!flags->display) ? ft_putchar('0') : 0;
 	}
-	if (local_pa < 0)
+	if (i == 1)
 	{
-		if (flags->zero > 0)
-			local_pa = -local_pa;
-		else if (flags->preci_diff != 0)
-			local_pa = -local_pa;
-		else if (flags->preci > 0)
-			local_pa = -local_pa;
+		if (flags->plus == 1 && value >= 0 && (!flags->display))
+			ft_putchar('+');
+		(flags->plus == 1) && (value >= 0) ? flags->spaces_count++ : 0;
 	}
-	if (!(flags->preci == -1 && local_pa == 0))
-		ft_putnbr_base(local_pa, 10, 0);
-	else
-		flags->spaces_count--;
 }
 
-void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa)
+/*
+** The ft_before_d_i() function is a launcher for the two functions above.
+*/
+
+void			ft_before_d_i(t_flags *flags, int v_len, long long value)
 {
 	int		i;
 
@@ -72,63 +71,48 @@ void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa)
 		i = 1;
 	else
 	{
-		(flags->plus == 1) && (local_pa >= 0) ? ft_putchar('+') : 0;
-		(flags->plus == 1) && (local_pa >= 0) ? flags->spaces_count++ : 0;
+		if (flags->plus == 1 && value >= 0 && (!flags->display))
+			ft_putchar('+');
+		(flags->plus == 1) && (value >= 0) ? flags->spaces_count++ : 0;
 	}
 	(flags->preci > 0) && (flags->preci > v_len) ? v_len = flags->preci : 0;
-	(flags->preci > 0) && (flags->spaces > flags->preci) && (flags->empty == 1) ? v_len++ : 0;
-	(flags->preci > 0) && (flags->spaces > flags->preci) && (flags->plus == 1) ? v_len++ : 0;
-	(flags->preci == -1) && (local_pa == 0) ? v_len-- : 0;
+	if (flags->preci > 0 && flags->spaces > flags->preci && flags->empty == 1)
+		v_len++;
+	if (flags->preci > 0 && flags->spaces > flags->preci && flags->plus == 1)
+		v_len++;
+	(flags->preci == -1) && (value == 0) ? v_len-- : 0;
 	if (flags->spaces && flags->spaces - v_len > 0)
-	{
-		(local_pa < 0) ? flags->spaces-- : 0;
-		while (flags->spaces-- - v_len != 0)
-		{
-			flags->spaces_count++;
-			ft_putchar(' ');
-		}
-		if (i == 1)
-		{
-			(flags->plus == 1) && (local_pa >= 0) ? ft_putchar('+') : 0;
-			(flags->plus == 1) && (local_pa >= 0) ? flags->spaces_count++ : 0;
-		}
-
-	}
+		ft_before_d_i_spaces(flags, v_len, value, i);
 	else if (flags->zero && flags->zero - v_len > 0)
-	{
-		(local_pa < 0) ? ft_putchar('-') : 0;
-		(local_pa < 0) ? flags->zero-- : 0;
-		(flags->plus == 1) && (local_pa < 0) ? flags->zero++ : 0;
-		while (flags->zero-- - v_len != 0)
-		{
-			flags->spaces_count++;
-			ft_putchar('0');
-		}
-		if (i == 1)
-		{
-			(flags->plus == 1) && (local_pa >= 0) ? ft_putchar('+') : 0;
-			(flags->plus == 1) && (local_pa >= 0) ? flags->spaces_count++ : 0;
-		}
-	}
+		ft_before_d_i_zero(flags, v_len, value, i);
 }
 
-void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa)
+/*
+** The ft_after_d_i() function adds spaces after the output when the conditions
+** are met.
+*/
+
+void			ft_after_d_i(t_flags *flags, int v_len, long long local_pa)
 {
 	(local_pa < 0) ? v_len++ : 0;
 	(flags->plus == 1 && flags->minus == 1) ? v_len++ : 0;
-
 	if (flags->spaces + v_len + flags->preci_diff < 0)
 	{
 		while (flags->spaces + v_len + flags->preci_diff < 0)
 		{
 			flags->spaces++;
 			flags->spaces_count++;
-			ft_putchar(' ');
+			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
 }
 
-int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index)
+/*
+** The ft_launch_conv_d_i() function launchs the conversion by x or X.
+*/
+
+int				ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str,
+					int index)
 {
 	if (str[index] == 'd' || str[index] == 'i')
 	{

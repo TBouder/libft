@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_0.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 18:16:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 14:30:40 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags)
 		*index += 1;
 		if (str[*index] == '+')
 		{
-			flags->plus = ft_flag_plus(str, index);
+			flags->plus = ft_flag_plus(index);
 			zero--;
 		}
 		while (i++ < ft_atoi(&str[*index]))

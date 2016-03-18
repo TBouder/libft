@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 11:46:18 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 14:56:47 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+/*
+** The ft_conv_s() function launchs the conversion for s specifier.
+*/
 
 int			ft_conv_s(va_list pa, t_flags flags)
 {
@@ -21,7 +25,7 @@ int			ft_conv_s(va_list pa, t_flags flags)
 	if (local_pa == NULL)
 	{
 		ft_before_str(&flags, 6);
-		ft_putstr("(null)");
+		(!flags.display) ? ft_putstr("(null)") : 0;
 		ft_after_str(&flags, 6);
 		return (6);
 	}

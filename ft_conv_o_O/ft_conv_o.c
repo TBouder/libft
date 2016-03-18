@@ -6,11 +6,15 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 01:28:59 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 15:01:23 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+/*
+** The ft_conv_o() function launchs the conversion for o / O specifier.
+*/
 
 int		ft_conv_o(va_list pa, t_flags flags)
 {
@@ -28,7 +32,11 @@ int		ft_conv_o(va_list pa, t_flags flags)
 	return (len + flags.spaces_count);
 }
 
-int			ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index)
+/*
+** The ft_launch_conv_o_O() function launchs the conversion by o or O.
+*/
+
+int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index)
 {
 	if (str[index] == 'o' || str[index] == 'O')
 		return (ft_conv_o(*pa, flags));

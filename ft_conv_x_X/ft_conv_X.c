@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_X.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:30:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/16 13:51:37 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 14:55:08 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int				ft_conv_X(va_list pa, t_flags flags, char *str)
+/*
+** The ft_conv_X() function launchs the conversion for X specifier.
+*/
+
+int		ft_conv_X(va_list pa, t_flags flags, char *str)
 {
 	long	local_pa;
 	long	value;
@@ -22,7 +26,7 @@ int				ft_conv_X(va_list pa, t_flags flags, char *str)
 	local_pa = va_arg(pa, long);
 	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa;
 	value = (local_pa == 4294967296) ? 0 : value;
-	str[-1] == ' ' ? ft_putchar(' ') : 0;
+	(str[-1] == ' ') && (!flags.display) ? ft_putchar(' ') : 0;
 	space = str[-1] == ' ' ? 1 : 0;
 	len = ft_strlen(ft_itoa_base(value, 16));
 	ft_before_x(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), value, 1);
@@ -32,14 +36,19 @@ int				ft_conv_X(va_list pa, t_flags flags, char *str)
 	return (len + flags.spaces_count + space);
 }
 
-int				ft_conv_X_l(va_list pa, t_flags flags, char *str)
+/*
+** The ft_conv_X_l() function launchs the conversion for X specifier with l,
+** ll or j flag.
+*/
+
+int		ft_conv_X_l(va_list pa, t_flags flags, char *str)
 {
 	long long	local_pa;
 	int			space;
 	int			len;
 
 	local_pa = va_arg(pa, long long);
-	str[-1] == ' ' ? ft_putchar(' ') : 0;
+	(str[-1] == ' ') && (!flags.display) ? ft_putchar(' ') : 0;
 	space = str[-1] == ' ' ? 1 : 0;
 	len = ft_strlen(ft_itoa_base_ull(local_pa, 16));
 	ft_before_x(&flags, ft_strlen(ft_itoa_base(local_pa, 16)), local_pa, 1);

@@ -3,51 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 18:06:09 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 18:06:30 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 14:29:35 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_flag_diaiz(char *str, int *index)
+int		ft_flag_diaiz(int *index)
 {
-	if (str[*index] == '#')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
+	*index += 1;
+	return (1);
 }
 
-int		ft_flag_minus(char *str, int *index)
+int		ft_flag_minus(int *index)
 {
-	if (str[*index] == '-')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
+	*index += 1;
+	return (1);
 }
 
-int		ft_flag_plus(char *str, int *index)
+int		ft_flag_plus(int *index)
 {
-	if (str[*index] == '+')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
+	*index += 1;
+	return (1);
 }
 
-int		ft_flag_empty(char *str, int *index)
+int		ft_flag_empty(int *index)
 {
-	if (str[*index] == ' ')
-	{
-		*index += 1;
-		return (1);
-	}
-	return (0);
+	*index += 1;
+	return (1);
+}
+
+int		ft_flag_display(int *index)
+{
+	*index += 1;
+	return (1);
 }

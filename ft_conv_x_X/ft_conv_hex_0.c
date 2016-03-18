@@ -3,41 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_hex_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/17 13:47:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 14:50:53 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_before_x_spaces(t_flags *flags, int v_len, long long local_pa)
+/*
+** The ft_before_x_spaces() functions adds spaces before the output when
+** the conditions are met.
+*/
+
+static void		ft_before_x_spaces(t_flags *flags, int v_len,
+					long long local_pa)
 {
 	(flags->diaiz == 1) ? flags->spaces -= 2 : 0;
 	(v_len < flags->preci) ? v_len += flags->preci - v_len : 0;
 	while (flags->spaces-- - v_len > 0)
 	{
 		flags->spaces_count++;
-		ft_putchar(' ');
+		(!flags->display) ? ft_putchar(' ') : 0;
 	}
-	(flags->preci == -1) && (local_pa == 0) ? ft_putchar(' ') : 0;
+	if (flags->preci == -1 && local_pa == 0 && (!flags->display))
+		ft_putchar(' ');
 	(flags->preci == -1) && (local_pa == 0) ? flags->spaces_count++ : 0;
 }
 
-void	ft_before_x_zero(t_flags *flags, int v_len, long long value, int maj)
+/*
+** The ft_before_x_zero() functions adds zeros before the output when
+** the conditions are met.
+*/
+
+static void		ft_before_x_zero(t_flags *flags, int v_len, long long value,
+					int maj)
 {
 	(flags->diaiz == 1) ? flags->zero -= 2 : 0;
-	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
-	(maj == 0) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0x") : 0;
+	if (maj == 1 && flags->diaiz == 1 && value != 0 && (!flags->display))
+		ft_putstr("0X");
+	else if (maj == 0 && flags->diaiz == 1 && value != 0 && (!flags->display))
+		ft_putstr("0x");
 	while (flags->zero-- - v_len > 0)
 	{
 		flags->spaces_count++;
-		ft_putchar('0');
+		(!flags->display) ? ft_putchar('0') : 0;
 	}
 }
 
-void	ft_before_x(t_flags *flags, int v_len, long long value, int maj)
+/*
+** The ft_before_x() function is a launcher for the two functions above.
+*/
+
+void			ft_before_x(t_flags *flags, int v_len, long long value, int maj)
 {
 	if (flags->spaces && flags->spaces - v_len > 0)
 		ft_before_x_spaces(flags, v_len, value);
@@ -46,12 +65,19 @@ void	ft_before_x(t_flags *flags, int v_len, long long value, int maj)
 		ft_before_x_zero(flags, v_len, value, maj);
 		maj = -1;
 	}
-	(maj == 1) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0X") : 0;
-	(maj == 0) && (flags->diaiz == 1) && (value != 0) ? ft_putstr("0x") : 0;
+	if (maj == 1 && flags->diaiz == 1 && value != 0 && (!flags->display))
+		ft_putstr("0X");
+	else if (maj == 0 && flags->diaiz == 1 && value != 0 && (!flags->display))
+		ft_putstr("0x");
 	(flags->diaiz == 1) && (value != 0) ? flags->spaces_count += 2 : 0;
 }
 
-void	ft_after_hex(t_flags *flags, int v_len)
+/*
+** The ft_after_hex() function adds spaces after the output when the conditions
+** are met.
+*/
+
+void			ft_after_hex(t_flags *flags, int v_len)
 {
 	(flags->preci == -1) ? flags->spaces-- : 0;
 	(flags->diaiz) ? flags->spaces += 2 : 0;
@@ -60,12 +86,17 @@ void	ft_after_hex(t_flags *flags, int v_len)
 		while (flags->spaces++ + v_len + flags->preci_diff < 0)
 		{
 			flags->spaces_count++;
-			ft_putchar(' ');
+			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
 }
 
-int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index)
+/*
+** The ft_launch_conv_x_X() function launchs the conversion by x or X.
+*/
+
+int				ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str,
+					int index)
 {
 	if (str[index] == 'X')
 	{

@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/14 18:34:38 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 13:41:24 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,20 @@
 */
 
 
+int		ft_undef(const char *str, int i)
+{
+	int		j;
+
+	j = 0;
+	while (str[i])
+	{
+		if (ft_is_printf(str[i]) == 1 || ft_is_printf(str[i]) == 2)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int		ft_printf(const char *format, ...)
 {
 	va_list		pa;
@@ -48,10 +62,11 @@ int		ft_printf(const char *format, ...)
 	va_start(pa, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
-		{
+
+		if (format[i] == '%' && ft_undef(format, i + 1) == 0)
+			return (r_value);
+		if (format[i] == '%' && format[i + 1] && ft_undef(format, i + 1))
 			i = ft_printf_conv((char *)format, &pa, &r_value, i + 1);
-		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
 			r_value--;
 		else if (format[i] != '%')
