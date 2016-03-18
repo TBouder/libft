@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 14:50:53 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 16:37:30 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void		ft_before_x_zero(t_flags *flags, int v_len, long long value,
 					int maj)
 {
 	(flags->diaiz == 1) ? flags->zero -= 2 : 0;
+	(v_len < flags->preci) ? v_len += flags->preci - v_len : 0;
 	if (maj == 1 && flags->diaiz == 1 && value != 0 && (!flags->display))
 		ft_putstr("0X");
 	else if (maj == 0 && flags->diaiz == 1 && value != 0 && (!flags->display))

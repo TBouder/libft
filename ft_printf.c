@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 13:41:24 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 23:53:21 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@
 ** 		de conversion débutant dans l'état initial. La chaîne multi-octet résultante est écrite.
 */
 
-
-int		ft_undef(const char *str, int i)
+static int		ft_undef(const char *str, int i)
 {
 	int		j;
 
@@ -49,6 +48,18 @@ int		ft_undef(const char *str, int i)
 		i++;
 	}
 	return (0);
+}
+
+int		ft_is_printf(char c)
+{
+	if (c == '%' || c == 'd' || c == 'D' || c == 'i' || c == 'x' || c == 'X'
+		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
+		|| c == 'O' || c == 'u' || c == 'U')
+		return (1);
+	if (c == '.' || ft_isnumber(c) || c == '#' || c == '-' || c == '+'
+		|| c == ' ' || c == 'l' || c == 'h' || c == 'j' || c == 'z' || c == '!')
+		return (0);
+	return (2);
 }
 
 int		ft_printf(const char *format, ...)

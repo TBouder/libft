@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 14:30:40 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 23:51:42 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags)
 	{
 		*index += 1;
 		if (str[*index] == '+')
-		{
-			flags->plus = ft_flag_plus(index);
-			zero--;
-		}
+			flags->plus = ft_flag_bool(index);
+		if (str[*index] == ' ')
+			flags->empty = ft_flag_bool(index);
+		if (str[*index] == '-')
+			flags->minus = ft_flag_bool(index);
 		while (i++ < ft_atoi(&str[*index]))
 			zero++;
 		*index += ft_nbrlen(ft_atoi(&str[*index]));

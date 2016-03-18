@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 14:53:32 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 23:50:27 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct		s_flags
 	int				preci;
 	int				preci_diff;
 	int				zero;
+	int				zero_base;
 	int				length;
 	int				diaiz;
 	int				minus;
@@ -49,11 +50,7 @@ int		ft_flag_spaces(char *str, int *index);
 int		ft_flag_zero(char *str, int *index, t_flags *flags);
 int		ft_flag_preci(char *str, int *index);
 int		ft_flag_length(char *str, int *index);
-int		ft_flag_diaiz(int *index);
-int		ft_flag_minus(int *index);
-int		ft_flag_plus(int *index);
-int		ft_flag_empty(int *index);
-int		ft_flag_display(int *index);
+int		ft_flag_bool(int *index);
 
 int		ft_conv_percent(t_flags flags);
 int		ft_conv_char(t_flags flags, char c);

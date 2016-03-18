@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:23:55 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 15:26:42 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/18 23:29:08 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void	ft_put_preci_int_ll(t_flags *flags, long long local_pa)
 		else if (flags->preci_diff != 0)
 			local_pa = -local_pa;
 	}
-	(!flags->display) ? ft_putnbr_ull(local_pa) : 0;
+	if (local_pa == -1)
+		(!flags->display) ? ft_putnbr_ull(-local_pa) : 0;
+	else
+		(!flags->display) ? ft_putnbr_ull(local_pa) : 0;
 }
 
 /*
@@ -62,7 +65,7 @@ void	ft_put_preci_int(t_flags *flags, long long local_pa)
 	}
 	if (local_pa < 0)
 	{
-		if (flags->zero > 0)
+		if (flags->zero_base > 0)
 			local_pa = -local_pa;
 		else if (flags->preci_diff != 0)
 			local_pa = -local_pa;
