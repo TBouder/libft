@@ -6,7 +6,7 @@
 #    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/18 15:31:19 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/19 15:50:07 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ PRINTF_d_i	=	ft_conv_d_i/ft_conv_d_i.c ft_conv_d_i/ft_conv_d_i_2.c ft_conv_d_i/f
 PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_X.c ft_conv_x_X/ft_conv_hex_0.c ft_conv_x_X/ft_conv_hex_1.c
 PRINTF_u_U	=	ft_conv_u_U/ft_conv_u.c ft_conv_u_U/ft_conv_uni_0.c ft_conv_u_U/ft_conv_uni_1.c
 PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c ft_conv_s_S/ft_conv_str_0.c
-PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c
+PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c ft_conv_o_O/ft_conv_oct_1.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \

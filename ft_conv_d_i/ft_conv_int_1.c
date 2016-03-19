@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:23:55 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 00:13:28 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/19 15:52:27 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,16 @@ void	ft_put_preci_int_l(t_flags *flags, long long local_pa)
 		else if (flags->preci > 0)
 			local_pa = -local_pa;
 	}
-	if (local_pa < -9223372036854775807)
-		(!flags->display) ? ft_putstr("-9223372036854775808") : 0;
+	if (local_pa < (long)-INT_MIN)
+	{
+		(!flags->display) ? ft_putstr("-") : 0;
+		(!flags->display) ? ft_putnbr_ull(-local_pa) : 0;
+	}
 	else if (!(flags->preci == -1 && local_pa == 0))
 		(!flags->display) ? ft_putnbr_ll(local_pa) : 0;
 	else
 		flags->spaces_count--;
 }
-
 
 /*
 ** The ft_put_preci_int() function adjusts the precision before displaying

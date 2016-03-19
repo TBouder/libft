@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 15:01:23 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/19 15:59:51 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,20 @@ int		ft_conv_o(va_list pa, t_flags flags)
 }
 
 /*
-** The ft_launch_conv_o_O() function launchs the conversion by o or O.
+** The ft_conv_o_ll() function launchs the conversion for o / O specifier with
+** ll flag.
 */
 
-int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index)
+int		ft_conv_o_ll(va_list pa, t_flags flags)
 {
-	if (str[index] == 'o' || str[index] == 'O')
-		return (ft_conv_o(*pa, flags));
-	return (0);
+	unsigned long long	local_pa;
+	int					len;
+
+	local_pa = va_arg(pa, unsigned long long);
+	len = ft_strlen(ft_itoa_base_ull(local_pa, 8));
+	ft_before_o(&flags, len, 0, local_pa);
+	ft_put_precision_oct_ll(&flags, local_pa);
+	ft_after_o(&flags, len);
+	local_pa == 0 && flags.preci == -1 ? len-- : 0;
+	return (len + flags.spaces_count);
 }
