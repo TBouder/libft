@@ -6,14 +6,14 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 12:21:20 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 16:03:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
 /*
-** The ft_conv_o() function launchs the conversion for o / O specifier.
+** The ft_conv_o() function launchs the conversion for o specifier.
 */
 
 int		ft_conv_o(va_list pa, t_flags flags)
@@ -23,10 +23,28 @@ int		ft_conv_o(va_list pa, t_flags flags)
 	int		len;
 
 	local_pa = va_arg(pa, long);
-	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa;
-	len = ft_strlen(ft_itoa_base(local_pa, 8));
-	ft_before_o(&flags, len, 0, local_pa);
+	value = (local_pa < 0) ? 4294967296 + local_pa : local_pa % 4294967296;
+	len = ft_strlen(ft_itoa_base(value, 8));
+	ft_before_o(&flags, len, 0, value);
 	ft_put_precision_oct(&flags, value);
+	ft_after_o(&flags, len);
+	value == 0 && flags.preci == -1 ? len-- : 0;
+	return (len + flags.spaces_count);
+}
+
+/*
+** The ft_conv_O() function launchs the conversion for O specifier.
+*/
+
+int		ft_conv_O(va_list pa, t_flags flags)
+{
+	long	local_pa;
+	int		len;
+
+	local_pa = va_arg(pa, long);
+	len = ft_strlen(ft_itoa_base_ull(local_pa, 8));
+	ft_before_o(&flags, len, 0, local_pa);
+	ft_put_precision_oct_ll(&flags, local_pa);
 	ft_after_o(&flags, len);
 	local_pa == 0 && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count);
@@ -52,6 +70,25 @@ int		ft_conv_o_ll(va_list pa, t_flags flags)
 }
 
 /*
+** The ft_conv_u_h() function launchs the conversion for u / U specifier with h.
+*/
+
+int		ft_conv_o_h(va_list pa, t_flags flags)
+{
+	int			local_pa;
+	int			len;
+	int			value;
+
+	local_pa = va_arg(pa, int);
+	value = (local_pa < 0) ? 65536 + local_pa : local_pa % 65536;
+	len = ft_strlen(ft_itoa_base_ull(value, 8));
+	ft_before_o(&flags, len, 0, value);
+	ft_put_precision_oct_ll(&flags, value);
+	ft_after_o(&flags, len);
+	return (len + flags.spaces_count);
+}
+
+/*
 ** The ft_conv_u_hh() function launchs the conversion for u / U specifier with
 ** hh.
 */
@@ -63,8 +100,8 @@ int		ft_conv_o_hh(va_list pa, t_flags flags)
 	short		value;
 
 	local_pa = va_arg(pa, int);
-	value = local_pa % 256;
-	len = ft_strlen(ft_itoa_base(value, 10));
+	value = (local_pa < 0) ? 256 + local_pa : local_pa % 256;
+	len = ft_strlen(ft_itoa_base(value, 8));
 	ft_before_o(&flags, len, 0, value);
 	ft_put_precision_oct(&flags, value);
 	ft_after_o(&flags, len);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 14:56:47 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 15:20:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,21 @@ int			ft_conv_s(va_list pa, t_flags flags)
 	int		ln;
 
 	local_pa = va_arg(pa, char *);
-	if (local_pa == NULL)
+	if (local_pa == NULL && flags.preci < 0)
 	{
+		ln = flags.zero;
+		ft_before_str(&flags, 0);
+		ft_put_precision_str(flags, local_pa, -1);
+		ft_after_str(&flags, 0);
+		return (ln);
+	}
+	else if (local_pa == NULL && flags.preci >= 0)
+	{
+		ln = 6;
 		ft_before_str(&flags, 6);
 		(!flags.display) ? ft_putstr("(null)") : 0;
 		ft_after_str(&flags, 6);
-		return (6);
+		return (ln);
 	}
 	else
 	{
@@ -38,4 +47,5 @@ int			ft_conv_s(va_list pa, t_flags flags)
 		ft_after_str(&flags, ln);
 		return (ln + flags.spaces_count);
 	}
+	return (0);
 }

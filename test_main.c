@@ -6,12 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:57:17 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 16:19:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "stdio.h"
+# include <wchar.h>
 
 int		main()
 {
@@ -48,19 +49,11 @@ int		main()
 	    ft_printf("%S == ", L"ݗݜशব");					    printf("%S\n", L"ݗݜशব");
 	    ft_printf("%C == ", 15000);		 					printf("%C\n", 15000);
 	*/
-	// printf("%12x\n", 145);
-	// printf("%12.1x\n", 145);
-	// printf("%12.4x\n\n", 145);
-	//
-	// ft_printf("%12x\n", 145);
-	// ft_printf("%12.1x\n", 145);
-	// ft_printf("%12.4x\n", 145);
-	// ft_printf("%-5.0x", 2500);
-	// ft_printf("%-5.0o", 2500);
+
 	int		l,k;
-	l = ft_printf("{%05.s}", 0);
+	l = ft_printf("%S", L"ݗݜशব");
 	printf("\n");
-	k = printf("{%05.s}", 0);
+	k = printf("%S", L"ݗݜशব");
 	printf("\n");
 	printf("%d vs %d\n", l, k);
 
