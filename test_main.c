@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 16:19:59 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 11:43:27 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int		main()
 	// ft_printf("%-5.0o", 2500);
 	int		l,k;
 	int		i;
-	l = ft_printf("{%015p}", &ft_putnbr);
+	l = ft_printf("%hho, %hho", 0, UCHAR_MAX + 42);
 	printf("\n");
-	k = printf("{%015p}", &ft_putnbr);
+	k = printf("%hho, %hho", 0, UCHAR_MAX + 42);
 	printf("\n");
 	printf("%d vs %d\n", l, k);
 

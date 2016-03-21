@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:02 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 15:46:18 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 11:41:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,3 +89,57 @@ int		ft_conv_u_j(va_list pa, t_flags flags)
 	ft_after_u(&flags, len);
 	return (len + flags.spaces_count);
 }
+
+/*
+** The ft_conv_u_h() function launchs the conversion for u / U specifier with h.
+*/
+
+int		ft_conv_u_h(va_list pa, t_flags flags)
+{
+	short		local_pa;
+	int			len;
+	short		value;
+
+	local_pa = va_arg(pa, int);
+	value = local_pa % 256;
+	len = ft_strlen(ft_itoa_base(value, 10));
+	ft_before_u(&flags, len, value);
+	ft_put_precision_uni(&flags, value);
+	ft_after_u(&flags, len);
+	return (len + flags.spaces_count);
+}
+
+int		ft_conv_u_hh(va_list pa, t_flags flags)
+{
+	short		local_pa;
+	int			len;
+	short		value;
+
+	local_pa = va_arg(pa, int);
+	value = local_pa % 256;
+	len = ft_strlen(ft_itoa_base(value, 10));
+	ft_before_u(&flags, len, value);
+	ft_put_precision_uni(&flags, value);
+	ft_after_u(&flags, len);
+	return (len + flags.spaces_count);
+}
+
+//
+// int		ft_conv_d_i_h(va_list pa, t_flags flags)
+// {
+// 	short		local_pa;
+// 	int			sign;
+// 	int			space;
+// 	int			len;
+//
+// 	local_pa = va_arg(pa, int);
+// 	if (flags.empty == 1 && local_pa > 0 && (!flags.display))
+// 		ft_putchar(' ');
+// 	space = (flags.empty == 1) && (local_pa > 0) ? 1 : 0;
+// 	sign = (local_pa < 0) ? 1 : 0;
+// 	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
+// 	ft_before_d_i(&flags, len, local_pa);
+// 	ft_put_preci_int(&flags, local_pa);
+// 	ft_after_d_i(&flags, len, local_pa);
+// 	return (len + flags.spaces_count + sign + space);
+// }

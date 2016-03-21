@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 15:56:28 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 11:28:37 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	ft_after_u(t_flags *flags, int v_len);
 int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_u(va_list pa, t_flags flags);
 int		ft_conv_u_l(va_list pa, t_flags flags);
+int		ft_conv_u_h(va_list pa, t_flags flags);
 int		ft_conv_u_z(va_list pa, t_flags flags);
 int		ft_conv_u_j(va_list pa, t_flags flags);
 
