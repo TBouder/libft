@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_oct_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 19:35:21 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 15:54:39 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 12:12:46 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,18 @@ void			ft_after_o(t_flags *flags, int v_len)
 int				ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str,
 					int index)
 {
-	if (str[index] == 'o' || str[index] == 'O')
+	if (str[index] == 'o')
 	{
-		if (flags.length == 1 || flags.length == 2)
+		if (flags.length == 1 || flags.length == 2 || flags.length == 3)
+			return (ft_conv_o_ll(*pa, flags));
+		else if (flags.length == 4)
+			return (ft_conv_o_hh(*pa, flags));
+		else
+			return (ft_conv_o(*pa, flags));
+	}
+	else if (str[index] == 'O')
+	{
+		if (flags.length == 1 || flags.length == 2 || flags.length == 3 || flags.length == 4)
 			return (ft_conv_o_ll(*pa, flags));
 		else
 			return (ft_conv_o(*pa, flags));

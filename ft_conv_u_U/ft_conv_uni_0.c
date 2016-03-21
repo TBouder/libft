@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 11:44:17 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 11:41:42 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 11:52:28 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int				ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str,
 		if (flags.length == 1 || flags.length == 2 || flags.length == 3)
 			return (ft_conv_u_l(*pa, flags));
 		else if (flags.length == 4)
-			return (ft_conv_u_h(*pa, flags));
+			return (ft_conv_u_hh(*pa, flags));
 		else if (flags.length == 5)
 			return (ft_conv_u_j(*pa, flags));
 		else if (flags.length == 6)
