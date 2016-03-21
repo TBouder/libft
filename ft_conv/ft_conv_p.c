@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 12:43:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:10:07 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void	ft_middle(t_flags *flags, int v_len)
 	if (flags->zero && flags->zero - v_len > 0)
 	{
 		while (flags->zero-- - v_len != 0)
+		{
+			flags->spaces_count++;
+			(!flags->display) ? ft_putchar('0') : 0;
+		}
+	}
+	else if (flags->preci && flags->preci - v_len + 2 > 0)
+	{
+		while (flags->preci-- - v_len + 2 != 0)
 		{
 			flags->spaces_count++;
 			(!flags->display) ? ft_putchar('0') : 0;
@@ -69,6 +77,14 @@ void	ft_after_null(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar('0') : 0;
 		}
 	}
+	else if (flags->preci && flags->preci - 1 > 0)
+	{
+		while (flags->preci-- - 1 != 0)
+		{
+			flags->spaces_count++;
+			(!flags->display) ? ft_putchar('0') : 0;
+		}
+	}
 }
 
 int		ft_conv_p(va_list *pa, t_flags flags)
@@ -82,7 +98,7 @@ int		ft_conv_p(va_list *pa, t_flags flags)
 		len = (flags.preci == -1) ? 2 : 3;
 		ft_before(&flags, len);
 		(!flags.display) ? ft_putstr("0x") : 0;
-		ft_middle(&flags, len);
+		(len == 3 && (!flags.display)) ? ft_putstr("0") : 0;
 		ft_after_null(&flags, len);
 		return (len + flags.spaces_count);
 	}
