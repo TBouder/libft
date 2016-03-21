@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 12:38:30 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:14:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_before_str(t_flags *flags, int v_len)
 		while (flags->zero-- - v_len != 0)
 		{
 			flags->spaces_count++;
-			ft_putchar('0');
+			(!flags->display) ? ft_putchar('0') : 0;
 		}
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/19 00:17:11 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:40:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int		ft_load_flags(char *str, int index, t_flags *flag)
 			|| str[index] == 'z')
 			flag->length = ft_flag_length(str, &index);
 	}
+	flag->zero_base = flag->zero;
 	(flag->minus == 1 && flag->zero != 0) ? flag->spaces = flag->zero : 0;
 	(flag->minus == 1 && flag->zero != 0) ? flag->zero = 0 : 0;
 	(flag->minus == 1) ? flag->spaces = -flag->spaces : 0;
 	(flag->preci != 0 && flag->zero != 0) ? flag->spaces = flag->zero : 0;
 	(flag->preci != 0 && flag->zero != 0) ? flag->zero = 0 : 0;
 	(flag->plus == 1 && flag->empty == 1) ? flag->empty = 0 : 0;
-	flag->zero_base = flag->zero;
 	return (index);
 }
 

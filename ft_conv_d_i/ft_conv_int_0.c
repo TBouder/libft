@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_int_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 23:46:38 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:40:09 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 void			ft_before_d_i(t_flags *flags, int v_len, long long value)
 {
 	int		i;
+
 	i = 0;
 	if (flags->plus == 1 && flags->spaces > flags->preci + v_len)
 		i = 1;
