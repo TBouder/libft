@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:40:09 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:55:16 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 		(value == 0) ? flags->spaces_count++ : 0;
 		(value == 0) && (!flags->display) ? ft_putchar(' ') : 0;
 	}
-	// (flags->empty == 1) ? v_len++ : 0;
 	while (flags->zero-- - v_len != 0)
 	{
 		flags->spaces_count++;
@@ -77,6 +76,7 @@ void			ft_before_d_i(t_flags *flags, int v_len, long long value)
 	int		i;
 
 	i = 0;
+	(flags->preci != 0 && flags->zero != 0) ? flags->spaces = flags->zero : 0;
 	if (flags->plus == 1 && flags->spaces > flags->preci + v_len)
 		i = 1;
 	else

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:23:55 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:44:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 13:51:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_put_preci_int_l(t_flags *flags, long long local_pa)
 	}
 	if (local_pa < 0)
 	{
-		if (flags->zero_base > 0)
+		if (flags->zero > 0)
 			local_pa = -local_pa;
 		else if (flags->preci_diff != 0)
 			local_pa = -local_pa;
@@ -104,7 +104,7 @@ void	ft_put_preci_int(t_flags *flags, long long local_pa)
 	}
 	if (local_pa < 0)
 	{
-		if (flags->zero_base > 0)
+		if (flags->zero > 0)
 			local_pa = -local_pa;
 		else if (flags->preci_diff != 0)
 			local_pa = -local_pa;
