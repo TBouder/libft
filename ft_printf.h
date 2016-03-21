@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 12:02:22 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 12:24:41 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,11 @@ int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_x(va_list pa, t_flags flags, char *str);
 int		ft_conv_x_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_x_hh(va_list pa, t_flags flags, char *str);
+int		ft_conv_x_z(va_list pa, t_flags flags, char *str);
 int		ft_conv_X(va_list pa, t_flags flags, char *str);
 int		ft_conv_X_l(va_list pa, t_flags flags, char *str);
 int		ft_conv_X_hh(va_list pa, t_flags flags, char *str);
+int		ft_conv_X_z(va_list pa, t_flags flags, char *str);
 
 /*u & U*/
 void	ft_put_preci_uni_ll(t_flags *flags, long long local_pa);
@@ -93,8 +95,8 @@ int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_u(va_list pa, t_flags flags);
 int		ft_conv_u_l(va_list pa, t_flags flags);
 int		ft_conv_u_hh(va_list pa, t_flags flags);
-int		ft_conv_u_z(va_list pa, t_flags flags);
 int		ft_conv_u_j(va_list pa, t_flags flags);
+int		ft_conv_u_z(va_list pa, t_flags flags);
 
 /*s & S*/
 void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
@@ -112,6 +114,8 @@ int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_o(va_list pa, t_flags flags);
 int		ft_conv_o_ll(va_list pa, t_flags flags);
 int		ft_conv_o_hh(va_list pa, t_flags flags);
+int		ft_conv_o_j(va_list pa, t_flags flags);
+int		ft_conv_o_z(va_list pa, t_flags flags);
 
 int		ft_conv_c(va_list pa, t_flags flags);
 int		ft_conv_p(va_list *pa, t_flags flags);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_d_i_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:50 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 19:47:27 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 12:16:34 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_conv_d_i_j(va_list pa, t_flags flags)
 	sign = (local_pa < 0) ? 1 : 0;
 	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
 	ft_before_d_i(&flags, len, local_pa);
-	ft_put_preci_int(&flags, local_pa);
+	ft_put_preci_int_l(&flags, local_pa);
 	ft_after_d_i(&flags, len, local_pa);
 	return (len + flags.spaces_count + sign + space);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_str_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 15:00:07 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 12:38:30 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	ft_put_precision_str(t_flags flags, char *local_pa, int len)
 	int		i;
 
 	i = 0;
-	flags.spaces = 0; //to delete
 	while (i < len)
 	{
-		(!flags.display) ? ft_putchar(local_pa[i]) : 0;
+		(flags.preci == -1 && (!flags.display)) ? ft_putchar(' ') : 0;
+		(flags.preci != -1 && (!flags.display)) ? ft_putchar(local_pa[i]) : 0;
 		i++;;
 	}
 }
@@ -47,6 +47,14 @@ void	ft_before_str(t_flags *flags, int v_len)
 			flags->spaces--;
 			flags->spaces_count++;
 			(!flags->display) ? ft_putchar(' ') : 0;
+		}
+	}
+	else if (flags->zero && flags->zero - v_len > 0)
+	{
+		while (flags->zero-- - v_len != 0)
+		{
+			flags->spaces_count++;
+			ft_putchar('0');
 		}
 	}
 }

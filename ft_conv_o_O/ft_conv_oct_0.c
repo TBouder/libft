@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 19:35:21 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 12:12:46 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 12:21:56 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,10 @@ int				ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str,
 			return (ft_conv_o_ll(*pa, flags));
 		else if (flags.length == 4)
 			return (ft_conv_o_hh(*pa, flags));
+		else if (flags.length == 5)
+			return (ft_conv_o_j(*pa, flags));
+		else if (flags.length == 6)
+			return (ft_conv_o_z(*pa, flags));
 		else
 			return (ft_conv_o(*pa, flags));
 	}
@@ -112,6 +116,10 @@ int				ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str,
 	{
 		if (flags.length == 1 || flags.length == 2 || flags.length == 3 || flags.length == 4)
 			return (ft_conv_o_ll(*pa, flags));
+		else if (flags.length == 5)
+			return (ft_conv_o_j(*pa, flags));
+		else if (flags.length == 6)
+			return (ft_conv_o_z(*pa, flags));
 		else
 			return (ft_conv_o(*pa, flags));
 	}
