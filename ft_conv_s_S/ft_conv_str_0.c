@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:14:29 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 19:14:34 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
 	if (str[index] == 's')
 	{
 		return (ft_conv_s(*pa, flags));
+	}
+	if (str[index] == 'S')
+	{
+		return (ft_conv_S(*pa, flags));
 	}
 	return (0);
 }

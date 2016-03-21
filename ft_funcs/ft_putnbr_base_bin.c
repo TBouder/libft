@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen_ll.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 13:32:53 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 12:48:55 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/21 19:36:09 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/21 19:36:22 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_nbrlen_ll() function count the number of digit in n (long long).
-*/
+#include "../ft_printf.h"
 
-#include "../libft.h"
-
-int		ft_nbrlen_ll(long long n)
+void	ft_putnbr_base_bin(unsigned long long nb, int base)
 {
-	int		i;
+	char	*str;
 
-	i = 0;
-	while (n != 0)
+	str = "0123456789abcdef";
+	if (nb < base)
+		ft_putchar(str[nb]);
+	else
 	{
-		n /= 10;
-		i++;
+		ft_putnbr_base_bin(nb / 10, 10);
+		ft_putnbr_base_bin(nb % base, base);
 	}
-	return (i);
 }

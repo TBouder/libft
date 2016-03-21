@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 16:08:28 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 19:36:46 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <wchar.h>
 # include <limits.h> // ?
 # include "libft/libft.h"
+# define ULL unsigned long long
 
 typedef struct		s_flags
 {
@@ -51,9 +52,19 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags);
 int		ft_flag_preci(char *str, int *index);
 int		ft_flag_length(char *str, int *index);
 int		ft_flag_bool(int *index);
-
 int		ft_conv_percent(t_flags flags);
 int		ft_conv_char(t_flags flags, char c);
+
+/*Funcs*/
+ULL		ft_atoi_ll(const char *str);
+char	*ft_itoa_base_ull(unsigned long long n, int base);
+int		ft_nbrlen_l(long n);
+int		ft_nbrlen_ll(long long n);
+void	ft_putnbr_base_ull(unsigned long long nb, int base, int maj);
+void	ft_putnbr_ll(long long nb);
+void	ft_putnbr_ull(unsigned long long nb);
+void	ft_putnbr_base_bin(unsigned long long nb, int base);
+
 
 /*i & d*/
 void	ft_put_preci_int_ll(t_flags *flags, long long local_pa);
@@ -104,6 +115,7 @@ void	ft_before_str(t_flags *flags, int v_len);
 void	ft_after_str(t_flags *flags, int v_len);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
+int		ft_conv_S(va_list pa, t_flags flags);
 
 /*o & O*/
 void	ft_put_precision_oct_ll(t_flags *flags, long long local_pa);

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 16:10:41 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 19:19:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ** string pointed to by n, according to the base.
 */
 
-#include "../libft.h"
+#include "../ft_printf.h"
 
 static void			ft_convert_base(unsigned long long n, int base, char *s,
 						int *index)

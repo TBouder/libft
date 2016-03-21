@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_ull.c                                    :+:      :+:    :+:   */
+/*   ft_nbrlen_l.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:34:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 17:33:55 by tbouder          ###   ########.fr       */
+/*   Created: 2015/11/24 13:32:53 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/21 19:19:59 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putnbr_ull() function prints the number nb (unsigned ull) to STDIN.
+** The ft_nbrlen_l() function count the number of digit in n (long).
 */
 
-#include "../libft.h"
+#include "../ft_printf.h"
 
-void	ft_putnbr_ull(unsigned long long nb)
+int		ft_nbrlen_l(long n)
 {
-	if (nb <= 9)
-		ft_putchar(nb + '0');
-	else
+	int		i;
+
+	i = 0;
+	while (n != 0)
 	{
-		ft_putnbr_ull(nb / 10);
-		ft_putnbr_ull(nb % 10);
+		n /= 10;
+		i++;
 	}
+	return (i);
 }
