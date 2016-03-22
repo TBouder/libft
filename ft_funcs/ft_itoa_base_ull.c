@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base_ull.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:19:47 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 22:10:58 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ static void			ft_convert_base(unsigned long long n, int base, char *s,
 		ft_convert_base(n / base, base, s, index);
 		ft_convert_base(n % base, base, s, index);
 	}
-}
-
-static int			ft_nbrlen_base(unsigned long long n, int base)
-{
-	int		len;
-
-	len = 0;
-	while (n != 0)
-	{
-		n /= base;
-		len++;
-	}
-	return (len);
 }
 
 char				*ft_itoa_base_ull(unsigned long long n, int base)

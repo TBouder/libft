@@ -6,11 +6,29 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:14:34 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/22 15:34:40 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+/*
+** The ft_put_precision_wstr() function adjusts the precision before displaying
+** the output.
+*/
+
+void	ft_put_precision_wstr(t_flags flags, char *local_pa, int len)
+{
+	int		i;
+
+	i = 0;
+	while (i < len)
+	{
+		(flags.preci == -1 && (!flags.display)) ? ft_putchar(' ') : 0;
+		(flags.preci != -1 && (!flags.display)) ? ft_putchar(local_pa[i]) : 0;
+		i++;
+	}
+}
 
 /*
 ** The ft_put_precision_str() function adjusts the precision before displaying

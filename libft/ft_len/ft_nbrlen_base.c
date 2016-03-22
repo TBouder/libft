@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:31:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 22:13:05 by Tbouder          ###   ########.fr       */
+/*   Created: 2016/03/21 22:06:30 by Tbouder           #+#    #+#             */
+/*   Updated: 2016/03/21 22:07:33 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putchar() function writes the character c (converted to an
-** 'unsigned char') to STDIN.
+** The ft_nbrlen_base() function computes the length of nbr, according to the
+** base. TO DO : add bases after 10.
 */
 
 #include "../libft.h"
-#include <unistd.h>
 
-void		ft_putchar(char c)
+int		ft_nbrlen_base(long long n, int base)
 {
-	write(1, &c, 1);
+	int		i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= base;
+		i++;
+	}
+	return (i);
 }

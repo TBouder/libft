@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:36:46 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/22 15:45:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include <limits.h> // ?
+#include <locale.h> // ?
 # include "libft/libft.h"
 # define ULL unsigned long long
 
@@ -45,6 +46,9 @@ int		ft_is_printf(char c);
 void	ft_flag_r_justified(t_flags *flags, int v_len);
 void	ft_flag_l_justified(t_flags *flags, int v_len);
 void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj);
+
+int		ft_binary_to_decimal(int b); //Add_libft
+int		*ft_parse_binary(long long b);
 
 /*Flags*/
 int		ft_flag_spaces(char *str, int *index);
@@ -131,7 +135,13 @@ int		ft_conv_o_h(va_list pa, t_flags flags);
 int		ft_conv_o_j(va_list pa, t_flags flags);
 int		ft_conv_o_z(va_list pa, t_flags flags);
 
+
+int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_c(va_list pa, t_flags flags);
+int		ft_conv_C(va_list pa, t_flags flags);
+void	ft_before_c(t_flags *flags, int v_len);
+void	ft_after_c(t_flags *flags, int v_len);
+
 int		ft_conv_p(va_list *pa, t_flags flags);
 
 

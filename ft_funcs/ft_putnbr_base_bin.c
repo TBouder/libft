@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 19:36:09 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:36:22 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 22:03:40 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_base_bin(unsigned long long nb, int base)
 	char	*str;
 
 	str = "0123456789abcdef";
-	if (nb < base)
+	if (nb < (unsigned long long) base)
 		ft_putchar(str[nb]);
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:47:10 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/22 15:45:50 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,11 @@ int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	*r_value += ft_launch_conv_x_X(pa, flags, str, index);
 	*r_value += ft_launch_conv_u_U(pa, flags, str, index);
 	*r_value += ft_launch_conv_s_S(pa, flags, str, index); //ADD S
+	*r_value += ft_launch_conv_c_C(pa, flags, str, index); //ADD S
 	*r_value += ft_launch_conv_o_O(pa, flags, str, index);
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags) : 0;
-	*r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
-	*r_value += str[index] == 'C' ? ft_conv_c(*pa, flags) : 0;
+	// *r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
+	// *r_value += str[index] == 'C' ? ft_conv_c(*pa, flags) : 0;
 	*r_value -= 1;
 
 	if (ft_is_printf(str[index]) == 2)

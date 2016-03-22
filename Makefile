@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/21 19:36:36 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/22 15:46:19 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,12 @@ CFLAGS		= 	-Wall -Werror -Wextra
 
 PRINTF 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
 
-PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_c.c ft_conv/ft_conv_p.c
+PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_p.c
 PRINTF_d_i	=	ft_conv_d_i/ft_conv_d_i.c ft_conv_d_i/ft_conv_d_i_2.c ft_conv_d_i/ft_conv_int_0.c ft_conv_d_i/ft_conv_int_1.c
 PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_X.c ft_conv_x_X/ft_conv_hex_0.c ft_conv_x_X/ft_conv_hex_1.c
 PRINTF_u_U	=	ft_conv_u_U/ft_conv_u.c ft_conv_u_U/ft_conv_uni_0.c ft_conv_u_U/ft_conv_uni_1.c
 PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c ft_conv_s_S/ft_conv_str_0.c
+PRINTF_c_C	=	ft_conv_c_C/ft_conv_c.c ft_conv_c_C/ft_conv_char_0.c
 PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c ft_conv_o_O/ft_conv_oct_1.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
 PRINTF_FUNC	=	ft_funcs/ft_atoi_ll.c ft_funcs/ft_itoa_base_ull.c \
@@ -33,7 +34,7 @@ FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isasci
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
 				libft/ft_is/ft_isspace.c libft/ft_is/ft_isprime.c libft/ft_is/ft_ishexa.c
 
-FT_LEN		=	libft/ft_len/ft_nbrlen.c \
+FT_LEN		=	libft/ft_len/ft_nbrlen.c libft/ft_len/ft_nbrlen_base.c\
 				libft/ft_len/ft_strlen.c libft/ft_len/ft_linelen.c libft/ft_len/ft_hexalen.c
 
 FT_LST		=	libft/ft_lst/ft_lstnew.c libft/ft_lst/ft_lstadd.c libft/ft_lst/ft_lstclr.c \
@@ -83,7 +84,7 @@ GNL			=	libft/get_next_line/get_next_line.c
 
 OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_FUNC:.c=.o) $(PRINTF_d_i:.c=.o) \
 				$(PRINTF_x_X:.c=.o) $(PRINTF_FLAG:.c=.o) $(PRINTF_u_U:.c=.o) \
-				$(PRINTF_s_S:.c=.o) $(PRINTF_o_O:.c=.o) \
+				$(PRINTF_s_S:.c=.o) $(PRINTF_o_O:.c=.o) $(PRINTF_c_C:.c=.o) \
 				$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
 				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
@@ -127,6 +128,8 @@ $(NAME):
 	mv *.o ft_conv_u_U/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_s_S)
 	mv *.o ft_conv_s_S/
+	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_c_C)
+	mv *.o ft_conv_c_C/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_o_O)
 	mv *.o ft_conv_o_O/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF)

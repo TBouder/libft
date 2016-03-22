@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv_c.c                                        :+:      :+:    :+:   */
+/*   ft_conv_char_0.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 16:28:47 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:22:49 by tbouder          ###   ########.fr       */
+/*   Created: 2016/03/22 15:39:27 by tbouder           #+#    #+#             */
+/*   Updated: 2016/03/22 15:49:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,19 @@ void	ft_after_c(t_flags *flags, int v_len)
 	}
 }
 
-int		ft_conv_c(va_list pa, t_flags flags)
-{
-	int		local_pa;
+/*
+** The ft_launch_conv_c_C() function launchs the conversion by c or C.
+*/
 
-	local_pa = va_arg(pa, unsigned int);
-	ft_before_c(&flags, 1);
-	(!flags.display) ? ft_putchar(local_pa) : 0;
-	ft_after_c(&flags, 1);
-	return (1 + flags.spaces_count);
+int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index)
+{
+	if (str[index] == 'c')
+	{
+		return (ft_conv_c(*pa, flags));
+	}
+	if (str[index] == 'C')
+	{
+		return (ft_conv_C(*pa, flags));
+	}
+	return (0);
 }

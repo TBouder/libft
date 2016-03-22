@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:35:32 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/21 22:08:21 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ void				ft_bzero(void *s, size_t n);
 
 size_t				ft_strlen(const char *s);
 int					ft_nbrlen(int n);
-int					ft_nbrlen_l(long n);
-int					ft_nbrlen_ll(long long n);
+int					ft_nbrlen_base(long long n, int base);
 int					ft_linelen(const char *str, int i);
 int					ft_hexalen(char *str);
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/21 19:27:25 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/21 22:07:48 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FT_IS		=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isnumber.c \
 				ft_is/ft_isspace.c ft_is/ft_isprime.c ft_is/ft_ishexa.c
 
-FT_LEN		=	ft_len/ft_nbrlen.c \
+FT_LEN		=	ft_len/ft_nbrlen.c ft_len/ft_nbrlen_base.c \
 				ft_len/ft_strlen.c ft_len/ft_linelen.c ft_len/ft_hexalen.c
 
 FT_LST		=	ft_lst/ft_lstnew.c ft_lst/ft_lstadd.c ft_lst/ft_lstclr.c \
