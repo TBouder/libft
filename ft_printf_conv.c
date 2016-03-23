@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 15:45:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:52:53 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_init_flags(t_flags *flag)
 	flag->zero = 0;
 	flag->spaces = 0;
 	flag->preci = 0;
-	flag->length = 0;
+	flag->l = 0;
 	flag->minus = 0;
 	flag->plus = 0;
 	flag->empty = 0;
@@ -43,14 +43,12 @@ int		ft_load_flags(char *str, int index, t_flags *flag)
 			flag->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j'
 			|| str[index] == 'z')
-			flag->length = ft_flag_length(str, &index);
+			flag->l = ft_flag_length(str, &index);
 	}
 	flag->zero_base = flag->zero;
 	(flag->minus == 1 && flag->zero != 0) ? flag->spaces = flag->zero : 0;
 	(flag->minus == 1 && flag->zero != 0) ? flag->zero = 0 : 0;
 	(flag->minus == 1) ? flag->spaces = -flag->spaces : 0;
-	// (flag->preci != 0 && flag->zero != 0) ? flag->spaces = flag->zero : 0;
-	// (flag->preci != 0 && flag->zero != 0) ? flag->zero = 0 : 0;
 	(flag->plus == 1 && flag->empty == 1) ? flag->empty = 0 : 0;
 	return (index);
 }

@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 19:35:21 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 13:48:55 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:57:46 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,32 +102,8 @@ int				ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'o')
-	{
-		if (flags.length == 1)
-			return (ft_conv_o_l(*pa, flags));
-		else if (flags.length == 2)
-			return (ft_conv_o_ll(*pa, flags));
-		else if (flags.length == 3)
-			return (ft_conv_o_h(*pa, flags));
-		else if (flags.length == 4)
-			return (ft_conv_o_hh(*pa, flags));
-		else if (flags.length == 5)
-			return (ft_conv_o_j(*pa, flags));
-		else if (flags.length == 6)
-			return (ft_conv_o_z(*pa, flags));
-		else
-			return (ft_conv_o(*pa, flags));
-	}
+		return (ft_o(*pa, flags));
 	else if (str[index] == 'O')
-	{
-		if (flags.length == 1 || flags.length == 2 || flags.length == 3 || flags.length == 4)
-			return (ft_conv_o_ll(*pa, flags));
-		else if (flags.length == 5)
-			return (ft_conv_o_j(*pa, flags));
-		else if (flags.length == 6)
-			return (ft_conv_o_z(*pa, flags));
-		else
-			return (ft_conv_O(*pa, flags));
-	}
+		return (ft_O(*pa, flags));
 	return (0);
 }

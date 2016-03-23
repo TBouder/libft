@@ -84,13 +84,13 @@ int				ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str,
 {
 	if (str[index] == 'u')
 	{
-		if (flags.length == 1 || flags.length == 2 || flags.length == 3)
+		if (flags.l == 1 || flags.l == 2 || flags.l == 3)
 			return (ft_conv_u_l(*pa, flags));
-		else if (flags.length == 4)
+		else if (flags.l == 4)
 			return (ft_conv_u_hh(*pa, flags));
-		else if (flags.length == 5)
+		else if (flags.l == 5)
 			return (ft_conv_u_j(*pa, flags));
-		else if (flags.length == 6)
+		else if (flags.l == 6)
 			return (ft_conv_u_z(*pa, flags));
 		else
 			return (ft_conv_u(*pa, flags));

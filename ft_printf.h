@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 14:09:41 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:57:34 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct		s_flags
 	int				preci_diff;
 	int				zero;
 	int				zero_base;
-	int				length;
+	int				l;
 	int				diaiz;
 	int				minus;
 	int				plus;
@@ -125,19 +125,14 @@ int		ft_conv_s(va_list pa, t_flags flags);
 int		ft_conv_S(va_list pa, t_flags flags);
 
 /*o & O*/
+int		ft_o(va_list pa, t_flags flag);
+int		ft_O(va_list pa, t_flags flag);
+
 void	ft_put_precision_oct_ll(t_flags *flags, long long local_pa);
 void	ft_put_precision_oct(t_flags *flags, long long local_pa);
 void	ft_before_o(t_flags *flags, int v_len, int index, long long local_pa);
 void	ft_after_o(t_flags *flags, int v_len);
 int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
-int		ft_conv_o(va_list pa, t_flags flags);
-int		ft_conv_O(va_list pa, t_flags flags);
-int		ft_conv_o_l(va_list pa, t_flags flags);
-int		ft_conv_o_ll(va_list pa, t_flags flags);
-int		ft_conv_o_hh(va_list pa, t_flags flags);
-int		ft_conv_o_h(va_list pa, t_flags flags);
-int		ft_conv_o_j(va_list pa, t_flags flags);
-int		ft_conv_o_z(va_list pa, t_flags flags);
 
 
 int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index);

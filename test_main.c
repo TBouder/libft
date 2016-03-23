@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 13:59:59 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:47:07 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int		main()
 
 	int		i, j;
 
-	i = ft_printf("%lo", ULONG_MAX);
+	i = ft_printf("%.o, %.0o", 0, 0);
 	printf("\n\n");
-	j = printf("%lo", ULONG_MAX);
+	j = printf("%.o, %.0o", 0, 0);
 
 	printf("\n%d vs %d\n", i, j);
 	return 0;

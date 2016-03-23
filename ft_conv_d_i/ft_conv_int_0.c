@@ -126,17 +126,17 @@ int				ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str,
 {
 	if (str[index] == 'd' || str[index] == 'i')
 	{
-		if (flags.length == 1)
+		if (flags.l == 1)
 			return (ft_conv_d_i_l(*pa, flags));
-		else if (flags.length == 2)
+		else if (flags.l == 2)
 			return (ft_conv_d_i_ll(*pa, flags));
-		else if (flags.length == 3)
+		else if (flags.l == 3)
 			return (ft_conv_d_i_h(*pa, flags));
-		else if (flags.length == 4)
+		else if (flags.l == 4)
 			return (ft_conv_d_i_hh(*pa, flags));
-		else if (flags.length == 5)
+		else if (flags.l == 5)
 			return (ft_conv_d_i_j(*pa, flags));
-		else if (flags.length == 6)
+		else if (flags.l == 6)
 			return (ft_conv_d_i_z(*pa, flags));
 		else
 			return (ft_conv_d_i(*pa, flags));

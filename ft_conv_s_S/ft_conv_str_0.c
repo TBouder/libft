@@ -104,11 +104,11 @@ void	ft_after_str(t_flags *flags, int v_len)
 
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
 {
-	if (str[index] == 's' && flags.length != 1)
+	if (str[index] == 's' && flags.l != 1)
 	{
 		return (ft_conv_s(*pa, flags));
 	}
-	if (str[index] == 'S' || (str[index] == 's' && flags.length == 1))
+	if (str[index] == 'S' || (str[index] == 's' && flags.l == 1))
 	{
 		return (ft_conv_S(*pa, flags));
 	}

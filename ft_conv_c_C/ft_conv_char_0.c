@@ -67,11 +67,11 @@ void	ft_after_c(t_flags *flags, int v_len)
 
 int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index)
 {
-	if (str[index] == 'c' && flags.length != 1)
+	if (str[index] == 'c' && flags.l != 1)
 	{
 		return (ft_conv_c(*pa, flags));
 	}
-	if (str[index] == 'C' || (str[index] == 'c' && flags.length == 1))
+	if (str[index] == 'C' || (str[index] == 'c' && flags.l == 1))
 	{
 		return (ft_conv_C(*pa, flags));
 	}

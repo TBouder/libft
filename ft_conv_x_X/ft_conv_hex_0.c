@@ -101,22 +101,22 @@ int				ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str,
 {
 	if (str[index] == 'X')
 	{
-		if (flags.length == 1 || flags.length == 2 || flags.length == 5)
+		if (flags.l == 1 || flags.l == 2 || flags.l == 5)
 			return (ft_conv_X_l(*pa, flags));
-		else if (flags.length == 4)
+		else if (flags.l == 4)
 			return (ft_conv_X_hh(*pa, flags));
-		else if (flags.length == 6)
+		else if (flags.l == 6)
 			return (ft_conv_X_z(*pa, flags));
 		else
 			return (ft_conv_X(*pa, flags));
 	}
 	else if (str[index] == 'x')
 	{
-		if (flags.length == 1 || flags.length == 2 || flags.length == 5)
+		if (flags.l == 1 || flags.l == 2 || flags.l == 5)
 			return (ft_conv_x_l(*pa, flags));
-		else if (flags.length == 4)
+		else if (flags.l == 4)
 			return (ft_conv_x_hh(*pa, flags));
-		else if (flags.length == 6)
+		else if (flags.l == 6)
 			return (ft_conv_x_z(*pa, flags));
 		else
 			return (ft_conv_x(*pa, flags));
