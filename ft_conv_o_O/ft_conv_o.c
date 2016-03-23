@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 16:03:01 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:06:58 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,38 @@ int		ft_conv_O(va_list pa, t_flags flags)
 }
 
 /*
+** The ft_conv_o_l() function launchs the conversion for o / O specifier with
+** l flag.
+*/
+
+int		ft_conv_o_l(va_list pa, t_flags flags)
+{
+	long long	local_pa;
+	int			len;
+
+	local_pa = va_arg(pa, long long);
+	len = ft_strlen(ft_itoa_base_ll(local_pa, 8));
+	ft_before_o(&flags, len, 0, local_pa);
+	ft_put_precision_oct_ll(&flags, local_pa);
+	ft_after_o(&flags, len);
+	return (len + flags.spaces_count);
+}
+
+/*
 ** The ft_conv_o_ll() function launchs the conversion for o / O specifier with
 ** ll flag.
 */
 
 int		ft_conv_o_ll(va_list pa, t_flags flags)
 {
-	unsigned long long	local_pa;
-	int					len;
+	long long	local_pa;
+	int			len;
 
-	local_pa = va_arg(pa, unsigned long long);
+	local_pa = va_arg(pa, long long);
 	len = ft_strlen(ft_itoa_base_ull(local_pa, 8));
 	ft_before_o(&flags, len, 0, local_pa);
 	ft_put_precision_oct_ll(&flags, local_pa);
 	ft_after_o(&flags, len);
-	local_pa == 0 && flags.preci == -1 ? len-- : 0;
 	return (len + flags.spaces_count);
 }
 

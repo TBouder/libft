@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:02 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 11:58:51 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 13:01:25 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,12 @@ int		ft_conv_u(va_list pa, t_flags flags)
 int		ft_conv_u_l(va_list pa, t_flags flags)
 {
 	long long	local_pa;
-	long long	value;
 	int			len;
 
 	local_pa = va_arg(pa, long);
-	value = (int)local_pa < 0 ? 0 + local_pa : local_pa;
-	len = ft_strlen(ft_itoa_base_ull(value, 10));
+	len = ft_strlen(ft_itoa_base_ull(local_pa, 10));
 	ft_before_u(&flags, len, local_pa);
-	ft_put_preci_uni_ll(&flags, value);
+	ft_put_preci_uni_ll(&flags, local_pa);
 	ft_after_u(&flags, len);
 	return (len + flags.spaces_count);
 }

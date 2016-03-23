@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nbrlen_l.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:32:53 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 19:19:59 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:09:21 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,43 @@ int		ft_nbrlen_l(long n)
 		i++;
 	}
 	return (i);
+}
+
+int		ft_nbrlen_ll(long long n)
+{
+	int		i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+int		ft_nbrlen_ull(unsigned long long n)
+{
+	int		i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+int			ft_nbrlen_base_oll(unsigned long long n, int base)
+{
+	int		len;
+
+	len = 0;
+	while (n != 0)
+	{
+		n /= base;
+		len++;
+	}
+	return (len);
 }

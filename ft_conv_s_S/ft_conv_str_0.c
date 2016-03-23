@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_str_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 15:34:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/22 18:03:39 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,11 @@ void	ft_after_str(t_flags *flags, int v_len)
 
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
 {
-	if (str[index] == 's')
+	if (str[index] == 's' && flags.length != 1)
 	{
 		return (ft_conv_s(*pa, flags));
 	}
-	if (str[index] == 'S')
+	if (str[index] == 'S' || (str[index] == 's' && flags.length == 1))
 	{
 		return (ft_conv_S(*pa, flags));
 	}

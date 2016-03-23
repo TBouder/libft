@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/22 15:46:19 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/22 18:19:55 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ PRINTF_c_C	=	ft_conv_c_C/ft_conv_c.c ft_conv_c_C/ft_conv_char_0.c
 PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c ft_conv_o_O/ft_conv_oct_1.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
 PRINTF_FUNC	=	ft_funcs/ft_atoi_ll.c ft_funcs/ft_itoa_base_ull.c \
-				ft_funcs/ft_nbrlen_l.c ft_funcs/ft_nbrlen_ll.c \
+				ft_funcs/ft_nbrlen_l.c \
 				ft_funcs/ft_putnbr_base_ull.c ft_funcs/ft_putnbr_ll.c \
 				ft_funcs/ft_putnbr_ull.c ft_funcs/ft_putnbr_base_bin.c
 

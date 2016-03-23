@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 16:05:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 13:59:59 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,10 @@ int		main()
 
 	int		i, j;
 
-	i = ft_printf("%C", 0);
+	i = ft_printf("%lo", ULONG_MAX);
 	printf("\n\n");
-	j = printf("%C", 0);
+	j = printf("%lo", ULONG_MAX);
 
 	printf("\n%d vs %d\n", i, j);
 	return 0;
 }
-
-// 1110110001
-// 110xxxxx 10xxxxxx
-// 11001110 10110001
-
-// 111110001110011
-// 1110xxxx 10xxxxxx 10xxxxxx
-// 1110.0111 10.110001 10.110011

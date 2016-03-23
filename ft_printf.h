@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 15:45:58 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 14:09:41 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,12 @@ int		ft_conv_char(t_flags flags, char c);
 
 /*Funcs*/
 ULL		ft_atoi_ll(const char *str);
+char	*ft_itoa_base_ll(unsigned long long n, int base);
 char	*ft_itoa_base_ull(unsigned long long n, int base);
 int		ft_nbrlen_l(long n);
 int		ft_nbrlen_ll(long long n);
+int		ft_nbrlen_ull(unsigned long long n);
+int		ft_nbrlen_base_oll(unsigned long long n, int base);
 void	ft_putnbr_base_ull(unsigned long long nb, int base, int maj);
 void	ft_putnbr_ll(long long nb);
 void	ft_putnbr_ull(unsigned long long nb);
@@ -129,6 +132,7 @@ void	ft_after_o(t_flags *flags, int v_len);
 int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_o(va_list pa, t_flags flags);
 int		ft_conv_O(va_list pa, t_flags flags);
+int		ft_conv_o_l(va_list pa, t_flags flags);
 int		ft_conv_o_ll(va_list pa, t_flags flags);
 int		ft_conv_o_hh(va_list pa, t_flags flags);
 int		ft_conv_o_h(va_list pa, t_flags flags);
