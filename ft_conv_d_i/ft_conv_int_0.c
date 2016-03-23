@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_int_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:55:16 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 16:04:56 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,23 +125,8 @@ int				ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'd' || str[index] == 'i')
-	{
-		if (flags.l == 1)
-			return (ft_conv_d_i_l(*pa, flags));
-		else if (flags.l == 2)
-			return (ft_conv_d_i_ll(*pa, flags));
-		else if (flags.l == 3)
-			return (ft_conv_d_i_h(*pa, flags));
-		else if (flags.l == 4)
-			return (ft_conv_d_i_hh(*pa, flags));
-		else if (flags.l == 5)
-			return (ft_conv_d_i_j(*pa, flags));
-		else if (flags.l == 6)
-			return (ft_conv_d_i_z(*pa, flags));
-		else
-			return (ft_conv_d_i(*pa, flags));
-	}
+		return (ft_d_i(*pa, flags));
 	else if (str[index] == 'D')
-		return (ft_conv_d_i_ll(*pa, flags));
+		return (ft_D_I(*pa, flags));
 	return (0);
 }

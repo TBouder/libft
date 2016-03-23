@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 14:58:27 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 15:37:00 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int		ft_o(va_list pa, t_flags flag)
 	long long	value;
 	int			len;
 
-	(flag.l == 0 || flag.l == 5 || flag.l == 6) ? lpa = va_arg(pa, long) : 0;
-	(flag.l == 1 || flag.l == 2) ? lpa = va_arg(pa, long long) : 0;
-	(flag.l == 3 || flag.l == 4) ? lpa = va_arg(pa, int) : 0;
+	lpa = va_arg(pa, long);
 	if (flag.l == 0)
 		value = (lpa < 0) ? 4294967296 + lpa : lpa % 4294967296;
 	else if (flag.l == 3)
