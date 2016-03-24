@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:15:44 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 02:36:49 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,10 @@ int		ft_conv_char(t_flags flags, char c);
 ULL		ft_atoi_ll(const char *str);
 char	*ft_itoa_base_ll(unsigned long long n, int base);
 char	*ft_itoa_base_ull(unsigned long long n, int base);
-int		ft_nbrlen_l(long n);
 int		ft_nbrlen_ll(long long n);
-int		ft_nbrlen_ull(unsigned long long n);
-int		ft_nbrlen_base_oll(unsigned long long n, int base);
 void	ft_putnbr_base_ull(unsigned long long nb, int base, int maj);
 void	ft_putnbr_ll(long long nb);
 void	ft_putnbr_ull(unsigned long long nb);
-void	ft_putnbr_base_bin(unsigned long long nb, int base);
 
 
 /*i & d*/

@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/23 20:08:23 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/24 02:45:56 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libftprintf.a
 
 CC			= 	gcc
-CFLAGS		= 	-Wall -Werror -Wextra -pg
+CFLAGS		= 	-Wall -Werror -Wextra
 
 PRINTF 		= 	ft_printf.c ft_printf_conv.c
 
@@ -26,9 +26,9 @@ PRINTF_c_C	=	ft_conv_c_C/ft_conv_c.c ft_conv_c_C/ft_conv_char_0.c
 PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c ft_conv_o_O/ft_conv_oct_1.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
 PRINTF_FUNC	=	ft_funcs/ft_atoi_ll.c ft_funcs/ft_itoa_base_ull.c \
-				ft_funcs/ft_nbrlen_l.c \
+				ft_funcs/ft_nbrlen_ll.c \
 				ft_funcs/ft_putnbr_base_ull.c ft_funcs/ft_putnbr_ll.c \
-				ft_funcs/ft_putnbr_ull.c ft_funcs/ft_putnbr_base_bin.c
+				ft_funcs/ft_putnbr_ull.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
