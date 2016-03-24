@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 13:13:42 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 22:12:59 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int			ft_binary_to_decimal(int b) //Add_libft
 	while (i++ < len)
 		if (binary[i] == '1')
 			r_value += ft_power(2, len - i - 1);
+	ft_strdel(&binary);
 	return (r_value);
 }
 
@@ -109,7 +110,6 @@ int			ft_conv_s(va_list pa, t_flags flags)
 		ft_after_str(&flags, ln);
 		return (ln + flags.spaces_count);
 	}
-	return (0);
 }
 
 /*
@@ -250,5 +250,4 @@ int			ft_conv_S(va_list pa, t_flags flags)
 		ft_after_str(&flags, ln);
 		return (ln + flags.spaces_count);
 	}
-	return (0);
 }

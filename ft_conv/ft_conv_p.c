@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:10:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 01:08:51 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,10 @@ int		ft_conv_p(va_list *pa, t_flags flags)
 		ft_after_null(&flags, len);
 		return (len + flags.spaces_count);
 	}
-	ft_before(&flags, ft_printf("%!x", local_pa) + 2);
+	ft_before(&flags, ft_printf("%!lx", local_pa) + 2);
 	(!flags.display) ? ft_putstr("0x") : 0;
-	ft_middle(&flags, ft_printf("%!x", local_pa) + 2);
-	(!flags.display) ? ft_printf("%x", local_pa) : 0;
-	ft_after(&flags, ft_printf("%!x", local_pa) + 2);
-	return (ft_printf("%!x", local_pa) + flags.spaces_count + 2);
+	ft_middle(&flags, ft_printf("%!lx", local_pa) + 2);
+	(!flags.display) ? ft_printf("%lx", local_pa) : 0;
+	ft_after(&flags, ft_printf("%!lx", local_pa) + 2);
+	return (ft_printf("%!lx", local_pa) + flags.spaces_count + 2);
 }

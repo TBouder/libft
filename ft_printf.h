@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 16:38:11 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 02:15:44 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include <limits.h> // ?
-#include <locale.h> // ?
+# include <locale.h> // ?
 # include "libft/libft.h"
 # define ULL unsigned long long
 
@@ -36,16 +36,12 @@ typedef struct		s_flags
 	int				plus;
 	int				empty;
 	int				display;
+	int				temp;
 }					t_flags;
 
 int		ft_printf(const char * restrict format, ...);
 int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index);
 int		ft_is_printf(char c);
-
-/*Tools*/
-void	ft_flag_r_justified(t_flags *flags, int v_len);
-void	ft_flag_l_justified(t_flags *flags, int v_len);
-void	ft_put_precision(t_flags flags, long long local_pa, int base, int maj);
 
 int		ft_binary_to_decimal(int b); //Add_libft
 int		*ft_parse_binary(long long b);
@@ -76,41 +72,33 @@ void	ft_putnbr_base_bin(unsigned long long nb, int base);
 /*i & d*/
 int		ft_d_i(va_list pa, t_flags flag);
 int		ft_D_I(va_list pa, t_flags flag);
-
-void	ft_put_preci_int_ll(t_flags *flags, long long local_pa);
-void	ft_put_preci_int_l(t_flags *flags, long long local_pa);
-void	ft_put_preci_int(t_flags *flags, long long local_pa);
+void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
 int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
 
-
-
 /*x & X*/
-void	ft_put_preci_hex_ll(t_flags *flags, long long local_pa, int maj);
-void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj);
+int		ft_x(va_list pa, t_flags flag, int maj);
+void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag);
 void	ft_before_x(t_flags *flags, int v_len, long long value, int maj);
 void	ft_after_hex(t_flags *flags, int v_len);
 int		ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str, int index);
-int		ft_conv_x(va_list pa, t_flags flags);
-int		ft_conv_x_l(va_list pa, t_flags flags);
-int		ft_conv_x_hh(va_list pa, t_flags flags);
-int		ft_conv_x_z(va_list pa, t_flags flags);
-int		ft_conv_X(va_list pa, t_flags flags);
-int		ft_conv_X_l(va_list pa, t_flags flags);
-int		ft_conv_X_hh(va_list pa, t_flags flags);
-int		ft_conv_X_z(va_list pa, t_flags flags);
+
+/*o & O*/
+int		ft_o(va_list pa, t_flags flag);
+int		ft_O(va_list pa, t_flags flag);
+void	ft_put_precision_oct(t_flags *flags, long long local_pa);
+void	ft_before_o(t_flags *flags, int v_len, int index, long long local_pa);
+void	ft_after_o(t_flags *flags, int v_len);
+int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
 
 /*u & U*/
 int		ft_u(va_list pa, t_flags flag);
 int		ft_U(va_list pa, t_flags flag);
-
-void	ft_put_preci_uni_ll(t_flags *flags, long long local_pa);
-void	ft_put_precision_uni(t_flags *flags, long long local_pa);
+void	ft_put_preci_uni(t_flags *flags, long long local_pa);
 void	ft_before_u(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_u(t_flags *flags, int v_len);
 int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
-
 
 /*s & S*/
 void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
@@ -119,16 +107,6 @@ void	ft_after_str(t_flags *flags, int v_len);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
 int		ft_conv_S(va_list pa, t_flags flags);
-
-/*o & O*/
-int		ft_o(va_list pa, t_flags flag);
-int		ft_O(va_list pa, t_flags flag);
-
-void	ft_put_precision_oct_ll(t_flags *flags, long long local_pa);
-void	ft_put_precision_oct(t_flags *flags, long long local_pa);
-void	ft_before_o(t_flags *flags, int v_len, int index, long long local_pa);
-void	ft_after_o(t_flags *flags, int v_len);
-int		ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str, int index);
 
 
 int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index);

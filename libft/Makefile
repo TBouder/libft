@@ -6,14 +6,14 @@
 #    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/21 22:07:48 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/23 22:22:39 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libft.a
 
 CC			= 	gcc
-CFLAGS		= 	-Wall -Werror -Wextra
+CFLAGS		= 	-Wall -Werror -Wextra -g
 
 FT_IS		=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isnumber.c \

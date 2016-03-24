@@ -6,13 +6,13 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 14:52:53 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 02:25:37 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_init_flags(t_flags *flag)
+static void		ft_init_flags(t_flags *flag)
 {
 	flag->diaiz = 0;
 	flag->zero = 0;
@@ -25,9 +25,10 @@ static void	ft_init_flags(t_flags *flag)
 	flag->spaces_count = 0;
 	flag->preci_diff = 0;
 	flag->display = 0;
+	flag->temp = 0;
 }
 
-int		ft_load_flags(char *str, int index, t_flags *flag)
+static int		ft_load_flags(char *str, int index, t_flags *flag)
 {
 	ft_init_flags(flag);
 	while (ft_is_printf(str[index]) == 0)
@@ -56,12 +57,11 @@ int		ft_load_flags(char *str, int index, t_flags *flag)
 /* ----FLAGS AU DESSUS ---- */
 
 
-int		ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
+int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
 	t_flags		flags;
 
 	index = ft_load_flags(str, index, &flags);
-
 	if (str[index] == '\0')
 	{
 		*r_value -= 1;

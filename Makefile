@@ -6,20 +6,20 @@
 #    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/23 16:05:03 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/03/23 20:08:23 by Tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libftprintf.a
 
 CC			= 	gcc
-CFLAGS		= 	-Wall -Werror -Wextra
+CFLAGS		= 	-Wall -Werror -Wextra -pg
 
-PRINTF 		= 	ft_printf.c ft_printf_conv.c ft_tools.c
+PRINTF 		= 	ft_printf.c ft_printf_conv.c
 
 PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_p.c
 PRINTF_d_i	=	ft_conv_d_i/ft_conv_d_i.c ft_conv_d_i/ft_conv_int_0.c ft_conv_d_i/ft_conv_int_1.c
-PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_X.c ft_conv_x_X/ft_conv_hex_0.c ft_conv_x_X/ft_conv_hex_1.c
+PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_hex_0.c ft_conv_x_X/ft_conv_hex_1.c
 PRINTF_u_U	=	ft_conv_u_U/ft_conv_u.c ft_conv_u_U/ft_conv_uni_0.c ft_conv_u_U/ft_conv_uni_1.c
 PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c ft_conv_s_S/ft_conv_str_0.c
 PRINTF_c_C	=	ft_conv_c_C/ft_conv_c.c ft_conv_c_C/ft_conv_char_0.c

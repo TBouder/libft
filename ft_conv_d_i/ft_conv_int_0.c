@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 16:04:56 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 02:16:30 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 					int i)
 {
 	(value < 0) && (!flags->display) ? ft_putchar('-') : 0;
+	(value < 0) ? flags->temp = 1 : 0;
 	(value < 0) ? flags->zero-- : 0;
 	(flags->plus == 1) && (value < 0) ? flags->zero++ : 0;
 	(flags->plus == 1) ? v_len++ : 0;

@@ -3,27 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_int_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:23:55 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 13:51:47 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 02:20:51 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
 /*
-** The ft_put_preci_int_ll() function adjusts the precision before displaying
-** the output (for long long).
+** The ft_put_preci_int() function adjusts the precision before displaying
+** the output.
 */
 
-void	ft_put_preci_int_ll(t_flags *flags, long long local_pa)
+static void		ft_preci_int_l(t_flags *flags, long long lpa)
+{
+	if (lpa < (long)-2147483648)
+		(!flags->display) ? ft_putnbr_ull(-lpa) : 0;
+	else if (!(flags->preci == -1 && lpa == 0))
+		(!flags->display) ? ft_putnbr_ll(lpa) : 0;
+	else
+		flags->spaces_count--;
+}
+
+static void		ft_preci_int(t_flags *flags, long long lpa)
+{
+	if (!(flags->preci == -1 && lpa == 0))
+		(!flags->display) ? ft_putnbr_base(lpa, 10, 0) : 0;
+	else
+		flags->spaces_count--;
+}
+
+void			ft_put_preci_int(t_flags *flags, long long lpa, int id)
 {
 	int		len;
 
-	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
-	if (local_pa < 0 && flags->preci > 0 && (!flags->display))
-		ft_putchar('-');
+	len = (ft_nbrlen_ll(lpa) == 0) ? 1 : ft_nbrlen_ll(lpa);
+	if (lpa < 0 && flags->temp == 0)
+		(!flags->display) ? ft_putchar('-') : 0;
 	while (flags->preci - len > 0)
 	{
 		(!flags->display) ? ft_putchar('0') : 0;
@@ -31,88 +49,12 @@ void	ft_put_preci_int_ll(t_flags *flags, long long local_pa)
 		flags->preci -= 1;
 		flags->preci_diff += 1;
 	}
-	if (local_pa < 0)
-	{
-		if (flags->zero > 0)
-			local_pa = -local_pa;
-		else if (flags->preci_diff != 0)
-			local_pa = -local_pa;
-	}
-	if (local_pa == -1)
-		(!flags->display) ? ft_putnbr_ull(-local_pa) : 0;
-	else
-		(!flags->display) ? ft_putnbr_ull(local_pa) : 0;
-}
+	(lpa < 0) ? lpa = -lpa : 0;
+	if ((flags->l == 0 || flags->l == 3 || flags->l == 4) && id == 0)
+		ft_preci_int(flags, lpa);
+	if ((flags->l == 1 || flags->l == 5 || flags->l == 6) && id == 0)
+		ft_preci_int_l(flags, lpa);
+	if (flags->l == 2 || id == 1)
+		(!flags->display) ? ft_putnbr_ull(lpa) : 0;
 
-/*
-** The ft_put_preci_int_l() function adjusts the precision before displaying
-** the output (for long).
-*/
-
-void	ft_put_preci_int_l(t_flags *flags, long long local_pa)
-{
-	int		len;
-
-	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
-	if (local_pa < 0 && flags->preci > 0 && (!flags->display))
-		ft_putchar('-');
-	while (flags->preci - len > 0)
-	{
-		(!flags->display) ? ft_putchar('0'): 0;
-		flags->preci_diff += 1;
-		flags->spaces_count += 1;
-		flags->preci -= 1;
-	}
-	if (local_pa < 0)
-	{
-		if (flags->zero > 0)
-			local_pa = -local_pa;
-		else if (flags->preci_diff != 0)
-			local_pa = -local_pa;
-		else if (flags->preci > 0)
-			local_pa = -local_pa;
-	}
-	if (local_pa < (long)-INT_MIN)
-	{
-		(!flags->display) ? ft_putstr("-") : 0;
-		(!flags->display) ? ft_putnbr_ull(-local_pa) : 0;
-	}
-	else if (!(flags->preci == -1 && local_pa == 0))
-		(!flags->display) ? ft_putnbr_ll(local_pa) : 0;
-	else
-		flags->spaces_count--;
-}
-
-/*
-** The ft_put_preci_int() function adjusts the precision before displaying
-** the output.
-*/
-
-void	ft_put_preci_int(t_flags *flags, long long local_pa)
-{
-	int		len;
-
-	len = (ft_nbrlen_ll(local_pa) == 0) ? 1 : ft_nbrlen_ll(local_pa);
-	if (local_pa < 0 && flags->preci > 0 && (!flags->display))
-		ft_putchar('-');
-	while (flags->preci - len > 0)
-	{
-		(!flags->display) ? ft_putchar('0'): 0;
-		flags->preci_diff += 1;
-		flags->spaces_count += 1;
-		flags->preci -= 1;
-	}
-	if (local_pa < 0)
-	{
-		if (flags->zero > 0)
-			local_pa = -local_pa;
-		else if (flags->preci_diff != 0)
-			local_pa = -local_pa;
-		else if (flags->preci > 0)
-			local_pa = -local_pa;
-	}
-	if (!(flags->preci == -1 && local_pa == 0))
-		(!flags->display) ? ft_putnbr_base(local_pa, 10, 0) : 0;
-	else
-		flags->spaces_count--;
 }

@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 15:37:00 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 01:21:32 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int		ft_o(va_list pa, t_flags flag)
 {
+	char		*s;
 	long long	lpa;
 	long long	value;
 	int			len;
@@ -31,11 +32,12 @@ int		ft_o(va_list pa, t_flags flag)
 		value = (lpa < 0) ? 256 + lpa : lpa % 256;
 	else
 		value = lpa;
-	len = ft_strlen(ft_itoa_base_ll(value, 8));
+	len = ft_strlen((s = ft_itoa_base_ll(value, 8)));
 	ft_before_o(&flag, len, 0, value);
-	ft_put_precision_oct_ll(&flag, value);
+	ft_put_precision_oct(&flag, value);
 	ft_after_o(&flag, len);
 	(flag.l == 0 && value == 0 && flag.preci == -1) ? len-- : 0;
+	ft_strdel(&s);
 	return (len + flag.spaces_count);
 }
 
@@ -45,15 +47,17 @@ int		ft_o(va_list pa, t_flags flag)
 
 int		ft_O(va_list pa, t_flags flag)
 {
+	char		*s;
 	long long	lpa;
 	long long	value;
 	int			len;
 
 	lpa = va_arg(pa, long long);
 	value = lpa;
-	len = ft_strlen(ft_itoa_base_ll(value, 8));
+	len = ft_strlen((s = ft_itoa_base_ll(value, 8)));
+	ft_strdel(&s);
 	ft_before_o(&flag, len, 0, value);
-	ft_put_precision_oct_ll(&flag, value);
+	ft_put_precision_oct(&flag, value);
 	ft_after_o(&flag, len);
 	(flag.l == 0 && value == 0 && flag.preci == -1) ? len-- : 0;
 	return (len + flag.spaces_count);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_hex_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 16:09:19 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/23 20:07:54 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,26 +100,8 @@ int				ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'X')
-	{
-		if (flags.l == 1 || flags.l == 2 || flags.l == 5)
-			return (ft_conv_X_l(*pa, flags));
-		else if (flags.l == 4)
-			return (ft_conv_X_hh(*pa, flags));
-		else if (flags.l == 6)
-			return (ft_conv_X_z(*pa, flags));
-		else
-			return (ft_conv_X(*pa, flags));
-	}
+		return (ft_x(*pa, flags, 1));
 	else if (str[index] == 'x')
-	{
-		if (flags.l == 1 || flags.l == 2 || flags.l == 5)
-			return (ft_conv_x_l(*pa, flags));
-		else if (flags.l == 4)
-			return (ft_conv_x_hh(*pa, flags));
-		else if (flags.l == 6)
-			return (ft_conv_x_z(*pa, flags));
-		else
-			return (ft_conv_x(*pa, flags));
-	}
+		return (ft_x(*pa, flags, 0));
 	return (0);
 }
