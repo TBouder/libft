@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:25:37 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:33:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,6 @@ static int		ft_load_flags(char *str, int index, t_flags *flag)
 	return (index);
 }
 
-/* ----FLAGS AU DESSUS ---- */
-
-
 int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
 	t_flags		flags;
@@ -68,19 +65,15 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 		return (index + 1);
 	}
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;
-	*r_value += ft_launch_conv_d_i(pa, flags, str, index); //ADD D
+	*r_value += ft_launch_conv_d_i(pa, flags, str, index);
 	*r_value += ft_launch_conv_x(pa, flags, str, index);
 	*r_value += ft_launch_conv_u(pa, flags, str, index);
-	*r_value += ft_launch_conv_s(pa, flags, str, index); //ADD S
-	*r_value += ft_launch_conv_c(pa, flags, str, index); //ADD S
+	*r_value += ft_launch_conv_s(pa, flags, str, index);
+	*r_value += ft_launch_conv_c(pa, flags, str, index);
 	*r_value += ft_launch_conv_o(pa, flags, str, index);
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags) : 0;
-	// *r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
-	// *r_value += str[index] == 'C' ? ft_conv_c(*pa, flags) : 0;
 	*r_value -= 1;
-
 	if (ft_is_printf(str[index]) == 2)
 		*r_value += ft_conv_char(flags, str[index]);
-
 	return (index);
 }
