@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 11:17:31 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 12:58:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ int		ft_nbrlen_ll(long long n);
 void	ft_putnbr_base_ull(unsigned long long nb, int base, int maj);
 void	ft_putnbr_ll(long long nb);
 void	ft_putnbr_ull(unsigned long long nb);
+int		ft_wstrlen_flags(wchar_t *str, t_flags flags);
+int		ft_wstrlen(wchar_t *str);
+int		ft_wchar_len(int *nbr);
 
 
 /*i & d*/
