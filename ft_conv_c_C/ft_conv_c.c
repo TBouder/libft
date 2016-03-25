@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:28:47 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:07:21 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:42:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_conv_lc(va_list pa, t_flags flags)
 	ft_before_c(&flags, 1);
 	bin = ft_itoa_base(local_pa, 2);
 	nbr = ft_parse_binary(ft_atoi_ll(bin));
+	ft_strdel(&bin);
 	while (nbr[i] != -1)
 	{
 		nbr[i] = ft_binary_to_decimal(nbr[i]);

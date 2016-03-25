@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:00:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:07:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:42:55 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ static int	ft_conv_ws_case1(t_flags flags)
 	return (ln);
 }
 
-static int	ft_conv_ws_case3(t_flags flags, wchar_t *lpa)
+static int	ft_conv_ws_case3(t_flags flags, wchar_t *lpa, int i)
 {
 	int		j;
-	int		i;
 	int		ln;
 	char	*bin;
 	int		*nbr;
 
-	i = 0;
 	ln = flags.preci != 0 ? ft_wstrlen_flags(lpa, flags) : ft_wstrlen(lpa);
 	ft_before_str(&flags, ln);
 	while (lpa[i])
@@ -40,6 +38,7 @@ static int	ft_conv_ws_case3(t_flags flags, wchar_t *lpa)
 		j = 0;
 		bin = ft_itoa_base(lpa[i], 2);
 		nbr = ft_parse_binary(ft_atoi_ll(bin));
+		ft_strdel(&bin);
 		while (nbr[j] != -1)
 		{
 			nbr[j] = ft_binary_to_decimal(nbr[j]);
@@ -52,16 +51,14 @@ static int	ft_conv_ws_case3(t_flags flags, wchar_t *lpa)
 	return (ln + flags.spaces_count);
 }
 
-static int	ft_conv_ws_case4(t_flags flags, wchar_t *lpa, int i)
+static int	ft_conv_ws_case4(t_flags flags, wchar_t *lpa, int i, int lnn)
 {
 	int		j;
 	int		ln;
-	int		lnn;
 	char	*bin;
 	int		*nbr;
 
 	ln = flags.preci != 0 ? ft_wstrlen_flags(lpa, flags) : ft_wstrlen(lpa);
-	lnn = 0;
 	ft_before_str(&flags, ln);
 	while (lpa[i] && lnn < flags.preci)
 	{
@@ -69,6 +66,7 @@ static int	ft_conv_ws_case4(t_flags flags, wchar_t *lpa, int i)
 		bin = ft_itoa_base(lpa[i], 2);
 		nbr = ft_parse_binary(ft_atoi_ll(bin));
 		lnn += ft_wchar_len(nbr);
+		ft_strdel(&bin);
 		while (nbr[j] != -1 && lnn <= flags.preci)
 		{
 			nbr[j] = ft_binary_to_decimal(nbr[j]);
@@ -92,7 +90,7 @@ int			ft_conv_ls(va_list pa, t_flags flags)
 	else if (lpa == NULL && flags.preci >= 0)
 		return (ft_conv_s_case2(flags));
 	else if (lpa != NULL && flags.preci == 0)
-		return (ft_conv_ws_case3(flags, lpa));
+		return (ft_conv_ws_case3(flags, lpa, 0));
 	else
-		return (ft_conv_ws_case4(flags, lpa, 0));
+		return (ft_conv_ws_case4(flags, lpa, 0, 0));
 }

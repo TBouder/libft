@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_int_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:16:30 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 14:01:17 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
 	(value < 0) ? flags->spaces-- : 0;
 	(flags->empty == 1 && flags->spaces > v_len + flags->preci) ? v_len++ : 0;
 	(v_len < flags->preci) ? v_len = flags->preci : 0;
+	(flags->plus == 1 && value < 0) ? flags->spaces++ : 0;
+	(flags->plus == 1 && flags->preci == 0) ? v_len++ : 0;
 	while (flags->spaces-- - v_len != 0)
 	{
 		flags->spaces_count++;
@@ -32,7 +34,7 @@ static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
 	{
 		if (flags->plus == 1 && value >= 0 && (!flags->display))
 			ft_putchar('+');
-		(flags->plus == 1) && (value >= 0) ? flags->spaces_count++ : 0;
+		(flags->plus == 1 && value >= 0) ? flags->spaces_count++ : 0;
 	}
 }
 
@@ -44,16 +46,16 @@ static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
 static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 					int i)
 {
-	(value < 0) && (!flags->display) ? ft_putchar('-') : 0;
+	(value < 0 && !flags->display) ? ft_putchar('-') : 0;
 	(value < 0) ? flags->temp = 1 : 0;
 	(value < 0) ? flags->zero-- : 0;
-	(flags->plus == 1) && (value < 0) ? flags->zero++ : 0;
+	(flags->plus == 1 && value < 0) ? flags->zero++ : 0;
 	(flags->plus == 1) ? v_len++ : 0;
 	if (flags->empty == 1)
 	{
 		v_len++;
 		(value == 0) ? flags->spaces_count++ : 0;
-		(value == 0) && (!flags->display) ? ft_putchar(' ') : 0;
+		(value == 0 && !flags->display) ? ft_putchar(' ') : 0;
 	}
 	while (flags->zero-- - v_len != 0)
 	{
@@ -64,7 +66,7 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 	{
 		if (flags->plus == 1 && value >= 0 && (!flags->display))
 			ft_putchar('+');
-		(flags->plus == 1) && (value >= 0) ? flags->spaces_count++ : 0;
+		(flags->plus == 1 && value >= 0) ? flags->spaces_count++ : 0;
 	}
 }
 

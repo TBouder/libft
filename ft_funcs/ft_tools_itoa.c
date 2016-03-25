@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:16:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:37:54 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 #include "../ft_printf.h"
 
-static void			ft_convert_base(unsigned long long n, int base, char *s,
+static void			ft_convert_base(ULL n, int base, char *s,
 						int *index)
 {
 	char	*str;
 
 	str = "0123456789ABCDEF";
-	if (n < (unsigned long long)base)
+	if (n < (ULL)base)
 	{
 		s[*index] = str[n];
 		*index += 1;
@@ -35,7 +35,7 @@ static void			ft_convert_base(unsigned long long n, int base, char *s,
 	}
 }
 
-static int			ft_nbrlen_bb(unsigned long long n, int base)
+static int			ft_nbrlen_bb(ULL n, int base)
 {
 	int		len;
 
@@ -48,7 +48,7 @@ static int			ft_nbrlen_bb(unsigned long long n, int base)
 	return (len);
 }
 
-char				*ft_itoa_base_ull(unsigned long long n, int base)
+char				*ft_itoa_base_ull(ULL n, int base)
 {
 	char	*s;
 	int		len;
@@ -61,7 +61,7 @@ char				*ft_itoa_base_ull(unsigned long long n, int base)
 	return (s);
 }
 
-char				*ft_itoa_base_ll(unsigned long long n, int base)
+char				*ft_itoa_base_ll(ULL n, int base)
 {
 	char	*s;
 	int		len;
@@ -76,8 +76,8 @@ char				*ft_itoa_base_ll(unsigned long long n, int base)
 
 ULL					ft_atoi_ll(const char *str)
 {
-	unsigned long long	result;
-	int					sign;
+	ULL		result;
+	int		sign;
 
 	sign = 1;
 	result = 0;
