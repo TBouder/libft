@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:00:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:00:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:07:54 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int	ft_conv_ws_case4(t_flags flags, wchar_t *lpa, int i)
 	return (ln + flags.spaces_count);
 }
 
-int			ft_conv_S(va_list pa, t_flags flags)
+int			ft_conv_ls(va_list pa, t_flags flags)
 {
 	wchar_t		*lpa;
 

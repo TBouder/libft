@@ -33,7 +33,7 @@ int		ft_d_i(va_list pa, t_flags flag)
 	return (len + flag.spaces_count + sign + space);
 }
 
-int		ft_D_I(va_list pa, t_flags flag)
+int		ft_ld(va_list pa, t_flags flag)
 {
 	long long	lpa;
 	int			sign;

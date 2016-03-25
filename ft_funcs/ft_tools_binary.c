@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:06:35 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 11:11:11 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:17:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int				*ft_parse_binary(long long b)
 ** Convert from binary to decimal
 */
 
-int				ft_binary_to_decimal(int b) //Add_libft
+int				ft_binary_to_decimal(int b)
 {
 	char	*binary;
 	int		len;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_x.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:30:07 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 01:17:17 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:16:05 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int		ft_x(va_list pa, t_flags flag, int maj)
 		value = lpa % 256;
 	else
 		value = lpa;
-	len = ft_strlen((s = ft_itoa_base_ull(value, 16)));
+	s = ft_itoa_base_ull(value, 16);
+	len = ft_strlen(s);
 	ft_before_x(&flag, ft_strlen(s), value, maj);
 	ft_put_preci_hex(&flag, value, maj, flag.l);
 	ft_after_hex(&flag, ft_strlen(s));

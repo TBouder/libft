@@ -76,15 +76,15 @@ void			ft_after_u(t_flags *flags, int v_len)
 }
 
 /*
-** The ft_launch_conv_u_U() function launchs the conversion by u or U.
+** The ft_launch_conv_u() function launchs the conversion by u or U.
 */
 
-int				ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str,
+int				ft_launch_conv_u(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'u')
 		return (ft_u(*pa, flags));
 	if (str[index] == 'U')
-		return (ft_U(*pa, flags));
+		return (ft_lu(*pa, flags));
 	return (0);
 }

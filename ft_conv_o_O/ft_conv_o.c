@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_o.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:29:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 01:21:32 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:27:14 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int		ft_o(va_list pa, t_flags flag)
 		value = (lpa < 0) ? 256 + lpa : lpa % 256;
 	else
 		value = lpa;
-	len = ft_strlen((s = ft_itoa_base_ll(value, 8)));
+	s = ft_itoa_base_ll(value, 8);
+	len = ft_strlen(s);
 	ft_before_o(&flag, len, 0, value);
 	ft_put_precision_oct(&flag, value);
 	ft_after_o(&flag, len);
@@ -42,10 +43,10 @@ int		ft_o(va_list pa, t_flags flag)
 }
 
 /*
-** The ft_O() function launchs the conversion for O specifier.
+** The ft_lo() function launchs the conversion for O specifier.
 */
 
-int		ft_O(va_list pa, t_flags flag)
+int		ft_lo(va_list pa, t_flags flag)
 {
 	char		*s;
 	long long	lpa;
@@ -54,7 +55,8 @@ int		ft_O(va_list pa, t_flags flag)
 
 	lpa = va_arg(pa, long long);
 	value = lpa;
-	len = ft_strlen((s = ft_itoa_base_ll(value, 8)));
+	s = ft_itoa_base_ll(value, 8);
+	len = ft_strlen(s);
 	ft_strdel(&s);
 	ft_before_o(&flag, len, 0, value);
 	ft_put_precision_oct(&flag, value);

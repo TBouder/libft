@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:28:47 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 16:07:37 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:07:21 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_conv_c(va_list pa, t_flags flags)
 	return (1 + flags.spaces_count);
 }
 
-int		ft_conv_C(va_list pa, t_flags flags)
+int		ft_conv_lc(va_list pa, t_flags flags)
 {
 	wchar_t		local_pa;
 	int			i;
@@ -44,8 +44,6 @@ int		ft_conv_C(va_list pa, t_flags flags)
 		i++;
 		ln++;
 	}
-	// (!flags.display) ? ft_putchar(local_pa) : 0;
-
 	ft_after_c(&flags, ln);
 	return (ln + flags.spaces_count);
 }

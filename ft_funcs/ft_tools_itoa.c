@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 11:06:03 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:16:50 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char				*ft_itoa_base_ll(unsigned long long n, int base)
 ULL					ft_atoi_ll(const char *str)
 {
 	unsigned long long	result;
-	int		sign;
+	int					sign;
 
 	sign = 1;
 	result = 0;

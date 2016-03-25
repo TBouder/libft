@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:00:49 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:15:19 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_put_precision_str(t_flags flags, char *local_pa, int len)
 	{
 		(flags.preci == -1 && (!flags.display)) ? ft_putchar(' ') : 0;
 		(flags.preci != -1 && (!flags.display)) ? ft_putchar(local_pa[i]) : 0;
-		i++;;
+		i++;
 	}
 }
 
@@ -99,10 +99,10 @@ void	ft_after_str(t_flags *flags, int v_len)
 }
 
 /*
-** The ft_launch_conv_s_S() function launchs the conversion by s or S.
+** The ft_launch_conv_s() function launchs the conversion by s or S.
 */
 
-int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
+int		ft_launch_conv_s(va_list *pa, t_flags flags, char *str, int index)
 {
 	if (str[index] == 's' && flags.l != 1)
 	{
@@ -110,7 +110,7 @@ int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index)
 	}
 	if (str[index] == 'S' || (str[index] == 's' && flags.l == 1))
 	{
-		return (ft_conv_S(*pa, flags));
+		return (ft_conv_ls(*pa, flags));
 	}
 	return (0);
 }

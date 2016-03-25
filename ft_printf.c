@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 11:35:12 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:29:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		ft_undef(const char *str, int i)
 	return (0);
 }
 
-int		ft_is_printf(char c)
+int				ft_is_printf(char c)
 {
 	if (c == '%' || c == 'd' || c == 'D' || c == 'i' || c == 'x' || c == 'X'
 		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
@@ -35,7 +35,7 @@ int		ft_is_printf(char c)
 	return (2);
 }
 
-int		ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list		pa;
 	int			i;

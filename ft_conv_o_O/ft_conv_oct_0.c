@@ -95,15 +95,15 @@ void			ft_after_o(t_flags *flags, int v_len)
 }
 
 /*
-** The ft_launch_conv_o_O() function launchs the conversion by o or O.
+** The ft_launch_conv_o() function launchs the conversion by o or O.
 */
 
-int				ft_launch_conv_o_O(va_list *pa, t_flags flags, char *str,
+int				ft_launch_conv_o(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'o')
 		return (ft_o(*pa, flags));
 	else if (str[index] == 'O')
-		return (ft_O(*pa, flags));
+		return (ft_lo(*pa, flags));
 	return (0);
 }

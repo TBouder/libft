@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_int_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:23:55 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:20:51 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:12:30 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,4 @@ void			ft_put_preci_int(t_flags *flags, long long lpa, int id)
 		ft_preci_int_l(flags, lpa);
 	if (flags->l == 2 || id == 1)
 		(!flags->display) ? ft_putnbr_ull(lpa) : 0;
-
 }

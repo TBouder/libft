@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_hex_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 16:20:09 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 01:24:14 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:15:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag)
 	char	*s;
 	int		len;
 
-	len = ft_strlen((s = ft_itoa_base(local_pa, 16)));
+	s = ft_itoa_base(local_pa, 16);
+	len = ft_strlen(s);
 	while (flags->preci - len > 0)
 	{
 		(!flags->display) ? ft_putchar('0') : 0;

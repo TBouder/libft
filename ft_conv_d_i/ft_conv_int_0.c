@@ -128,6 +128,6 @@ int				ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str,
 	if (str[index] == 'd' || str[index] == 'i')
 		return (ft_d_i(*pa, flags));
 	else if (str[index] == 'D')
-		return (ft_D_I(*pa, flags));
+		return (ft_ld(*pa, flags));
 	return (0);
 }

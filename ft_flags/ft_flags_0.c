@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_0.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/18 23:51:42 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:17:31 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,37 +72,8 @@ int		ft_flag_preci(char *str, int *index)
 	return (value);
 }
 
-int		ft_flag_length(char *str, int *index)
+int		ft_flag_bool(int *index)
 {
-	if (str[*index] == 'l' && str[*index + 1] != 'l')
-	{
-		*index += 1;
-		return (1);
-	}
-	if (str[*index] == 'l' && str[*index + 1] == 'l')
-	{
-		*index += 2;
-		return (2);
-	}
-	if (str[*index] == 'h' && str[*index + 1] != 'h')
-	{
-		*index += 1;
-		return (3);
-	}
-	if (str[*index] == 'h' && str[*index + 1] == 'h')
-	{
-		*index += 2;
-		return (4);
-	}
-	if (str[*index] == 'j')
-	{
-		*index += 1;
-		return (5);
-	}
-	if (str[*index] == 'z')
-	{
-		*index += 1;
-		return (6);
-	}
-	return (0);
+	*index += 1;
+	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:02 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 01:26:05 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:28:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ int		ft_u(va_list pa, t_flags flag)
 	int			len;
 
 	flag.l == 0 || flag.l == 4 ? lpa = va_arg(pa, unsigned int) : 0;
-	flag.l == 1  || flag.l == 2 || flag.l == 3 || flag.l == 5 || flag.l == 6
+	flag.l == 1 || flag.l == 2 || flag.l == 3 || flag.l == 5 || flag.l == 6
 		? lpa = va_arg(pa, long) : 0;
 	value = (flag.l == 0 && lpa < 0) ? 4294967296 + lpa : lpa;
 	value = (flag.l == 4) ? lpa % 256 : lpa;
-	len = ft_strlen((s = ft_itoa_base_ull(value, 10)));
+	s = ft_itoa_base_ull(value, 10);
+	len = ft_strlen(s);
 	ft_before_u(&flag, len, value);
 	ft_put_preci_uni(&flag, value);
 	ft_after_u(&flag, len);
@@ -33,15 +34,15 @@ int		ft_u(va_list pa, t_flags flag)
 	return (len + flag.spaces_count);
 }
 
-//HHU saute de temps en temps
-int		ft_U(va_list pa, t_flags flag)
+int		ft_lu(va_list pa, t_flags flag)
 {
 	char		*s;
 	long long	local_pa;
 	int			len;
 
 	local_pa = va_arg(pa, long long);
-	len = ft_strlen((s = ft_itoa_base_ull(local_pa, 10)));
+	s = ft_itoa_base_ull(local_pa, 10);
+	len = ft_strlen(s);
 	ft_before_u(&flag, len, local_pa);
 	ft_put_preci_uni(&flag, local_pa);
 	ft_after_u(&flag, len);

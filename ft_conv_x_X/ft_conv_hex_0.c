@@ -93,10 +93,10 @@ void			ft_after_hex(t_flags *flags, int v_len)
 }
 
 /*
-** The ft_launch_conv_x_X() function launchs the conversion by x or X.
+** The ft_launch_conv_x() function launchs the conversion by x or X.
 */
 
-int				ft_launch_conv_x_X(va_list *pa, t_flags flags, char *str,
+int				ft_launch_conv_x(va_list *pa, t_flags flags, char *str,
 					int index)
 {
 	if (str[index] == 'X')

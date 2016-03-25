@@ -69,11 +69,11 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	}
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;
 	*r_value += ft_launch_conv_d_i(pa, flags, str, index); //ADD D
-	*r_value += ft_launch_conv_x_X(pa, flags, str, index);
-	*r_value += ft_launch_conv_u_U(pa, flags, str, index);
-	*r_value += ft_launch_conv_s_S(pa, flags, str, index); //ADD S
-	*r_value += ft_launch_conv_c_C(pa, flags, str, index); //ADD S
-	*r_value += ft_launch_conv_o_O(pa, flags, str, index);
+	*r_value += ft_launch_conv_x(pa, flags, str, index);
+	*r_value += ft_launch_conv_u(pa, flags, str, index);
+	*r_value += ft_launch_conv_s(pa, flags, str, index); //ADD S
+	*r_value += ft_launch_conv_c(pa, flags, str, index); //ADD S
+	*r_value += ft_launch_conv_o(pa, flags, str, index);
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags) : 0;
 	// *r_value += str[index] == 'c' ? ft_conv_c(*pa, flags) : 0;
 	// *r_value += str[index] == 'C' ? ft_conv_c(*pa, flags) : 0;

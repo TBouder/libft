@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_char_0.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 15:39:27 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/22 18:03:30 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 13:11:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	ft_after_c(t_flags *flags, int v_len)
 }
 
 /*
-** The ft_launch_conv_c_C() function launchs the conversion by c or C.
+** The ft_launch_conv_c() function launchs the conversion by c or C.
 */
 
-int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index)
+int		ft_launch_conv_c(va_list *pa, t_flags flags, char *str, int index)
 {
 	if (str[index] == 'c' && flags.l != 1)
 	{
@@ -73,7 +73,7 @@ int		ft_launch_conv_c_C(va_list *pa, t_flags flags, char *str, int index)
 	}
 	if (str[index] == 'C' || (str[index] == 'c' && flags.l == 1))
 	{
-		return (ft_conv_C(*pa, flags));
+		return (ft_conv_lc(*pa, flags));
 	}
 	return (0);
 }
