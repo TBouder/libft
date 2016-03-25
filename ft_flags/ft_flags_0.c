@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:17:31 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:17:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags)
 
 	i = 0;
 	zero = 0;
+	if (flags->zero != 0)
+	{
+		*index += 1;
+		return (flags->zero);
+	}
 	if (str[*index] == '0')
 	{
 		*index += 1;
