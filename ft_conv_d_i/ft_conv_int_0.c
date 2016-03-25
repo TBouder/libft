@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 14:31:42 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 14:38:15 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@ void			ft_before_d_i(t_flags *flags, int v_len, long long value)
 void			ft_after_d_i(t_flags *flags, int v_len, long long local_pa)
 {
 	(local_pa < 0) ? v_len++ : 0;
-	// (flags->plus == 1 && flags->minus == 1) ? v_len++ : 0;
+	(flags->plus == 1 && flags->minus == 1 && (flags->spaces > 0 ||
+		local_pa > 0)) ? v_len++ : 0;
 	if (flags->spaces + v_len + flags->preci_diff < 0)
 	{
 		while (flags->spaces + v_len + flags->preci_diff < 0)

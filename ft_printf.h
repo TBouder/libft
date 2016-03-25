@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:33:06 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 14:48:16 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		*ft_parse_binary(long long b);
 int		ft_flag_spaces(char *str, int *index);
 int		ft_flag_zero(char *str, int *index, t_flags *flags);
 int		ft_flag_preci(char *str, int *index);
-int		ft_flag_length(char *str, int *index);
+int		ft_flag_length(char *str, int *index, t_flags flags);
 int		ft_flag_bool(int *index);
 int		ft_conv_percent(t_flags flags);
 int		ft_conv_char(t_flags flags, char c);

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:33:58 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 14:58:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int		ft_load_flags(char *str, int index, t_flags *flag)
 			flag->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j'
 			|| str[index] == 'z')
-			flag->l = ft_flag_length(str, &index);
+			flag->l = ft_flag_length(str, &index, *flag);
 	}
 	flag->zero_base = flag->zero;
 	(flag->minus == 1 && flag->zero != 0) ? flag->spaces = flag->zero : 0;
