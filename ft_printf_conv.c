@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 17:01:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 17:06:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ static void		ft_init_flags(t_flags *flag)
 	flag->temp = 0;
 }
 
+static void		ft_init_table(int (*tab[128])())
+{
+	tab['d'] = &ft_d_i;
+	tab['i'] = &ft_d_i;
+	tab['D'] = &ft_ld;
+	tab['x'] = &ft_x;
+	tab['X'] = &ft_lx;
+	tab['u'] = &ft_u;
+	tab['U'] = &ft_lu;
+	tab['o'] = &ft_o;
+	tab['O'] = &ft_lo;
+	tab['p'] = &ft_conv_p;
+	tab['s'] = &ft_conv_s;
+	tab['S'] = &ft_conv_ls;
+	tab['c'] = &ft_conv_c;
+	tab['C'] = &ft_conv_lc;
+}
 
 static int		ft_load_flags(char *str, int index, t_flags *flag)
 {
@@ -55,58 +72,13 @@ static int		ft_load_flags(char *str, int index, t_flags *flag)
 	return (index);
 }
 
-
-void		ft_init_table(int (*tab[128])())
-{
-	tab['d'] = &ft_d_i;
-	tab['i'] = &ft_d_i;
-	tab['D'] = &ft_ld;
-	tab['x'] = &ft_x;
-	tab['X'] = &ft_lx;
-	tab['u'] = &ft_u;
-	tab['U'] = &ft_lu;
-	tab['o'] = &ft_o;
-	tab['O'] = &ft_lo;
-
-	tab['p'] = &ft_conv_p;
-	tab['s'] = &ft_conv_s;
-	tab['S'] = &ft_conv_ls;
-	tab['c'] = &ft_conv_c;
-	tab['C'] = &ft_conv_lc;
-}
-
-
-
 int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
-	t_flags		flags;
 	int 		(*tab[128]) (va_list, t_flags);
+	t_flags		flags;
 
 	index = ft_load_flags(str, index, &flags);
 	ft_init_table(tab);
-	// tab['d'] = &ft_d_i;
-	// tab['i'] = &ft_d_i;
-	// tab['D'] = &ft_ld;
-	// tab['x'] = &ft_x;
-	// tab['X'] = &ft_lx;
-	// tab['u'] = &ft_u;
-	// tab['U'] = &ft_lu;
-	// tab['o'] = &ft_o;
-	// tab['O'] = &ft_lo;
-	//
-	// tab['p'] = &ft_conv_p;
-	// tab['s'] = &ft_conv_s;
-	// tab['S'] = &ft_conv_ls;
-	// tab['c'] = &ft_conv_c;
-	// tab['C'] = &ft_conv_lc;
-
-
-
-	if (str[index] == '\0')
-	{
-		*r_value -= 1;
-		return (index + 1);
-	}
 	if (ft_is_printf(str[index]) == 2)
 		*r_value += ft_conv_char(flags, str[index]);
 	else if (str[index] == '%')
