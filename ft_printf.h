@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 16:00:44 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 16:32:23 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
 void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
 
-int		ft_x(va_list pa, t_flags flag, int maj);
+int		ft_x(va_list pa, t_flags flag);
+int		ft_lx(va_list pa, t_flags flag);
 void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag);
 void	ft_before_x(t_flags *flags, int v_len, long long value, int maj);
 void	ft_after_hex(t_flags *flags, int v_len);
@@ -100,6 +101,6 @@ int		ft_conv_lc(va_list pa, t_flags flags);
 void	ft_before_c(t_flags *flags, int v_len);
 void	ft_after_c(t_flags *flags, int v_len);
 
-int		ft_conv_p(va_list *pa, t_flags flags);
+int		ft_conv_p(va_list pa, t_flags flags);
 
 #endif

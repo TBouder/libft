@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 01:08:51 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 16:22:05 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	ft_after_null(t_flags *flags, int v_len)
 	}
 }
 
-int		ft_conv_p(va_list *pa, t_flags flags)
+int		ft_conv_p(va_list pa, t_flags flags)
 {
 	int		*local_pa;
 	int		len;
 
-	local_pa = (va_arg(*pa, int*));
+	local_pa = (va_arg(pa, int*));
 	if (local_pa == NULL)
 	{
 		len = (flags.preci == -1) ? 2 : 3;
