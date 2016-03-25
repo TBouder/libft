@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_hex_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 20:07:54 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 16:00:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,18 +90,4 @@ void			ft_after_hex(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_x() function launchs the conversion by x or X.
-*/
-
-int				ft_launch_conv_x(va_list *pa, t_flags flags, char *str,
-					int index)
-{
-	if (str[index] == 'X')
-		return (ft_x(*pa, flags, 1));
-	else if (str[index] == 'x')
-		return (ft_x(*pa, flags, 0));
-	return (0);
 }

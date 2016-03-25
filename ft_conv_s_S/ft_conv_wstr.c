@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:00:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:42:55 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:38:17 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int			ft_conv_ls(va_list pa, t_flags flags)
 {
 	wchar_t		*lpa;
 
-	setlocale(LC_ALL, "en_US.UTF-8");
 	lpa = (wchar_t *)va_arg(pa, char *);
 	if (flags.preci == -1)
 		return (ft_conv_ws_case1(flags));

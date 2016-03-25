@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_uni_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 11:44:17 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 22:43:31 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:52 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,4 @@ void			ft_after_u(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_u() function launchs the conversion by u or U.
-*/
-
-int				ft_launch_conv_u(va_list *pa, t_flags flags, char *str,
-					int index)
-{
-	if (str[index] == 'u')
-		return (ft_u(*pa, flags));
-	if (str[index] == 'U')
-		return (ft_lu(*pa, flags));
-	return (0);
 }

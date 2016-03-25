@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 15:18:04 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,28 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 		return (index + 1);
 	}
 	*r_value += str[index] == '%' ? ft_conv_percent(flags) : 0;
-	*r_value += ft_launch_conv_d_i(pa, flags, str, index);
-	*r_value += ft_launch_conv_x(pa, flags, str, index);
-	*r_value += ft_launch_conv_u(pa, flags, str, index);
-	*r_value += ft_launch_conv_s(pa, flags, str, index);
-	*r_value += ft_launch_conv_c(pa, flags, str, index);
-	*r_value += ft_launch_conv_o(pa, flags, str, index);
+
+	*r_value += str[index] == 'd' ? ft_d_i(*pa, flags) : 0;
+	*r_value += str[index] == 'i' ? ft_d_i(*pa, flags) : 0;
+	*r_value += str[index] == 'D' ? ft_ld(*pa, flags) : 0;
+
+	*r_value += str[index] == 'x' ? ft_x(*pa, flags, 0) : 0;
+	*r_value += str[index] == 'X' ? ft_x(*pa, flags, 1) : 0;
+
+	*r_value += str[index] == 'u' ? ft_u(*pa, flags) : 0;
+	*r_value += str[index] == 'U' ? ft_lu(*pa, flags) : 0;
+
+	*r_value += str[index] == 's' && flags.l != 1 ? ft_conv_s(*pa, flags) : 0;
+	*r_value += str[index] == 's' && flags.l == 1 ? ft_conv_ls(*pa, flags) : 0;
+	*r_value += str[index] == 'S' ? ft_conv_ls(*pa, flags) : 0;
+
+	*r_value += str[index] == 'c' && flags.l != 1 ? ft_conv_c(*pa, flags) : 0;
+	*r_value += str[index] == 'c' && flags.l == 1 ? ft_conv_lc(*pa, flags) : 0;
+	*r_value += str[index] == 'C' ? ft_conv_lc(*pa, flags) : 0;
+
+	*r_value += str[index] == 'o' ? ft_o(*pa, flags) : 0;
+	*r_value += str[index] == 'O' ? ft_lo(*pa, flags) : 0;
+
 	*r_value += str[index] == 'p' ? ft_conv_p(pa, flags) : 0;
 	*r_value -= 1;
 	if (ft_is_printf(str[index]) == 2)

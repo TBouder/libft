@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 15:39:27 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:11:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,4 @@ void	ft_after_c(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_c() function launchs the conversion by c or C.
-*/
-
-int		ft_launch_conv_c(va_list *pa, t_flags flags, char *str, int index)
-{
-	if (str[index] == 'c' && flags.l != 1)
-	{
-		return (ft_conv_c(*pa, flags));
-	}
-	if (str[index] == 'C' || (str[index] == 'c' && flags.l == 1))
-	{
-		return (ft_conv_lc(*pa, flags));
-	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:15:19 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,21 +96,4 @@ void	ft_after_str(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_s() function launchs the conversion by s or S.
-*/
-
-int		ft_launch_conv_s(va_list *pa, t_flags flags, char *str, int index)
-{
-	if (str[index] == 's' && flags.l != 1)
-	{
-		return (ft_conv_s(*pa, flags));
-	}
-	if (str[index] == 'S' || (str[index] == 's' && flags.l == 1))
-	{
-		return (ft_conv_ls(*pa, flags));
-	}
-	return (0);
 }

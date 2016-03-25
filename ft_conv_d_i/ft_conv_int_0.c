@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 15:24:57 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:28 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
 					int i)
 {
 	(value < 0) ? flags->spaces-- : 0;
-	(flags->empty == 1 && flags->spaces > v_len + flags->preci) ? v_len++ : 0;
 	(v_len < flags->preci) ? v_len = flags->preci : 0;
+	(flags->empty && flags->spaces > v_len && flags->preci <= 0) ? v_len++ : 0;
 	(flags->plus == 1 && value < 0) ? flags->spaces++ : 0;
 	(flags->plus == 1 && flags->preci == 0) ? v_len++ : 0;
 	while (flags->spaces-- - v_len != 0)
@@ -51,7 +51,7 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 	(value < 0) ? flags->zero-- : 0;
 	(flags->plus == 1 && value < 0) ? flags->zero++ : 0;
 	(flags->plus == 1) ? v_len++ : 0;
-	if (flags->empty == 1)
+	if (flags->empty == 1 && value >= 0)
 	{
 		v_len++;
 		(value == 0) ? flags->spaces_count++ : 0;
@@ -120,18 +120,4 @@ void			ft_after_d_i(t_flags *flags, int v_len, long long local_pa)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_d_i() function launchs the conversion by x or X.
-*/
-
-int				ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str,
-					int index)
-{
-	if (str[index] == 'd' || str[index] == 'i')
-		return (ft_d_i(*pa, flags));
-	else if (str[index] == 'D')
-		return (ft_ld(*pa, flags));
-	return (0);
 }

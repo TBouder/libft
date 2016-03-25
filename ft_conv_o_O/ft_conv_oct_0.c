@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_oct_0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 19:35:21 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 14:57:46 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 15:59:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,4 @@ void			ft_after_o(t_flags *flags, int v_len)
 			(!flags->display) ? ft_putchar(' ') : 0;
 		}
 	}
-}
-
-/*
-** The ft_launch_conv_o() function launchs the conversion by o or O.
-*/
-
-int				ft_launch_conv_o(va_list *pa, t_flags flags, char *str,
-					int index)
-{
-	if (str[index] == 'o')
-		return (ft_o(*pa, flags));
-	else if (str[index] == 'O')
-		return (ft_lo(*pa, flags));
-	return (0);
 }

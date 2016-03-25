@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 14:48:16 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 16:00:44 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,37 +70,31 @@ int		ft_ld(va_list pa, t_flags flag);
 void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
 void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
-int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 
 int		ft_x(va_list pa, t_flags flag, int maj);
 void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag);
 void	ft_before_x(t_flags *flags, int v_len, long long value, int maj);
 void	ft_after_hex(t_flags *flags, int v_len);
-int		ft_launch_conv_x(va_list *pa, t_flags flags, char *str, int index);
 
 int		ft_o(va_list pa, t_flags flag);
 int		ft_lo(va_list pa, t_flags flag);
 void	ft_put_precision_oct(t_flags *flags, long long local_pa);
 void	ft_before_o(t_flags *flags, int v_len, int index, long long local_pa);
 void	ft_after_o(t_flags *flags, int v_len);
-int		ft_launch_conv_o(va_list *pa, t_flags flags, char *str, int index);
 
 int		ft_u(va_list pa, t_flags flag);
 int		ft_lu(va_list pa, t_flags flag);
 void	ft_put_preci_uni(t_flags *flags, long long local_pa);
 void	ft_before_u(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_u(t_flags *flags, int v_len);
-int		ft_launch_conv_u(va_list *pa, t_flags flags, char *str, int index);
 
 void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
 int		ft_conv_s_case2(t_flags flags);
 void	ft_before_str(t_flags *flags, int v_len);
 void	ft_after_str(t_flags *flags, int v_len);
-int		ft_launch_conv_s(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_s(va_list pa, t_flags flags);
 int		ft_conv_ls(va_list pa, t_flags flags);
 
-int		ft_launch_conv_c(va_list *pa, t_flags flags, char *str, int index);
 int		ft_conv_c(va_list pa, t_flags flags);
 int		ft_conv_lc(va_list pa, t_flags flags);
 void	ft_before_c(t_flags *flags, int v_len);
