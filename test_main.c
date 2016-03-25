@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:54:38 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 14:21:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int		main()
 	int	i;
 	int	j;
 
-	i = ft_printf("%-10+d", -42);
+	i = ft_printf("%-50+d", -42);
 	ft_printf("\n\n");
-	j = printf("%-10+d", -42);
+	j = printf("%-50+d", -42);
 	printf("\n%d vs %d", i, j);
 
 	return (0);
