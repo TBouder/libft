@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 11:17:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 16:36:15 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int			ft_conv_s(va_list pa, t_flags flags)
 	char	*local_pa;
 	int		ln;
 
+	if (flags.l == 1)
+		return (ft_conv_ls(pa, flags));
 	local_pa = va_arg(pa, char *);
 	if (local_pa == NULL && flags.preci < 0)
 		return (ft_conv_s_case1(local_pa, flags));
