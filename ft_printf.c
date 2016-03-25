@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/23 20:54:45 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/24 11:35:12 by Tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int		ft_printf(const char *format, ...)
 	i = 0;
 	r_value = 0;
 	va_start(pa, format);
+	if (format == NULL)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && ft_undef(format, i + 1) == 0)

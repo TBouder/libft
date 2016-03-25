@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:36:49 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 11:17:31 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void	ft_putnbr_ull(unsigned long long nb);
 int		ft_d_i(va_list pa, t_flags flag);
 int		ft_D_I(va_list pa, t_flags flag);
 void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
-int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 void	ft_before_d_i(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
+int		ft_launch_conv_d_i(va_list *pa, t_flags flags, char *str, int index);
 
 /*x & X*/
 int		ft_x(va_list pa, t_flags flag, int maj);
@@ -98,6 +98,7 @@ int		ft_launch_conv_u_U(va_list *pa, t_flags flags, char *str, int index);
 
 /*s & S*/
 void	ft_put_precision_str(t_flags flags, char *local_pa, int len);
+int		ft_conv_s_case2(t_flags flags);
 void	ft_before_str(t_flags *flags, int v_len);
 void	ft_after_str(t_flags *flags, int v_len);
 int		ft_launch_conv_s_S(va_list *pa, t_flags flags, char *str, int index);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base_ull.c                                 :+:      :+:    :+:   */
+/*   ft_tools_itoa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/24 02:34:28 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 11:06:03 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,16 @@ char				*ft_itoa_base_ll(unsigned long long n, int base)
 	s = ft_strnew(len + 1);
 	ft_convert_base(n, base, s, &k);
 	return (s);
+}
+
+ULL					ft_atoi_ll(const char *str)
+{
+	unsigned long long	result;
+	int		sign;
+
+	sign = 1;
+	result = 0;
+	while (*str >= '0' && *str <= '1')
+		result = (result + *str++ - '0') * 10;
+	return (result / 10 * sign);
 }

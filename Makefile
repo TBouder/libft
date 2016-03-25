@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/24 02:45:56 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/25 11:06:45 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,11 @@ PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_p.c
 PRINTF_d_i	=	ft_conv_d_i/ft_conv_d_i.c ft_conv_d_i/ft_conv_int_0.c ft_conv_d_i/ft_conv_int_1.c
 PRINTF_x_X	=	ft_conv_x_X/ft_conv_x.c ft_conv_x_X/ft_conv_hex_0.c ft_conv_x_X/ft_conv_hex_1.c
 PRINTF_u_U	=	ft_conv_u_U/ft_conv_u.c ft_conv_u_U/ft_conv_uni_0.c ft_conv_u_U/ft_conv_uni_1.c
-PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c ft_conv_s_S/ft_conv_str_0.c
+PRINTF_s_S	=	ft_conv_s_S/ft_conv_s.c ft_conv_s_S/ft_conv_str_0.c ft_conv_s_S/ft_conv_wstr.c
 PRINTF_c_C	=	ft_conv_c_C/ft_conv_c.c ft_conv_c_C/ft_conv_char_0.c
 PRINTF_o_O	=	ft_conv_o_O/ft_conv_o.c ft_conv_o_O/ft_conv_oct_0.c ft_conv_o_O/ft_conv_oct_1.c
 PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
-PRINTF_FUNC	=	ft_funcs/ft_atoi_ll.c ft_funcs/ft_itoa_base_ull.c \
-				ft_funcs/ft_nbrlen_ll.c \
-				ft_funcs/ft_putnbr_base_ull.c ft_funcs/ft_putnbr_ll.c \
-				ft_funcs/ft_putnbr_ull.c
+PRINTF_FUNC	=	ft_funcs/ft_tools_itoa.c ft_funcs/ft_tools_nbr.c ft_funcs/ft_tools_binary.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
