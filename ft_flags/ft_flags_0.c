@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 14:57:52 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 15:17:57 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/26 17:22:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags)
 			flags->empty = ft_flag_bool(index);
 		if (str[*index] == '-')
 			flags->minus = ft_flag_bool(index);
+		if (str[*index] == '*')
+		{
+			flags->prio[flags->star] = 1;
+			flags->star += ft_flag_bool(index);
+		}
 		while (i++ < ft_atoi(&str[*index]))
 			zero++;
 		*index += ft_nbrlen(ft_atoi(&str[*index]));
@@ -56,7 +61,7 @@ int		ft_flag_zero(char *str, int *index, t_flags *flags)
 	return (zero);
 }
 
-int		ft_flag_preci(char *str, int *index)
+int		ft_flag_preci(char *str, int *index, t_flags *flags)
 {
 	int		value;
 
@@ -64,7 +69,12 @@ int		ft_flag_preci(char *str, int *index)
 	if (str[*index] == '.')
 	{
 		*index += 1;
-		if (ft_isnumber(str[*index]))
+		if (str[*index] == '*')
+		{
+			flags->prio[flags->star] = 3;
+			flags->star += ft_flag_bool(index);
+		}
+		else if (ft_isnumber(str[*index]))
 		{
 			value = ft_atoi(&str[*index]);
 			*index += str[*index] == '0' ? 1 : ft_nbrlen(ft_atoi(&str[*index]));
@@ -79,6 +89,14 @@ int		ft_flag_preci(char *str, int *index)
 
 int		ft_flag_bool(int *index)
 {
+	*index += 1;
+	return (1);
+}
+
+int		ft_flag_star_bool(int *index, t_flags *flag)
+{
+	if (flag->spaces >= 0)
+		flag->spaces = 0;
 	*index += 1;
 	return (1);
 }

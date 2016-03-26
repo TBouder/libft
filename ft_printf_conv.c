@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 17:06:57 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/26 17:59:44 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ static void		ft_init_flags(t_flags *flag)
 	flag->preci_diff = 0;
 	flag->display = 0;
 	flag->temp = 0;
+	flag->star = 0;
+	flag->prio[0] = 0;
+	flag->prio[1] = 0;
+	flag->prio[2] = 0;
 }
 
 static void		ft_init_table(int (*tab[128])())
@@ -39,11 +43,11 @@ static void		ft_init_table(int (*tab[128])())
 	tab['U'] = &ft_lu;
 	tab['o'] = &ft_o;
 	tab['O'] = &ft_lo;
-	tab['p'] = &ft_conv_p;
-	tab['s'] = &ft_conv_s;
-	tab['S'] = &ft_conv_ls;
-	tab['c'] = &ft_conv_c;
-	tab['C'] = &ft_conv_lc;
+	tab['p'] = &ft_p;
+	tab['s'] = &ft_s;
+	tab['S'] = &ft_ls;
+	tab['c'] = &ft_c;
+	tab['C'] = &ft_lc;
 }
 
 static int		ft_load_flags(char *str, int index, t_flags *flag)
@@ -51,13 +55,14 @@ static int		ft_load_flags(char *str, int index, t_flags *flag)
 	ft_init_flags(flag);
 	while (ft_is_printf(str[index]) == 0)
 	{
-		(str[index] == '#') ? flag->diaiz = ft_flag_bool(&index) : 0;
-		(str[index] == '-') ? flag->minus = ft_flag_bool(&index) : 0;
-		(str[index] == '.') ? flag->preci = ft_flag_preci(str, &index) : 0;
-		(str[index] == ' ') ? flag->empty = ft_flag_bool(&index) : 0;
-		(str[index] == '+') ? flag->plus = ft_flag_bool(&index) : 0;
-		(str[index] == '0') ? flag->zero = ft_flag_zero(str, &index, flag) : 0;
-		(str[index] == '!') ? flag->display = ft_flag_bool(&index) : 0;
+		str[index] == '#' ? flag->diaiz = ft_flag_bool(&index) : 0;
+		str[index] == '-' ? flag->minus = ft_flag_bool(&index) : 0;
+		str[index] == '.' ? flag->preci = ft_flag_preci(str, &index, flag) : 0;
+		str[index] == ' ' ? flag->empty = ft_flag_bool(&index) : 0;
+		str[index] == '+' ? flag->plus = ft_flag_bool(&index) : 0;
+		str[index] == '0' ? flag->zero = ft_flag_zero(str, &index, flag) : 0;
+		str[index] == '!' ? flag->display = ft_flag_bool(&index) : 0;
+		str[index] == '*' ? flag->star += ft_flag_star_bool(&index, flag) : 0;
 		if (str[index] > '0' && str[index] <= '9')
 			flag->spaces = ft_flag_spaces(str, &index);
 		if (str[index] == 'l' || str[index] == 'h' || str[index] == 'j'
@@ -72,13 +77,54 @@ static int		ft_load_flags(char *str, int index, t_flags *flag)
 	return (index);
 }
 
+void			ft_flag_star(va_list pa, t_flags *flag, int index)
+{
+	int		value;
+
+	value = va_arg(pa, long);
+	if (flag->prio[index] == 1 && flag->zero <= 0)
+	{
+		flag->zero = value;
+		flag->zero_base = flag->zero;
+	}
+	else if (flag->prio[index] == 3 && flag->preci <= 0)
+	{
+		if (value < 0)
+		{
+			flag->preci = flag->zero;
+			flag->zero = 0;
+			flag->zero_base = 0;
+		}
+		else
+		{
+			flag->preci = value;
+			if (flag->preci == 0)
+				flag->preci = -1;
+		}
+	}
+	else if (flag->spaces <= 0)
+	{
+		flag->spaces = value;
+	}
+	flag->star -= 1;
+}
+
 int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
 	int 		(*tab[128]) (va_list, t_flags);
+	int			i;
 	t_flags		flags;
 
+	i = 0;
 	index = ft_load_flags(str, index, &flags);
 	ft_init_table(tab);
+	while (flags.star > 0)
+	{
+		ft_flag_star(*pa, &flags, i);
+		i++;
+	}
+
+
 	if (ft_is_printf(str[index]) == 2)
 		*r_value += ft_conv_char(flags, str[index]);
 	else if (str[index] == '%')

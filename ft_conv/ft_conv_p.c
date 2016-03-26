@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 16:22:05 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/25 23:54:32 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_after_null(t_flags *flags, int v_len)
 	}
 }
 
-int		ft_conv_p(va_list pa, t_flags flags)
+int		ft_p(va_list pa, t_flags flags)
 {
 	int		*local_pa;
 	int		len;
