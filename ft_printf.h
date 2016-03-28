@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 19:55:26 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 00:38:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		ft_flag_preci(char *str, int *index, t_flags *flags);
 int		ft_flag_length(char *str, int *index, t_flags flags);
 int		ft_flag_bool(int *index);
 int		ft_flag_star_bool(int *index, t_flags *flag);
+
 int		ft_conv_percent(t_flags flags);
 int		ft_conv_char(t_flags flags, char c);
 
@@ -83,7 +84,6 @@ int		ft_ls(va_list pa, t_flags flags);
 int		ft_c(va_list pa, t_flags flags);
 int		ft_lc(va_list pa, t_flags flags);
 int		ft_p(va_list pa, t_flags flags);
-
 int		ft_f(va_list pa, t_flags flag);
 
 void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);

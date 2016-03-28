@@ -6,11 +6,19 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 17:57:26 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 00:54:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+/*
+** Bonus
+** - flag *
+** - flag !
+** - %f
+** - colors
+*/
 
 static int		ft_undef(const char *str, int i)
 {
@@ -20,6 +28,33 @@ static int		ft_undef(const char *str, int i)
 			return (1);
 		i++;
 	}
+	return (0);
+}
+
+static int		ft_color(const char *str, int *index)
+{
+	if (str[*index + 1] == 'b' && str[*index + 2] == '}')
+		ft_putstr("\033[34;01m");
+	else if (str[*index + 1] == 'r' && str[*index + 2] == '}')
+		ft_putstr("\033[31;01m");
+	else if (str[*index + 1] == 'g' && str[*index + 2] == '}')
+		ft_putstr("\033[32;01m");
+	else if (str[*index + 1] == 'y' && str[*index + 2] == '}')
+		ft_putstr("\033[33;01m");
+	else if (str[*index + 1] == 'p' && str[*index + 2] == '}')
+		ft_putstr("\033[35;01m");
+	else if (str[*index + 1] == 'c' && str[*index + 2] == '}')
+		ft_putstr("\033[36;01m");
+	else if (str[*index + 1] == 'w' && str[*index + 2] == '}')
+		ft_putstr("\033[37;01m");
+	else if (str[*index + 1] == '0' && str[*index + 2] == '}')
+		ft_putstr("\033[00m");
+	else
+	{
+		index += 1;
+		return (1);
+	}
+	*index += 3;
 	return (0);
 }
 
@@ -49,6 +84,7 @@ int				ft_printf(const char *format, ...)
 		return (-1);
 	while (format[i])
 	{
+		(format[i] == '{') ? ft_color(format, &i) : 0;
 		if (format[i] == '%' && ft_undef(format, i + 1) == 0)
 			return (r_value);
 		if (format[i] == '%' && format[i + 1] && ft_undef(format, i + 1))

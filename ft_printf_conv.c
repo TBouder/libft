@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 17:57:18 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 00:28:52 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,8 +122,6 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 		ft_flag_star(*pa, &flags, i);
 		i++;
 	}
-
-
 	if (ft_is_printf(str[index]) == 2)
 		*r_value += ft_conv_char(flags, str[index]);
 	else if (str[index] == '%')
