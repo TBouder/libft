@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 12:57:02 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 12:58:46 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 22:37:31 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int			ft_wstrlen_flags(wchar_t *str, t_flags flags)
 		if (len > flags.preci)
 			len -= to_add;
 		i++;
+		ft_strdel(&b);
 	}
 	return (len);
 }
@@ -54,6 +55,7 @@ int			ft_wstrlen(wchar_t *str)
 		(ft_strlen(b) >= 17 && ft_strlen(b) <= 21) ? to_add = 4 : 0;
 		len += to_add;
 		i++;
+		ft_strdel(&b);
 	}
 	return (len);
 }

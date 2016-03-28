@@ -6,25 +6,19 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/26 17:47:36 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 22:55:18 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "stdio.h"
 
 int		main()
 {
-	setlocale(LC_ALL, "en_US.UTF-8");
-/*
-	int		i, j;
+	// setlocale(LC_ALL, "en_US.UTF-8");
 
-	i = ft_printf("%D\n%d\n%o\n%O\n%u\n%U\n%zx\n%zX\n", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42);
-	printf("\n\n");
-	j = printf("%D\n%d\n%o\n%O\n%u\n%U\n%zx\n%zX\n", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42);
+	// int		i, j;
 
-	printf("\n%d vs %d\n", i, j);
-	ft_printf("\n");
+	ft_printf("%D%d%o%O%u%U%zx%zX\n", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42);
     ft_printf("%%\n");
     ft_printf("%d\n", 42);
     ft_printf("%d%d\n", 42, 41);
@@ -54,14 +48,18 @@ int		main()
     ft_printf("%s%s\n", "test", "test");
     ft_printf("%s%s%s\n", "test", "test", "test");
     ft_printf("%C\n", 15000);
-*/
-	int	i;
-	int	j;
 
-	i = ft_printf("{%05.*d}", -15, 42);
-	ft_printf("\n\n");
-	j = printf("{%05.*d}", -15, 42);
-	printf("\n%d vs %d\n", i, j);
+	// int	i;
+	// int	j;
+	// char str[32];
+	//
+	// i = ft_printf("%.4f", 17.0);
+	// // i = ft_printf("s", 17.0);
+	// // ft_putfloat(4683.3729376);
+	// // ft_putendl(str);
+	// ft_printf("\n\n");
+	// j = printf("%.4f", 17.0);
+	// printf("\n%d vs %d\n", i, j);
 
 
 	return (0);

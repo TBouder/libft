@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/26 17:20:26 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 19:55:26 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ int		ft_c(va_list pa, t_flags flags);
 int		ft_lc(va_list pa, t_flags flags);
 int		ft_p(va_list pa, t_flags flags);
 
+int		ft_f(va_list pa, t_flags flag);
+
 void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
 void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag);
 void	ft_put_precision_oct(t_flags *flags, long long local_pa);
@@ -96,6 +98,7 @@ void	ft_before_o(t_flags *flags, int v_len, int index, long long local_pa);
 void	ft_before_u(t_flags *flags, int v_len, long long local_pa);
 void	ft_before_str(t_flags *flags, int v_len);
 void	ft_before_c(t_flags *flags, int v_len);
+void	ft_before_f(t_flags *flags, int v_len, double local_pa);
 
 void	ft_after_d_i(t_flags *flags, int v_len, long long local_pa);
 void	ft_after_hex(t_flags *flags, int v_len);
@@ -103,6 +106,7 @@ void	ft_after_o(t_flags *flags, int v_len);
 void	ft_after_u(t_flags *flags, int v_len);
 void	ft_after_str(t_flags *flags, int v_len);
 void	ft_after_c(t_flags *flags, int v_len);
+void	ft_after_f(t_flags *flags, int v_len);
 
 
 #endif

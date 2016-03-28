@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/26 17:59:44 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 17:57:18 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static void		ft_init_table(int (*tab[128])())
 	tab['S'] = &ft_ls;
 	tab['c'] = &ft_c;
 	tab['C'] = &ft_lc;
+	tab['f'] = &ft_f;
+	tab['F'] = &ft_f;
 }
 
 static int		ft_load_flags(char *str, int index, t_flags *flag)
@@ -98,14 +100,11 @@ void			ft_flag_star(va_list pa, t_flags *flag, int index)
 		else
 		{
 			flag->preci = value;
-			if (flag->preci == 0)
-				flag->preci = -1;
+			(flag->preci == 0) ? flag->preci = -1 : 0;
 		}
 	}
 	else if (flag->spaces <= 0)
-	{
 		flag->spaces = value;
-	}
 	flag->star -= 1;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:06:35 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 13:17:01 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 22:53:22 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int				*ft_parse_binary(long long b)
 int				ft_binary_to_decimal(int b)
 {
 	char	*binary;
+	char	*itoab;
 	int		len;
 	int		i;
 	int		r_value;
@@ -74,8 +75,10 @@ int				ft_binary_to_decimal(int b)
 	len = ft_nbrlen_base(b, 10);
 	if (!(binary = (char *)malloc(sizeof(char) * len)))
 		return (0);
-	ft_memmove(binary, ft_itoa(b), len);
-	while (i++ < len)
+	itoab = ft_itoa(b);
+	ft_memmove(binary, itoab, len);
+	ft_strdel(&itoab);
+	while (++i < len)
 		if (binary[i] == '1')
 			r_value += ft_power(2, len - i - 1);
 	ft_strdel(&binary);
