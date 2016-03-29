@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:26:22 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 17:17:53 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:11:18 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ int		ft_ld(va_list pa, t_flags flag)
 	int			len;
 
 	lpa = va_arg(pa, long);
-	if (flag.empty == 1 && lpa > 0 && (!flag.display))
-		ft_putchar(' ');
+	(flag.empty == 1 && lpa > 0 && (!flag.display)) ? ft_putchar(' ') : 0;
 	space = (flag.empty == 1) && (lpa > 0) ? 1 : 0;
 	sign = (lpa < 0) ? 1 : 0;
 	len = (ft_nbrlen_ll(lpa) == 0) ? 1 : ft_nbrlen_ll(lpa);

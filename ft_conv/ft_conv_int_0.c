@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 14:07:04 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 23:51:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:15:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void		ft_before_d_i_spaces(t_flags *flags, int v_len, long long value,
 	}
 	if (i == 1)
 	{
-		if (flags->plus == 1 && value >= 0 && (!flags->display))
-			ft_putchar('+');
+		if (flags->plus == 1 && value >= 0)
+			(!flags->display) ? ft_putchar('+') : 0;
 		(flags->plus == 1 && value >= 0) ? flags->spaces_count++ : 0;
 	}
 }
@@ -64,8 +64,8 @@ static void		ft_before_d_i_zero(t_flags *flags, int v_len, long long value,
 	}
 	if (i == 1)
 	{
-		if (flags->plus == 1 && value >= 0 && (!flags->display))
-			ft_putchar('+');
+		if (flags->plus == 1 && value >= 0)
+			(!flags->display) ? ft_putchar('+') : 0;
 		(flags->plus == 1 && value >= 0) ? flags->spaces_count++ : 0;
 	}
 }
@@ -85,8 +85,8 @@ void			ft_before_d_i(t_flags *flags, int v_len, long long value)
 		i = 1;
 	else
 	{
-		if (flags->plus == 1 && value >= 0 && (!flags->display))
-			ft_putchar('+');
+		if (flags->plus == 1 && value >= 0)
+			(!flags->display) ? ft_putchar('+') : 0;
 		(flags->plus == 1 && value >= 0) ? flags->spaces_count++ : 0;
 	}
 	(flags->preci > 0 && flags->preci > v_len) ? v_len = flags->preci : 0;

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 16:24:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 23:52:31 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:14:53 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void		ft_before_x_spaces(t_flags *flags, int v_len,
 		flags->spaces_count++;
 		(!flags->display) ? ft_putchar(' ') : 0;
 	}
-	if (flags->preci == -1 && local_pa == 0 && (!flags->display))
-		ft_putchar(' ');
+	if (flags->preci == -1 && local_pa == 0)
+		(!flags->display) ? ft_putchar(' ') : 0;
 	(flags->preci == -1) && (local_pa == 0) ? flags->spaces_count++ : 0;
 }
 
@@ -42,10 +42,10 @@ static void		ft_before_x_zero(t_flags *flags, int v_len, long long value,
 {
 	(flags->diaiz == 1) ? flags->zero -= 2 : 0;
 	(v_len < flags->preci) ? v_len += flags->preci - v_len : 0;
-	if (maj == 1 && flags->diaiz == 1 && value != 0 && (!flags->display))
-		ft_putstr("0X");
-	else if (maj == 0 && flags->diaiz == 1 && value != 0 && (!flags->display))
-		ft_putstr("0x");
+	if (maj == 1 && flags->diaiz == 1 && value != 0)
+		(!flags->display) ? ft_putstr("0X") : 0;
+	else if (maj == 0 && flags->diaiz == 1 && value != 0)
+		(!flags->display) ? ft_putstr("0x") : 0;
 	while (flags->zero-- - v_len > 0)
 	{
 		flags->spaces_count++;
@@ -66,10 +66,10 @@ void			ft_before_x(t_flags *flags, int v_len, long long value, int maj)
 		ft_before_x_zero(flags, v_len, value, maj);
 		maj = -1;
 	}
-	if (maj == 1 && flags->diaiz == 1 && value != 0 && (!flags->display))
-		ft_putstr("0X");
-	else if (maj == 0 && flags->diaiz == 1 && value != 0 && (!flags->display))
-		ft_putstr("0x");
+	if (maj == 1 && flags->diaiz == 1 && value != 0)
+		(!flags->display) ? ft_putstr("0X") : 0;
+	else if (maj == 0 && flags->diaiz == 1 && value != 0)
+		(!flags->display) ? ft_putstr("0x") : 0;
 	(flags->diaiz == 1) && (value != 0) ? flags->spaces_count += 2 : 0;
 }
 

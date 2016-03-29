@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 00:54:04 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:24:54 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 ** - flag !
 ** - %f
 ** - colors
+** - binary
+** - binary oct
 */
 
 static int		ft_undef(const char *str, int i)
@@ -62,7 +64,8 @@ int				ft_is_printf(char c)
 {
 	if (c == '%' || c == 'd' || c == 'D' || c == 'i' || c == 'x' || c == 'X'
 		|| c == 's' || c == 'S' || c == 'p' || c == 'c' || c == 'C' || c == 'o'
-		|| c == 'O' || c == 'u' || c == 'U' || c == 'f' || c == 'F')
+		|| c == 'O' || c == 'u' || c == 'U' || c == 'f' || c == 'F' || c == 'b'
+		|| c == 'B')
 		return (1);
 	if (c == '.' || ft_isnumber(c) || c == '#' || c == '-' || c == '+'
 		|| c == ' ' || c == 'l' || c == 'h' || c == 'j' || c == 'z' || c == '!'

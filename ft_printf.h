@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 00:38:47 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:29:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ int		ft_flag_length(char *str, int *index, t_flags flags);
 int		ft_flag_bool(int *index);
 int		ft_flag_star_bool(int *index, t_flags *flag);
 
-int		ft_conv_percent(t_flags flags);
-int		ft_conv_char(t_flags flags, char c);
-
 ULL		ft_atoi_ll(const char *str);
 char	*ft_itoa_base_ll(unsigned long long n, int base);
 char	*ft_itoa_base_ull(unsigned long long n, int base);
@@ -70,6 +67,8 @@ int		ft_wstrlen(wchar_t *str);
 int		ft_wchar_len(int *nbr);
 int		ft_conv_s_case2(t_flags flags);
 
+int		ft_conv_percent(t_flags flags);
+int		ft_conv_char(t_flags flags, char c);
 int		ft_d_i(va_list pa, t_flags flag);
 int		ft_d_i_test(va_list pa, t_flags *flag);
 int		ft_ld(va_list pa, t_flags flag);
@@ -85,6 +84,8 @@ int		ft_c(va_list pa, t_flags flags);
 int		ft_lc(va_list pa, t_flags flags);
 int		ft_p(va_list pa, t_flags flags);
 int		ft_f(va_list pa, t_flags flag);
+int		ft_b(va_list pa, t_flags flag);
+int		ft_lb(va_list pa, t_flags flag);
 
 void	ft_put_preci_int(t_flags *flags, long long local_pa, int id);
 void	ft_put_preci_hex(t_flags *flags, long long local_pa, int maj, int flag);

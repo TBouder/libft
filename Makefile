@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/28 23:54:14 by tbouder          ###   ########.fr        #
+#    Updated: 2016/03/29 11:34:11 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME 		= 	libftprintf.a
 CC			= 	gcc
 CFLAGS		= 	-Wall -Werror -Wextra
 
-PRINTF 		= 	ft_printf.c ft_printf_conv.c
+PRINTF 		= 	ft_printf.c
 
 PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_p.c ft_conv/ft_conv_f.c \
 				ft_conv/ft_conv_d_i.c ft_conv/ft_conv_int_0.c ft_conv/ft_conv_int_1.c \
@@ -24,9 +24,12 @@ PRINTF_CONV	=	ft_conv/ft_conv_percent.c ft_conv/ft_conv_p.c ft_conv/ft_conv_f.c 
 				ft_conv/ft_conv_s.c ft_conv/ft_conv_str_0.c ft_conv/ft_conv_wstr.c \
 				ft_conv/ft_conv_c.c ft_conv/ft_conv_char_0.c \
 				ft_conv/ft_conv_o.c ft_conv/ft_conv_oct_0.c ft_conv/ft_conv_oct_1.c \
-				ft_conv/ft_conv_f.c ft_conv/ft_conv_flt_0.c
-PRINTF_FLAG	=	ft_flags/ft_flags_0.c ft_flags/ft_flags_1.c
-PRINTF_FUNC	=	ft_funcs/ft_tools_itoa.c ft_funcs/ft_tools_nbr.c ft_funcs/ft_tools_binary.c ft_funcs/ft_tools_wchar.c
+				ft_conv/ft_conv_f.c ft_conv/ft_conv_flt_0.c ft_conv/ft_conv_b.c
+
+PRINTF_FUNC	=	ft_funcs/ft_tools_itoa.c ft_funcs/ft_tools_nbr.c \
+				ft_funcs/ft_tools_binary.c ft_funcs/ft_tools_wchar.c \
+				ft_funcs/ft_flags_0.c ft_funcs/ft_flags_1.c \
+				ft_funcs/ft_printf_conv.c
 
 FT_IS		=	libft/ft_is/ft_isalnum.c libft/ft_is/ft_isalpha.c libft/ft_is/ft_isascii.c \
 				libft/ft_is/ft_isdigit.c libft/ft_is/ft_isprint.c libft/ft_is/ft_isnumber.c \
@@ -80,7 +83,7 @@ FT_MATH		=	libft/ft_math/ft_factorial.c libft/ft_math/ft_fibonacci.c \
 
 GNL			=	libft/get_next_line/get_next_line.c
 
-OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_FUNC:.c=.o) $(PRINTF_FLAG:.c=.o) \
+OBJ			=	$(PRINTF:.c=.o) $(PRINTF_CONV:.c=.o) $(PRINTF_FUNC:.c=.o) \
 				$(FT_IS:.c=.o) $(FT_LEN:.c=.o) $(FT_LST:.c=.o) \
 				$(FT_MEM:.c=.o) $(FT_NB:.c=.o) $(FT_PRINT:.c=.o) \
 				$(FT_STR:.c=.o) $(FT_MATH:.c=.o) $(GNL:.c=.o)
@@ -91,7 +94,6 @@ all: $(NAME)
 
 .SILENT : $(NAME)
 $(NAME):
-	cd libft/ && $(MAKE)
 	$(CC) $(CFLAGS) -c $(HEADER) $(FT_IS)
 	mv *.o libft/ft_is/
 	$(CC) $(CFLAGS) -c $(HEADER) $(FT_LEN)
@@ -114,21 +116,17 @@ $(NAME):
 	mv *.o ft_conv/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FUNC)
 	mv *.o ft_funcs/
-	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF_FLAG)
-	mv *.o ft_flags/
 	$(CC) $(CFLAGS) -c $(HEADER) $(PRINTF)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 .SILENT : clean
 clean:
-	cd libft/ && $(MAKE) clean
 	rm -f $(OBJ)
 	rm -f *.gch
 
 .SILENT : fclean
 fclean: clean
-	cd libft/ && $(MAKE) fclean
 	rm -f $(NAME)
 
 re: fclean all

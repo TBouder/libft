@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:28:47 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 22:14:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:10:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_lc(va_list pa, t_flags flags)
 	while (nbr[i] != -1)
 	{
 		nbr[i] = ft_binary_to_decimal(nbr[i]);
-		ft_putchar(nbr[i]);
+		(!flags.display) ? ft_putchar(nbr[i]) : 0;
 		i++;
 		ln++;
 	}
