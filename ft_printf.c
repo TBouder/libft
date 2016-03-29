@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 11:44:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 13:30:07 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int				ft_printf(const char *format, ...)
 {
 	va_list		pa;
 	int			i;
-	int			r_value;
+	int			r_val;
 
 	i = -1;
-	r_value = 0;
+	r_val = 0;
 	va_start(pa, format);
 	if (format == NULL)
 		return (-1);
@@ -90,15 +90,18 @@ int				ft_printf(const char *format, ...)
 		if (format[i] == '{')
 			ft_color(format, &i);
 		if (format[i] == '%' && ft_undef(format, i + 1) == 0)
-			return (r_value);
+			return (r_val);
 		if (format[i] == '%' && format[i + 1] && ft_undef(format, i + 1))
-			i = ft_printf_conv((char *)format, &pa, &r_value, i + 1);
+		{
+			if ((i = ft_printf_conv((char *)format, &pa, &r_val, i + 1)) == -1)
+				return (-1);
+		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
-			r_value--;
+			r_val--;
 		else if (format[i] != '%')
 			ft_putchar(format[i]);
-		r_value++;
+		r_val++;
 	}
 	va_end(pa);
-	return (r_value);
+	return (r_val);
 }

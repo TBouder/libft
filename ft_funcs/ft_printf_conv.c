@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:11:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 11:34:31 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 12:53:26 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 {
 	int			(*tab[128])(va_list, t_flags);
 	int			i;
+	int			j;
 	t_flags		flags;
 
 	i = 0;
@@ -129,7 +130,11 @@ int				ft_printf_conv(char *str, va_list *pa, int *r_value, int index)
 	else if (str[index] == '%')
 		*r_value += ft_conv_percent(flags);
 	else if (ft_is_printf(str[index]) == 1 && str[index] != '%')
-		*r_value += tab[(int)str[index]](*pa, flags);
+	{
+		if ((j = tab[(int)str[index]](*pa, flags)) == -1)
+			return (-1);
+		*r_value += j;
+	}
 	*r_value -= 1;
 	return (index);
 }
