@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 13:30:07 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 13:34:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,7 @@ int				ft_printf(const char *format, ...)
 		return (-1);
 	while (format[++i])
 	{
-		if (format[i] == '{')
-			ft_color(format, &i);
+		(format[i] == '{') ? ft_color(format, &i) : 0;
 		if (format[i] == '%' && ft_undef(format, i + 1) == 0)
 			return (r_val);
 		if (format[i] == '%' && format[i + 1] && ft_undef(format, i + 1))
