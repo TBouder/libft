@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 11:24:54 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/29 11:44:54 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,15 @@ int				ft_printf(const char *format, ...)
 	int			i;
 	int			r_value;
 
-	i = 0;
+	i = -1;
 	r_value = 0;
 	va_start(pa, format);
 	if (format == NULL)
 		return (-1);
-	while (format[i])
+	while (format[++i])
 	{
-		(format[i] == '{') ? ft_color(format, &i) : 0;
+		if (format[i] == '{')
+			ft_color(format, &i);
 		if (format[i] == '%' && ft_undef(format, i + 1) == 0)
 			return (r_value);
 		if (format[i] == '%' && format[i + 1] && ft_undef(format, i + 1))
@@ -97,7 +98,6 @@ int				ft_printf(const char *format, ...)
 		else if (format[i] != '%')
 			ft_putchar(format[i]);
 		r_value++;
-		i++;
 	}
 	va_end(pa);
 	return (r_value);
