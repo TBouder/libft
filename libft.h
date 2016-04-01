@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 22:08:21 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/01 13:51:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ int					ft_nbrsmallest(int *nbr, int len);
 int					ft_nbrlargest(int *nbr, int len);
 int					ft_next_prime(int nb);
 int					*ft_nbrnew(size_t size);
+int					ft_nbrcmp(int nb1, int nb2);
 
 /*
 ** Prints
