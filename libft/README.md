@@ -35,7 +35,7 @@
 * char		\*ft\_lsttostr(t\_list \*\*list)
 
 # ft\_math
-* double	ft\_cos(double nb) 
+* double	ft\_cos(double nb)
 * double	ft\_sin(double nb)
 * double	ft\_tan(double nb)
 * double	ft\_factorial(double nb)
@@ -109,17 +109,5 @@
 * int		ft\_tolower(int c)
 * int		ft\_toupper(int c)
 
-
 # GNL
 * int		get_next_line(int const fd, char \*\*line)
-
-
-
-
-
-
-
-
-
-
-
