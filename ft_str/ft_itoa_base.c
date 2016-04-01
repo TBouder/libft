@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/15 14:12:04 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/03/28 22:35:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,6 @@ static void			ft_convert_base(long long n, int base, char *s, int *index)
 	}
 }
 
-static int			ft_nbrlen_base(long long n, int base)
-{
-	int		len;
-
-	len = 0;
-	while (n != 0)
-	{
-		n /= base;
-		len++;
-	}
-	return (len);
-}
-
 char				*ft_itoa_base(long long n, int base)
 {
 	char	*s;
@@ -56,7 +43,7 @@ char				*ft_itoa_base(long long n, int base)
 	len = ft_nbrlen_base(n, base);
 	sign = n < 0 ? 1 : 0;
 	n = sign == 1 ? -n : n;
-	s = ft_strnew(len + 1);
+	s = ft_strnew(len);
 	sign ? s[0] = '-' : 0;
 	ft_convert_base(n, base, s, &sign);
 	return (s);
