@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+         #
+#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/03/23 22:22:39 by Tbouder          ###   ########.fr        #
+#    Updated: 2016/04/01 13:59:44 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ FT_MEM		=	ft_mem/ft_memccpy.c ft_mem/ft_memchr.c ft_mem/ft_memcmp.c \
 
 FT_NB		=	ft_nb/ft_atoi.c ft_nb/ft_atoi_part.c  ft_nb/ft_atoi_hexa.c \
 				ft_nb/ft_nbrsmallest.c ft_nb/ft_nbrlargest.c \
-				ft_nb/ft_next_prime.c ft_nb/ft_nbrnew.c
+				ft_nb/ft_next_prime.c ft_nb/ft_nbrnew.c ft_nb/ft_nbrcmp.c
 
 FT_PRINT	=	ft_print/ft_putchar.c ft_print/ft_putchar_fd.c \
 				ft_print/ft_putstr.c ft_print/ft_putstr_fd.c \
