@@ -25,7 +25,7 @@ int		ft_isspace(int c);
 int			ft_hexalen(char *str);
 int			ft_linelen(const char *str, int i);
 int			ft_nbrlen(int n);
-size_t	ft_strlen(const char *str);
+size_t		ft_strlen(const char *str);
 ```
 
 #### ft_lst
@@ -38,8 +38,8 @@ void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstend(t_list **list, void *content, size_t c_size);
 void		ft_lstiter(t_list *lst, void (f)(t_list *elem));
 int			ft_lstlen(t_list *begin_list);
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list	*ft_lstnew(void const *content, size_t c_size);
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list		*ft_lstnew(void const *content, size_t c_size);
 void		ft_lstprint(t_list *begin_list);
 void		ft_lststart(t_list **list, void *content, size_t c_size);
 char		*ft_lsttostr(t_list **list);
@@ -111,7 +111,7 @@ int			ft_strequ(char const *s1, char const *s2);
 void		ft_striter(char *s, void (*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
 char		*ft_strmap(char const *s, char (*f)(char));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strncat(char *s1, const char *s2, size_t n);
@@ -132,5 +132,5 @@ int			ft_toupper(int c);
 
 #### GNL
 ```c
-int		get_next_line(int const fd, char **line);
+int			get_next_line(int const fd, char **line);
 ```
