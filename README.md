@@ -1,8 +1,13 @@
-# README #
+# Libft  
 
-[Libft](https://mega.nz/#!hpRxmLBJ!SB90oAfdoSDAZ3TWidffhGqtWfeTZI0_gyTGzE9uvPU)
+[PDF](https://mega.nz/#!hpRxmLBJ!SB90oAfdoSDAZ3TWidffhGqtWfeTZI0_gyTGzE9uvPU)
 
-# ft_is
+###Gameplay  
+>Le projet libft vous fait écrire une bibliothèque de fonctions utiles que vous pourrez ensuite utiliser dans la vaste majorité de vos projets de C cette année et ainsi vous faire gagner beaucoup de temps. Ce projet vous demande d’écrire beaucoup de code que vous avez déja réalisé pendant la piscine, ce qui en fait un excellent moment pour faire le point sur votre avancement.
+>Dans une première partie, vous devez recoder un ensemble de fonctions de la libc telles que décrites dans leur man respectif sur votre système. Vos fonctions devront avoir exactement le même prototype et le même comportement que les originales. Leur nom devra être préfixé par “ft_”. Par exemple strlen devient ft_strlen.
+>Dans une seconde partie, vous devrez coder un certain nombre de fonctions absentes de la libc ou présentes dans une forme différente. Certaines de ces fonctions peuvent avoir de l’intéret pour faciliter l’écriture des fonctions de la première partie.
+
+#### ft_is
 * int		ft\_isalnum(int c)
 * int		ft\_isalpha(int c)
 * int		ft\_isascii(int c)
@@ -13,13 +18,13 @@
 * int		ft\_isprint(int c)
 * int		ft\_isspace(int c)
 
-# ft\_len
+#### ft\_len
 * int		ft\_hexalen(char \*str)
 * int		ft\_linelen(const char \*str, int i)
 * int		ft\_nbrlen(int n)
 * size\_t	ft\_strlen(const char \*str)
 
-# ft\_lst
+#### ft\_lst
 * void		ft\_lstadd(t\_list \*\*alst, t\_list \*new)
 * void		ft\_lstclr(t\_list \*\*begin\_list)
 * int		ft\_lstcontentsize(t\_list \*begin\_list)
@@ -34,7 +39,7 @@
 * void		ft\_lststart(t\_list \*\*list, void \*content, size\_t c\_size)
 * char		\*ft\_lsttostr(t\_list \*\*list)
 
-# ft\_math
+#### ft\_math
 * double	ft\_cos(double nb)
 * double	ft\_sin(double nb)
 * double	ft\_tan(double nb)
@@ -44,7 +49,7 @@
 * int		ft\_fibonacci(int nb)
 * int		ft\_rand(int nb)
 
-# ft\_mem
+#### ft\_mem
 * void		ft\_bzero(void \*s, size\_t n)
 * void		\*ft\_memalloc(size\_t size)
 * void		\*ft\_memccpy(void \*dst, const void \*src, int c, size\_t n)
@@ -56,7 +61,7 @@
 * void		\*ft\_memset(void \*b, int c, size\_t len)
 * void		\*ft\_realloc(void \*ptr, size\_t size)
 
-# ft\_nb
+#### ft\_nb
 * int		ft\_atoi(const char \*str)
 * int		ft\_atoi\_hexa(const char \*str)
 * int		ft\_atoi\_part(const char \*str, int i)
@@ -65,7 +70,7 @@
 * int		\*ft\_nbrnew(size\_t size)
 * int		ft\_next\_prime(int nb)
 
-# ft\_print
+#### ft\_print
 * void		ft\_nbrendl(int nb)
 * void		ft\_putchar(char c)
 * void		ft\_putchar\_fd(char c, int fd)
@@ -77,7 +82,7 @@
 * void		ft\_putstr(char const \*str)
 * void		ft\_putstr\_fd(char const \*str, int fd)
 
-# ft\_str
+#### ft\_str
 * char		\*ft\_itoa(int n)
 * char		\*ft\_itoa\_base(int n, int base)
 * char		\*ft\_strcat(char \*s1, const char \*s2)
@@ -109,5 +114,5 @@
 * int		ft\_tolower(int c)
 * int		ft\_toupper(int c)
 
-# GNL
+#### GNL
 * int		get_next_line(int const fd, char \*\*line)
