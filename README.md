@@ -7,7 +7,13 @@
 >Dans une première partie, vous devez recoder un ensemble de fonctions de la libc telles que décrites dans leur man respectif sur votre système. Vos fonctions devront avoir exactement le même prototype et le même comportement que les originales. Leur nom devra être préfixé par “ft_”. Par exemple strlen devient ft_strlen.
 >Dans une seconde partie, vous devrez coder un certain nombre de fonctions absentes de la libc ou présentes dans une forme différente. Certaines de ces fonctions peuvent avoir de l’intéret pour faciliter l’écriture des fonctions de la première partie.
 
-#### ft_is
+###Requirements :
+- [LIBFT](https://bitbucket.org/Tbouder/libft)
+- C compiler  
+- GNU  
+
+###Functions :  
+###### ft_is
 ```c
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -20,7 +26,7 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 ```
 
-#### ft_len
+###### ft_len
 ```c
 int			ft_hexalen(char *str);
 int			ft_linelen(const char *str, int i);
@@ -28,7 +34,7 @@ int			ft_nbrlen(int n);
 size_t		ft_strlen(const char *str);
 ```
 
-#### ft_lst
+###### ft_lst
 ```c
 void		ft_lstadd(t_list **alst, t_list *new);
 void		ft_lstclr(t_list **begin_list);
@@ -45,7 +51,7 @@ void		ft_lststart(t_list **list, void *content, size_t c_size);
 char		*ft_lsttostr(t_list **list);
 ```
 
-#### ft_math
+###### ft_math
 ```c
 double		ft_cos(double nb);
 double		ft_sin(double nb);
@@ -57,7 +63,7 @@ int			ft_fibonacci(int nb);
 int			ft_rand(int nb);
 ```
 
-#### ft_mem
+###### ft_mem
 ```c
 void		ft_bzero(void *s, size_t n);
 void		*ft_memalloc(size_t size);
@@ -71,7 +77,7 @@ void		*ft_memset(void *b, int c, size_t len);
 void		*ft_realloc(void *ptr, size_t size);
 ```
 
-#### ft_nb
+###### ft_nb
 ```c
 int			ft_atoi(const char *str);
 int			ft_atoi_hexa(const char *str);
@@ -82,7 +88,7 @@ int			*ft_nbrnew(size_t size);
 int			ft_next_prime(int nb);
 ```
 
-#### ft_print
+###### ft_print
 ```c
 void		ft_nbrendl(int nb);
 void		ft_putchar(char c);
@@ -96,7 +102,7 @@ void		ft_putstr(char const *str);
 void		ft_putstr_fd(char const *str, int fd);
 ```
 
-#### ft_str
+###### ft_str
 ```c
 char		*ft_itoa(int n);
 char		*ft_itoa_base(int n, int base);
@@ -130,7 +136,7 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 ```
 
-#### GNL
+###### GNL
 ```c
 int			get_next_line(int const fd, char **line);
 ```
