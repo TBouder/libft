@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/04/11 22:24:38 by tbouder          ###   ########.fr        #
+#    Updated: 2016/04/11 22:45:48 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ FT_NB		= 	$(wildcard ft_nb/*.c)
 FT_PRINT	= 	$(wildcard ft_print/*.c)
 FT_STR		= 	$(wildcard ft_str/*.c)
 FT_MATH		= 	$(wildcard ft_math/*.c)
-GNL			= 	$(wildcard gnl/*.c)
+GNL			= 	$(wildcard get_next_line/*.c)
 
 SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
 				$(FT_STR) $(FT_MATH) $(GNL)
