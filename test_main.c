@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/11 20:06:18 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/12 11:26:49 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int		main()
 	int	i;
 	int	j;
 
-	i = ft_printf("Bonjour, %c, %d\n", 'h', 42);
+	i = ft_printf("Bonjour,%t \n",  42);
 	ft_printf("\n\n\n");
-	j = printf("Bonjour, %c, %d\n", 'h', 42);
+	j = printf("Bonjour,%t \n",  42);
 	printf("\n%d vs %d\n", i, j);
 
 

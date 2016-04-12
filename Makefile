@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/04/11 22:45:49 by tbouder          ###   ########.fr        #
+#    Updated: 2016/04/12 11:25:33 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store)
 
 all: $(NAME)
 
-# .SILENT : $(NAME)
+.SILENT : $(NAME)
 $(NAME):
 	$(CC) $(CFLAGS) -c $(HEADER) $(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) $(FT_STR) $(FT_MATH) $(GNL) $(PRINTF_CONV) $(PRINTF_FUNC) $(PRINTF)
 	ar rc $(NAME) $(OBJ)
