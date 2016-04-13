@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 18:34:22 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/12 12:00:13 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/13 13:22:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int		main()
 	int	i;
 	int	j;
 
-	i = ft_printf("Bonjour,%td \n",  42);
+	i = ft_printf("Bonjour, %.5s, %d, %lh020d \n",  "SAlut les coupaings", 42, 42000000000000);
 	ft_printf("\n\n\n");
-	j = printf("Bonjour,%td \n",  42);
+	j = printf("Bonjour, %.5s, %d, %lh020d \n",  "SAlut les coupaings", 42, 42000000000000);
 	printf("\n%d vs %d\n", i, j);
 
 
