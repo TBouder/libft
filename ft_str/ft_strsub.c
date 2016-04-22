@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:07:03 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:13:05 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/22 11:00:55 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == NULL || !(buffer = ft_strnew(len)) || len > ft_strlen(s))
 		return (NULL);
-	while (i < len)
+	while (i < len && ((char *)s)[start])
 	{
 		buffer[i] = ((char *)s)[start];
 		i++;
