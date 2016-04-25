@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/25 14:24:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/25 14:32:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int		ft_undef(const char *str, int i)
 	return (0);
 }
 
-int		ft_color(const char *str, int *index)
+int				ft_color(const char *str, int *index)
 {
 	if (str[*index + 1] == 'b' && str[*index + 2] == '}')
 		write(1, "\033[34;01m", 8);
