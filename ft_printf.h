@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/29 13:01:26 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/25 14:24:22 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,7 @@ void				ft_after_u(t_flags *flags, int v_len);
 void				ft_after_str(t_flags *flags, int v_len);
 void				ft_after_c(t_flags *flags, int v_len);
 void				ft_after_f(t_flags *flags, int v_len);
+
+int					ft_color(const char *str, int *index);
 
 #endif
