@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:06:19 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:02:47 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/26 15:17:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ char			**ft_strsplit(char const *s, char c)
 	n_c[0] = c;
 	if (s == NULL)
 		return (NULL);
-	n_words = ((s != NULL) ? count_w(s, n_c) : 0);
-	if (!(str = (char **)malloc(sizeof(*str) * n_words + 1)))
+	n_words = count_w(s, n_c);
+	if (!(str = (char **)malloc(sizeof(char *) * (n_words + 1))))
 		return (NULL);
 	if (s[0] == '\0')
 		str[i] = ft_strsub(s, 0, count_l(s, c));

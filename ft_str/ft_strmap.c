@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:38:28 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 15:00:29 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/04/26 15:19:08 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		return (NULL);
 	temp = (char *)s;
 	i = 0;
-	if ((buffer = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)) == NULL)
+	if ((buffer = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))) == NULL)
 		return (NULL);
 	while (temp[i])
 	{
