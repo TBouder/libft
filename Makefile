@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/04/26 14:56:05 by tbouder          ###   ########.fr        #
+#    Updated: 2016/05/02 14:59:22 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,14 @@ FT_LST		= 	$(wildcard libft/ft_lst/*.c)
 FT_MEM		= 	$(wildcard libft/ft_mem/*.c)
 FT_NB		= 	$(wildcard libft/ft_nb/*.c)
 FT_PRINT	= 	$(wildcard libft/ft_print/*.c)
+FT_DBSTR	= 	$(wildcard ft_dbstr/*.c)
 FT_STR		= 	$(wildcard libft/ft_str/*.c)
 FT_MATH		= 	$(wildcard libft/ft_math/*.c)
 GNL			= 	$(wildcard libft/get_next_line/*.c)
 
 SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
-				$(FT_STR) $(FT_MATH) $(GNL) $(PRINTF) $(PRINTF_CONV) $(PRINTF_FUNC)
+				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(GNL) $(PRINTF) $(PRINTF_CONV) \
+				$(PRINTF_FUNC)
 OBJ			=	$(notdir $(SRC:.c=.o))
 JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store)
 
@@ -39,7 +41,7 @@ all: $(NAME)
 
 .SILENT : $(NAME)
 $(NAME):
-	$(CC) $(CFLAGS) -c $(HEADER) $(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) $(FT_STR) $(FT_MATH) $(GNL) $(PRINTF_CONV) $(PRINTF_FUNC) $(PRINTF)
+	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
