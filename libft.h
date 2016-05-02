@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/01 13:58:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/02 15:01:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,14 @@ int					ft_nbrlen(int n);
 int					ft_nbrlen_base(long long n, int base);
 int					ft_linelen(const char *str, int i);
 int					ft_hexalen(char *str);
+int					ft_dbstrlen(char **str);
 
 /*
 ** Strings
 */
 
 char				*ft_strnew(size_t size);
+char				*ft_strinit(char *s1);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 
@@ -105,6 +107,11 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(long long n, int base);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+
+/*
+** Double strings
+*/
+void				ft_dbstrdel(char **str);
 
 /*
 ** Numbers
