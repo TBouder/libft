@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/05/02 14:57:23 by tbouder          ###   ########.fr        #
+#    Updated: 2016/05/02 14:58:10 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FT_MEM		= 	$(wildcard ft_mem/*.c)
 FT_NB		= 	$(wildcard ft_nb/*.c)
 FT_PRINT	= 	$(wildcard ft_print/*.c)
 FT_STR		= 	$(wildcard ft_str/*.c)
-FT_DBSTR		= 	$(wildcard ft_dbstr/*.c)
+FT_DBSTR	= 	$(wildcard ft_dbstr/*.c)
 FT_MATH		= 	$(wildcard ft_math/*.c)
 GNL			= 	$(wildcard get_next_line/*.c)
 
