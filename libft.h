@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/02 15:01:48 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/09 15:43:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int					ft_isnumber(int c);
 int					ft_isspace(int c);
 int					ft_isprime(int c);
 int					ft_ishexa(int c);
+int					ft_isstrstr(const char *s1, const char *s2);
 
 /*
 ** Mem
