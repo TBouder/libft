@@ -6,13 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:31:32 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/25 23:54:32 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/09 12:00:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_before(t_flags *flags, int v_len)
+static void	ft_before(t_flags *flags, int v_len)
 {
 	flags->spaces_count = 0;
 	if (flags->spaces && flags->spaces - v_len > 0)
@@ -25,7 +25,7 @@ void	ft_before(t_flags *flags, int v_len)
 	}
 }
 
-void	ft_middle(t_flags *flags, int v_len)
+static void	ft_middle(t_flags *flags, int v_len)
 {
 	if (flags->zero && flags->zero - v_len > 0)
 	{
@@ -45,7 +45,7 @@ void	ft_middle(t_flags *flags, int v_len)
 	}
 }
 
-void	ft_after(t_flags *flags, int v_len)
+static void	ft_after(t_flags *flags, int v_len)
 {
 	if (flags->spaces + v_len < 0)
 	{
@@ -58,7 +58,7 @@ void	ft_after(t_flags *flags, int v_len)
 	}
 }
 
-void	ft_after_null(t_flags *flags, int v_len)
+static void	ft_after_null(t_flags *flags, int v_len)
 {
 	if (flags->spaces + v_len < 0)
 	{
@@ -87,7 +87,7 @@ void	ft_after_null(t_flags *flags, int v_len)
 	}
 }
 
-int		ft_p(va_list pa, t_flags flags)
+int			ft_p(va_list pa, t_flags flags)
 {
 	int		*local_pa;
 	int		len;
