@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 19:18:19 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 23:14:00 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/18 23:44:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 #define	R str[*index + 3]
 #define	F str[*index + 4]
 
+int		ft_ok(char str)
+{
+	if (ft_isdigit(str) || str == 'r' || str == 'g' || str == 'b' || str == 'y'
+		|| str == 'p' || str == 'c' || str == 'w' || str == 'A')
+		return (1);
+	return (0);
+}
+
 int		ft_color(const char *str, int *index)
 {
-	if (O < '0' && O > '9' && O != 'r' && O != 'g' && O != 'y' && O != 'b'
-		&& O != 'p' && O != 'c' && O != 'w' && O != 'A')
-	{
-		index += 1;
-		return (1);
-	}
-	else
+	if ((ft_ok(O) && T == '}') || (ft_ok(O) && ft_ok(T) && R == '}') || (ft_ok(O) && ft_ok(T) && ft_ok(R) == '}' && F == '}'))
 	{
 		ft_color_part_1(str, index);
 		ft_color_part_2(str, index);
@@ -44,6 +46,9 @@ int		ft_color(const char *str, int *index)
 			*index += 4;
 		else if (O && T && R && F && F == '}')
 			*index += 5;
+		return (0);
 	}
-	return (0);
+	else
+		index += 1;
+	return (1);
 }
