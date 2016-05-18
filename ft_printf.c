@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/25 14:32:01 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/18 20:06:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,6 @@ static int		ft_undef(const char *str, int i)
 			return (1);
 		i++;
 	}
-	return (0);
-}
-
-int				ft_color(const char *str, int *index)
-{
-	if (str[*index + 1] == 'b' && str[*index + 2] == '}')
-		write(1, "\033[34;01m", 8);
-	else if (str[*index + 1] == 'r' && str[*index + 2] == '}')
-		write(1, "\033[31;01m", 8);
-	else if (str[*index + 1] == 'g' && str[*index + 2] == '}')
-		write(1, "\033[32;01m", 8);
-	else if (str[*index + 1] == 'y' && str[*index + 2] == '}')
-		write(1, "\033[33;01m", 8);
-	else if (str[*index + 1] == 'p' && str[*index + 2] == '}')
-		write(1, "\033[35;01m", 8);
-	else if (str[*index + 1] == 'c' && str[*index + 2] == '}')
-		write(1, "\033[36;01m", 8);
-	else if (str[*index + 1] == 'w' && str[*index + 2] == '}')
-		write(1, "\033[37;01m", 8);
-	else if (str[*index + 1] == '0' && str[*index + 2] == '}')
-		write(1, "\033[00m", 5);
-	else
-	{
-		index += 1;
-		return (1);
-	}
-	*index += 3;
 	return (0);
 }
 
