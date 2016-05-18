@@ -11,6 +11,7 @@
 - [x] Flag ! (Do not display the result of the conversion)  
 - [x] %f (float)  
 - [x] Colors ({b} for blue, {g} for green, etc.)  
+- [x] Extended colors (from {0} to {255} and {A} to display all the colors)  
 - [x] %b (binary)  
 - [x] %B (binary UTF-8)  
 
