@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 20:09:40 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 20:27:42 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/18 22:14:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,40 @@
 #define	R str[*index + 3]
 #define	F str[*index + 4]
 
+/*
+** Some modifier for color shape
+** 9698 : ◢
+** 9699 : ◣
+** 9700 : ◤
+** 9701 : ◥
+** 9607 : ▇
+** 11044 : ⬤
+*/
+
 static void	ft_print_all_colors(void)
 {
 	int		i;
+	int		j;
 
 	i = 0;
-	while (i <= 255)
+	j = 0;
+	while (i <= 15)
 	{
-		ft_printf("%s%d%s%d%s\t", "\e[38;5;", i, "m", i, "\e[0m");
-		if (!((i + 1) % 10))
+		ft_printf("%s%d%s%C: %d%s\t", "\e[38;5;", i, "m", 9607, i, "\e[0m");
+		if (!((i + 1) % 6))
 			ft_putchar('\n');
 		i++;
+	}
+	ft_putendl("\n");
+	while (i <= 256)
+	{
+		ft_printf("%s%d%s%C: %d%s\t", "\e[38;5;", i, "m", 9607, i, "\e[0m");
+		if (i == 51 || i == 87 || i == 123 || i == 159 || i == 195 || i == 231)
+			ft_putstr("\n\n");
+		else if (!((j + 1) % 6))
+			ft_putstr("\n");
+		i++;
+		j++;
 	}
 	ft_putchar('\n');
 }
