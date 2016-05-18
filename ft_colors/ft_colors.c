@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 19:18:19 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 20:15:04 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/18 23:14:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,12 @@ int		ft_color(const char *str, int *index)
 		ft_color_part_10(str, index);
 		ft_color_part_11(str, index);
 		ft_color_part_12(str, index);
-		T == '}' ? *index += 3 : 0;
-		R == '}' ? *index += 4 : 0;
-		F == '}' ? *index += 5 : 0;
-		return (0);
+		if (O && T && T == '}')
+			*index += 3;
+		else if (O && T && R && R == '}')
+			*index += 4;
+		else if (O && T && R && F && F == '}')
+			*index += 5;
 	}
+	return (0);
 }

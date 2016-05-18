@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 11:43:46 by tbouder           #+#    #+#             */
-/*   Updated: 2016/04/25 14:26:24 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/18 23:16:57 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_put_precision_wstr(t_flags flags, char *local_pa, int len)
 	i = 0;
 	while (i < len)
 	{
+		(local_pa[i] == '{') ? ft_color(local_pa, &i) : 0;
 		(flags.preci == -1 && (!flags.display)) ? ft_putchar(' ') : 0;
 		(flags.preci != -1 && (!flags.display)) ? ft_putchar(local_pa[i]) : 0;
 		i++;
@@ -42,7 +43,7 @@ void	ft_put_precision_str(t_flags flags, char *local_pa, int len)
 	i = 0;
 	while (i < len)
 	{
-		ft_color(local_pa, &i);
+		(local_pa[i] == '{') ? ft_color(local_pa, &i) : 0;
 		(flags.preci == -1 && (!flags.display)) ? ft_putchar(' ') : 0;
 		(flags.preci != -1 && (!flags.display)) ? ft_putchar(local_pa[i]) : 0;
 		i++;
