@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 19:18:19 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 23:44:10 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/19 12:16:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define	T str[*index + 2]
 #define	R str[*index + 3]
 #define	F str[*index + 4]
+#define	V str[*index + 5]
 
 int		ft_ok(char str)
 {
@@ -26,7 +27,7 @@ int		ft_ok(char str)
 
 int		ft_color(const char *str, int *index)
 {
-	if ((ft_ok(O) && T == '}') || (ft_ok(O) && ft_ok(T) && R == '}') || (ft_ok(O) && ft_ok(T) && ft_ok(R) == '}' && F == '}'))
+	if ((ft_ok(O) && T == '}') || (ft_ok(O) && ft_ok(T) && R == '}') || (ft_ok(O) && ft_ok(T) && ft_ok(R) && F == '}'))
 	{
 		ft_color_part_1(str, index);
 		ft_color_part_2(str, index);
