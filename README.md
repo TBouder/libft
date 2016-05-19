@@ -1,5 +1,6 @@
 # ft_printf
 
+![Illustration](http://img15.hostingpics.net/pics/880748printf.png)  
 [PDF](https://mega.nz/#!VxAWmZSa!mD6758M1O06xHDIL-loe0mCVd6_R179JIar4kGiVA68)  
 
 ###Gameplay  
