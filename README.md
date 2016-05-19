@@ -22,6 +22,5 @@
 - GNU  
 
 ###Installation :  
-1. git clone https://bitbucket.org/Tbouder/ft_printf && cd ft_printf  
-2. git clone https://bitbucket.org/Tbouder/libft  
+1. git clone https://bitbucket.org/Tbouder/ft_printf  
 3. make  

@@ -6,21 +6,11 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:02:47 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 23:44:13 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/19 13:08:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-** Bonus
-** - flag *
-** - flag !
-** - %f
-** - colors
-** - binary
-** - binary oct
-*/
 
 static int		ft_undef(const char *str, int i)
 {
