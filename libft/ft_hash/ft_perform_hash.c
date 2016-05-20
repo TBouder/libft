@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 16:53:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/20 17:00:58 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/20 17:19:00 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,40 @@
 
 #include "../libft.h"
 
-static unsigned char	ft_end(const char *data, unsigned char hash, int i)
+static void		ft_end(const char *data, unsigned char *hash, int i)
 {
 	if (i == 3)
 	{
-		hash += (unsigned char)data;
-		hash ^= hash << 8;
-		hash ^= ((signed char)data[sizeof(unsigned char)]) << 9;
-		hash += hash >> 5;
+		*hash += (unsigned char)data;
+		*hash ^= *hash << 8;
+		*hash ^= ((signed char)data[sizeof(unsigned char)]) << 9;
+		*hash += *hash >> 5;
 	}
 	else if (i == 2)
 	{
-		hash += (unsigned char) (data);
-		hash ^= hash << 5;
-		hash += hash >> 8;
+		*hash += (unsigned char)data;
+		*hash ^= *hash << 5;
+		*hash += *hash >> 8;
 	}
 	else if (i == 1)
 	{
-		hash += (char)*data;
-		hash ^= hash << 4;
-		hash += hash >> 1;
+		*hash += (char)*data;
+		*hash ^= *hash << 4;
+		*hash += *hash >> 1;
 	}
-	return (hash);
 }
 
-static unsigned char	ft_snow(unsigned char hash)
+static void		ft_snow(unsigned char *hash)
 {
-	hash ^= hash << 3;
-    hash += hash >> 5;
-    hash ^= hash << 4;
-    hash += hash >> 17;
-    hash ^= hash << 25;
-    hash += hash >> 6;
-	return (hash);
+	*hash ^= *hash << 3;
+    *hash += *hash >> 5;
+    *hash ^= *hash << 4;
+    *hash += *hash >> 17;
+    *hash ^= *hash << 25;
+    *hash += *hash >> 6;
 }
 
-unsigned char			ft_perform_hash(const char *data, int len)
+unsigned char	ft_perform_hash(const char *data, int len)
 {
 	unsigned char	hash;
 	unsigned char	temp;
@@ -62,7 +60,6 @@ unsigned char			ft_perform_hash(const char *data, int len)
 	hash = len;
     i = len & 3;
     len >>= 1;
-	ft_end(data, hash, i);
 	while (len > 0)
 	{
 		hash += (unsigned char)data;
@@ -72,6 +69,7 @@ unsigned char			ft_perform_hash(const char *data, int len)
 		hash += hash >> 5;
 		len--;
 	}
-	ft_snow(hash);
+	ft_end(data, &hash, i);
+	ft_snow(&hash);
     return (hash);
 }
