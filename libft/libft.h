@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/09 15:43:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/20 17:02:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,5 +173,11 @@ double				ft_sin(double nb);
 double				ft_cos(double nb);
 double				ft_tan(double nb);
 int					ft_pgcd(int nb1, int nb2);
+
+/*
+** Hash
+*/
+unsigned char		ft_perform_hash(const char *data, int len);
+
 
 #endif

@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/05/18 20:07:08 by tbouder          ###   ########.fr        #
+#    Updated: 2016/05/20 17:01:54 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,11 @@ FT_PRINT	= 	$(wildcard libft/ft_print/*.c)
 FT_DBSTR	= 	$(wildcard libft/ft_dbstr/*.c)
 FT_STR		= 	$(wildcard libft/ft_str/*.c)
 FT_MATH		= 	$(wildcard libft/ft_math/*.c)
+FT_HASH		= 	$(wildcard libft/ft_hash/*.c)
 GNL			= 	$(wildcard libft/get_next_line/*.c)
 
 SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
-				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(GNL) $(PRINTF) $(PRINTF_CONV) \
+				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH) $(GNL) $(PRINTF) $(PRINTF_CONV) \
 				$(PRINTF_FUNC) $(PRINTF_COL)
 OBJ			=	$(notdir $(SRC:.c=.o))
 JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store)
