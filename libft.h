@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/20 17:22:33 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/21 01:27:52 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,11 @@ int					ft_pgcd(int nb1, int nb2);
 /*
 ** Hash
 */
-unsigned char		ft_perform_hash(const char *data, int len);
+unsigned int		ft_hash_superfast(const char *data, int len);
+unsigned int		ft_hash_djbtwo(char *str, int len);
+unsigned int		ft_hash_sdbm(char *str, int len);
+unsigned long int	adler_thirtytwo(const void *str, unsigned int len);
+unsigned int		ft_hash_little(char *str, int len);
 
 
 #endif
