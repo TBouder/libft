@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/18 20:10:52 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/20 12:00:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,18 +117,5 @@ void				ft_after_c(t_flags *flags, int v_len);
 void				ft_after_f(t_flags *flags, int v_len);
 
 int					ft_color(const char *str, int *index);
-void				ft_color_part_1(const char *str, int *index);
-void				ft_color_part_2(const char *str, int *index);
-void				ft_color_part_3(const char *str, int *index);
-void				ft_color_part_4(const char *str, int *index);
-void				ft_color_part_5(const char *str, int *index);
-void				ft_color_part_6(const char *str, int *index);
-void				ft_color_part_7(const char *str, int *index);
-void				ft_color_part_8(const char *str, int *index);
-void				ft_color_part_9(const char *str, int *index);
-void				ft_color_part_10(const char *str, int *index);
-void				ft_color_part_11(const char *str, int *index);
-void				ft_color_part_12(const char *str, int *index);
-
 
 #endif
