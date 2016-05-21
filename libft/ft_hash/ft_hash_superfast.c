@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_perform_hash.c                                  :+:      :+:    :+:   */
+/*   ft_hash_superfast.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 16:53:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/20 17:19:00 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/21 01:20:21 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void		ft_snow(unsigned char *hash)
     *hash += *hash >> 6;
 }
 
-unsigned char	ft_perform_hash(const char *data, int len)
+unsigned int	ft_hash_superfast(const char *data, int len)
 {
 	unsigned char	hash;
 	unsigned char	temp;
@@ -71,5 +71,6 @@ unsigned char	ft_perform_hash(const char *data, int len)
 	}
 	ft_end(data, &hash, i);
 	ft_snow(&hash);
-    return (hash);
+	len += len / 2;
+	return (hash % len);
 }
