@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/21 01:27:52 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/23 13:20:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "get_next_line/get_next_line.h"
 
 # define PI 3.141592653589793
+# define EQU ft_strequ
+# define CMP ft_strcmp
 
 typedef struct		s_list
 {
@@ -44,6 +46,7 @@ int					ft_isspace(int c);
 int					ft_isprime(int c);
 int					ft_ishexa(int c);
 int					ft_isstrstr(const char *s1, const char *s2);
+int					ft_isstrnum(char *str);
 
 /*
 ** Mem
