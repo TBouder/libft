@@ -6,16 +6,16 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 19:18:19 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/20 12:02:19 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:37:20 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#define	O str[*index + 1]
-#define	T str[*index + 2]
-#define	R str[*index + 3]
-#define	F str[*index + 4]
-#define	V str[*index + 5]
+#define O str[*index + 1]
+#define T str[*index + 2]
+#define R str[*index + 3]
+#define F str[*index + 4]
+#define V str[*index + 5]
 
 int			ft_ok(char str)
 {
