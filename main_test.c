@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 12:59:06 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/25 12:43:32 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:52:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static void	ft_part_three(void)
 	printf("\t%S\n", L"我是一只猫。");
 }
 
-int		main(void)
+int			main(void)
 {
 	setlocale(LC_ALL, "en_US.UTF-8");
 	ft_printf("{156}SRC{0}\t\t\t{38}MINE{0}\t\t\t{208}ORIGINAL{0}\n");
