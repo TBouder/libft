@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 16:53:48 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/21 01:20:21 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:41:26 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ static void		ft_end(const char *data, unsigned char *hash, int i)
 static void		ft_snow(unsigned char *hash)
 {
 	*hash ^= *hash << 3;
-    *hash += *hash >> 5;
-    *hash ^= *hash << 4;
-    *hash += *hash >> 17;
-    *hash ^= *hash << 25;
-    *hash += *hash >> 6;
+	*hash += *hash >> 5;
+	*hash ^= *hash << 4;
+	*hash += *hash >> 17;
+	*hash ^= *hash << 25;
+	*hash += *hash >> 6;
 }
 
 unsigned int	ft_hash_superfast(const char *data, int len)
@@ -55,11 +55,11 @@ unsigned int	ft_hash_superfast(const char *data, int len)
 	unsigned char	temp;
 	int				i;
 
-    if (len <= 0 || data == NULL)
+	if (len <= 0 || data == NULL)
 		return (0);
 	hash = len;
-    i = len & 3;
-    len >>= 1;
+	i = len & 3;
+	len >>= 1;
 	while (len > 0)
 	{
 		hash += (unsigned char)data;

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/23 13:20:58 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:46:39 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,5 @@ unsigned int		ft_hash_djbtwo(char *str, int len);
 unsigned int		ft_hash_sdbm(char *str, int len);
 unsigned long int	adler_thirtytwo(const void *str, unsigned int len);
 unsigned int		ft_hash_little(char *str, int len);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/21 01:05:37 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/21 01:06:32 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:40:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ unsigned int	ft_hash_djbtwo(char *str, int len)
 	counter = 0;
 	while (str[counter])
 	{
-	    hash = ((hash << 5) + hash) + str[counter];
+		hash = ((hash << 5) + hash) + str[counter];
 		counter++;
 	}
 	len += len / 2;

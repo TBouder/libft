@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 17:21:09 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/20 17:22:21 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:42:26 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ static void		ft_print_raw_mem(char *add, size_t size)
 static void		ft_print_hex_mem(char *add, size_t size)
 {
 	size_t		i;
-	char		hex[] = "0123456789abcdef";
+	char		*hex;
 
+	hex = ft_strinit("0123456789abcdef");
 	i = 0;
 	while (i < 16)
 	{
@@ -54,7 +55,7 @@ static void		ft_print_hex_mem(char *add, size_t size)
 			ft_putchar(' ');
 		i++;
 	}
-
+	ft_strdel(&hex);
 }
 
 void			ft_print_memory(const void *addr, size_t size)

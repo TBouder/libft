@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/21 01:02:34 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/21 01:05:05 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/25 12:40:16 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ unsigned int	ft_hash_sdbm(char *str, int len)
 	counter = 0;
 	while (str[counter])
 	{
-    	hash = str[counter] + (hash << 6) + (hash << 16) - hash;
+		hash = str[counter] + (hash << 6) + (hash << 16) - hash;
 		counter++;
 	}
 	len += len / 2;
