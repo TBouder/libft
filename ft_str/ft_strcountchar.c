@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strcountchar.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/30 19:48:38 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/05/29 15:20:14 by tbouder          ###   ########.fr       */
+/*   Created: 2016/05/29 15:20:42 by tbouder           #+#    #+#             */
+/*   Updated: 2016/05/29 15:21:30 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_sqrt() function returns the square of nb.
+** The ft_strcountchar() function will count the number of occurence of c inside
+** of str
 */
 
 #include "../libft.h"
 
-int		ft_sqrt(int nb)
+int		ft_strcountchar(char *str, char c)
 {
-	int	i;
-	int	sqr;
+	int		i;
+	int		space;
 
-	sqr = 0;
-	i = 1 << 30;
-	while (i > nb)
-		i >>= 2;
-	while (i != 0)
+	i = 0;
+	space = 0;
+	while (str[i])
 	{
-		if (nb >= sqr + i)
-		{
-			nb -= sqr + i;
-			sqr = (sqr >> 1) + i;
-		}
-		else
-			sqr >>= 1;
-		i >>= 2;
+		if (str[i] == c)
+			space++;
+		i++;
 	}
-	return (sqr);
+	return (space + 1);
 }

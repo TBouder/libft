@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/25 12:46:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/29 15:21:53 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(long long n, int base);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+
+int					ft_strcountchar(char *str, char c);
 
 /*
 ** Double strings
