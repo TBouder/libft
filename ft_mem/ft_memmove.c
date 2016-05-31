@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:31:08 by tbouder           #+#    #+#             */
-/*   Updated: 2015/12/25 14:11:29 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/30 18:21:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	temp[len];
+	char	*temp;
 
+	temp = ft_strnew(len);
 	ft_memcpy(temp, src, len);
 	ft_memcpy(dst, temp, len);
+	ft_strdel(&temp);
 	return (dst);
 }
