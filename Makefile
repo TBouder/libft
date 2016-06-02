@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
-#    Updated: 2016/05/20 17:01:54 by tbouder          ###   ########.fr        #
+#    Updated: 2016/06/02 11:57:40 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,20 +36,21 @@ SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
 				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH) $(GNL) $(PRINTF) $(PRINTF_CONV) \
 				$(PRINTF_FUNC) $(PRINTF_COL)
 OBJ			=	$(notdir $(SRC:.c=.o))
+OBJ			=	$(patsubst %.c,%.o, $(SRC))
 JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store)
 
 
 all: $(NAME)
 
-.SILENT : $(NAME)
-$(NAME):
+.SILENT : $(NAME) $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 .SILENT : clean
 clean:
-	rm -f $(OBJ) $(JUNCK)
+	rm -f $(notdir $(OBJ)) $(OBJ) $(JUNCK)
 
 .SILENT : fclean
 fclean: clean

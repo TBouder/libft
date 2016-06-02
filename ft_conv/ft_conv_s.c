@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:27:03 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/26 16:37:15 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/06/02 13:18:13 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ int			ft_conv_s_case2(t_flags flags)
 	int		ln;
 
 	ln = 6;
-	ft_before_str(&flags, 6);
-	(!flags.display) ? ft_putstr("(null)") : 0;
-	ft_after_str(&flags, 6);
-	return (ln);
+	flags.preci > 0 && flags.preci < ln ? ln = flags.preci : 0;
+	ft_before_str(&flags, ln);
+	ft_put_precision_str(flags, "(null)", ln);
+	ft_after_str(&flags, ln);
+	return (ln + flags.spaces_count);
 }
 
 static int	ft_conv_s_case3(char *lpa, t_flags flags)
@@ -67,7 +68,7 @@ int			ft_s(va_list pa, t_flags flags)
 	local_pa = va_arg(pa, char *);
 	if (local_pa == NULL && flags.preci == -1)
 		return (ft_conv_s_case1(local_pa, flags));
-	else if (local_pa == NULL && flags.preci == 0)
+	else if (local_pa == NULL && flags.preci >= 0)
 		return (ft_conv_s_case2(flags));
 	else if (local_pa != NULL && flags.preci == -1)
 		return (ft_conv_s_case3(local_pa, flags));
