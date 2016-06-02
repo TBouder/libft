@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 11:59:39 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/23 20:03:09 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/05/30 18:04:58 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft.h"
-# define BUFF_SIZE 100000
+# define BUFF_SIZE 1000000
 
 int		get_next_line(int const fd, char **line);
 
