@@ -6,7 +6,7 @@
 /*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 22:06:30 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/03/21 22:07:33 by Tbouder          ###   ########.fr       */
+/*   Updated: 2016/06/02 12:16:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@
 
 #include "../libft.h"
 
-int		ft_nbrlen_base(long long n, int base)
+int		ft_nbrlen_base(long value, int base)
 {
-	int		i;
+	int		result;
 
-	i = 0;
-	while (n != 0)
+	result = 0;
+	if (value == 0)
+		return (2);
+	while (value != 0)
 	{
-		n /= base;
-		i++;
+		result++;
+		value /= base;
 	}
-	return (i);
+	return (result + 1);
 }
