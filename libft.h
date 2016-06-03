@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/06/02 12:17:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/06/02 13:04:35 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void				ft_print_memory(const void *addr, size_t size);
 
 size_t				ft_strlen(const char *s);
 int					ft_nbrlen(int n);
-int					ft_nbrlen_base(long value, int base);
+int					ft_nbrlen_base(long long n, int base);
 int					ft_linelen(const char *str, int i);
 int					ft_hexalen(char *str);
 int					ft_dbstrlen(char **str);
