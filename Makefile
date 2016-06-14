@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/05/20 17:20:34 by tbouder          ###   ########.fr        #
+#    Updated: 2016/06/02 11:33:07 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ GNL			= 	$(wildcard get_next_line/*.c)
 SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
 				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH) $(GNL)
 OBJ			=	$(notdir $(SRC:.c=.o))
-JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store)
+JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store libft.h.gch)
 
 all: $(NAME)
 
