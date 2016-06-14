@@ -95,9 +95,9 @@ int			main(void)
 	ft_part_two();
 	ft_part_three();
 	ft_printf("\nSupport flags & modifiers : l, ll, h, hh, j, z, *, !, ., #, 0,\
-		 -, + and space\n");
+ -, + and space\n");
 	ft_putstr("\n--ft_printf(\"{A}\")------------------------------------------\
-		--------\n");
+--------\n");
 	ft_printf("{A}");
 	return (0);
 }
