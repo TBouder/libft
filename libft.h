@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/07/28 17:23:08 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/07/28 20:39:06 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string.h>
 # include <fcntl.h>
-# include "get_next_line/get_next_line.h"
 
 # define PI		3.141592653589793
 # define EQU	ft_strequ
