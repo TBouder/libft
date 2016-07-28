@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/06/02 13:04:35 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/07/28 17:23:08 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
-# define PI 3.141592653589793
-# define EQU ft_strequ
-# define CMP ft_strcmp
+# define PI		3.141592653589793
+# define EQU	ft_strequ
+# define CMP	ft_strcmp
+# define FALSE	0
+# define TRUE	1
 
 typedef struct		s_list
 {
@@ -104,6 +107,8 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strnjoin(char const *s1, char const *s2, int n1,
+						int n2);
 char				*ft_strtrim(char const *s);
 char				*ft_strtrim_char(char const *s, char c);
 char				**ft_strsplit(char const *s, char c);

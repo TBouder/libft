@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 00:29:53 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 13:17:44 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/07/28 00:13:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_lsttostr(t_list **list)
 	tmp = *list;
 	while (tmp)
 	{
-		str = ft_strncat(str, tmp->content, tmp->content_size);
+		str = ft_strcat(str, tmp->content);
 		tmp = tmp->next;
 	}
 	ft_lstclr(list);
