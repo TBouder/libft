@@ -6,16 +6,20 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/07/28 21:04:58 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/08/23 00:17:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <fcntl.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+
 # include "get_next_line/get_next_line.h"
+// # include "ft_printf/ft_printf.h"
 
 # define PI		3.141592653589793
 # define EQU	ft_strequ
