@@ -6,20 +6,19 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 15:59:36 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/25 12:37:16 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/08/23 00:22:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
 # include <wchar.h>
 # include <limits.h>
 # include <locale.h>
-# include "libft/libft.h"
+
+# include "../libft.h"
 # define ULL unsigned long long
 
 typedef struct		s_flags
