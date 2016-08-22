@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/07/28 17:23:05 by tbouder          ###   ########.fr        #
+#    Updated: 2016/08/23 00:33:58 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,11 @@ NAME 		= 	libft.a
 
 CC			= 	gcc
 CFLAGS		= 	-Wall -Werror -Wextra
+HEADER 		= 	libft.h get_next_line/get_next_line.h ft_printf/ft_printf.h
 
-HEADER 		= 	./libft.h ./get_next_line/get_next_line.h
+################################################################################
+#	LIBFT
+################################################################################
 FT_IS		= 	$(wildcard ft_is/*.c)
 FT_LEN		= 	$(wildcard ft_len/*.c)
 FT_LST		= 	$(wildcard ft_lst/*.c)
@@ -26,27 +29,52 @@ FT_STR		= 	$(wildcard ft_str/*.c)
 FT_DBSTR	= 	$(wildcard ft_dbstr/*.c)
 FT_MATH		= 	$(wildcard ft_math/*.c)
 FT_HASH		= 	$(wildcard ft_hash/*.c)
-GNL			= 	$(wildcard get_next_line/*.c)
+LIBFT		=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
+				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH)
 
-SRC			=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
-				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH) $(GNL)
+SRC_FILES = $(filter-out src/bar.cpp, $(wildcard src/*.cpp))
+################################################################################
+#	GET_NEXT_LINE
+################################################################################
+GET			= 	$(filter-out get_next_line/main_test.c, \
+				$(wildcard get_next_line/*.c))
+GNL			=	$(GET)
+
+################################################################################
+#	FT_PRINTF
+################################################################################
+PRINTF		= 	$(filter-out ft_printf/main_test.c, \
+				$(wildcard ft_printf/*.c))
+PRINTF_CONV	= 	$(wildcard ft_printf/ft_conv/*.c)
+PRINTF_FUNC	= 	$(wildcard ft_printf/ft_funcs/*.c)
+PRINTF_COL	= 	$(wildcard ft_printf/ft_colors/*.c)
+FT_PRINTF	=	$(PRINTF) $(PRINTF_CONV) $(PRINTF_FUNC) $(PRINTF_COL)
+
+SRC			=	$(LIBFT) $(GET) $(FT_PRINTF)
 OBJ			=	$(notdir $(SRC:.c=.o))
-JUNCK		=	$(wildcard *.gch .DS_Store */.DS_Store libft.h.gch)
+JUNCK		=	$(wildcard .DS_Store */.DS_Store */*/.DS_Store *.gch \
+				get_next_line/*.gch ft_printf/*.gch)
+
+
+################################################################################
+#	RULES
+################################################################################
+.SILENT : $(NAME) clean fclean
 
 all: $(NAME)
 
-.SILENT : $(NAME)
 $(NAME):
 	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-.SILENT : clean
 clean:
 	rm -f $(OBJ) $(JUNCK)
 
-.SILENT : fclean
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+list:
+	ar t $(NAME)
