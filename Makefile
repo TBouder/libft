@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/08/23 00:33:58 by tbouder          ###   ########.fr        #
+#    Updated: 2016/08/24 15:20:59 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ FT_HASH		= 	$(wildcard ft_hash/*.c)
 LIBFT		=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
 				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH)
 
-SRC_FILES = $(filter-out src/bar.cpp, $(wildcard src/*.cpp))
 ################################################################################
 #	GET_NEXT_LINE
 ################################################################################
