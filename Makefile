@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/08/24 15:20:59 by tbouder          ###   ########.fr        #
+#    Updated: 2016/09/12 15:14:15 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,8 +61,6 @@ JUNCK		=	$(wildcard .DS_Store */.DS_Store */*/.DS_Store *.gch \
 .SILENT : $(NAME) clean fclean
 
 all: $(NAME)
-
-$(NAME):
 	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
