@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/09/12 15:14:15 by tbouder          ###   ########.fr        #
+#    Updated: 2016/09/13 09:29:01 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,10 @@ NAME 		= 	libft.a
 
 CC			= 	gcc
 CFLAGS		= 	-Wall -Werror -Wextra
+OCLINT		=	oclint
+OFLAGS		=	-enable-global-analysis -rc SHORT_VARIABLE_NAME=1 \
+				-rc LONG_LINE=80 -rc CYCLOMATIC_COMPLEXITY=25 -disable-rule \
+				UselessParentheses -disable-rule ParameterReassignment
 HEADER 		= 	libft.h get_next_line/get_next_line.h ft_printf/ft_printf.h
 
 ################################################################################
@@ -58,9 +62,11 @@ JUNCK		=	$(wildcard .DS_Store */.DS_Store */*/.DS_Store *.gch \
 ################################################################################
 #	RULES
 ################################################################################
-.SILENT : $(NAME) clean fclean
+.SILENT : $(NAME) clean fclean oclint
 
 all: $(NAME)
+
+$(NAME):
 	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
@@ -75,3 +81,6 @@ re: fclean all
 
 list:
 	ar t $(NAME)
+
+oclint:
+	$(OCLINT) $(OFLAGS) $(LIBFT) $(GET) $(FT_PRINTF) $(HEADER) -- c

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 14:30:38 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/30 14:33:06 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/09/13 09:24:33 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 
 int		ft_nbrcmp(int nb1, int nb2)
 {
-	if (nb1 != nb2)
-		return (nb1 - nb2);
-	else
+	if (nb1 == nb2)
 		return (0);
+	return (nb1 - nb2);
 }

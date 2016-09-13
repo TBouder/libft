@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:05:56 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 14:58:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/09/13 09:27:11 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		}
 		if (match == ft_strlen(s2))
 			return ((char *)s1 + i - match);
-		else
-			i -= match;
+		i -= match;
 		i++;
 	}
 	return (NULL);
