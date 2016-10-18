@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:02:55 by tbouder           #+#    #+#             */
-/*   Updated: 2016/05/31 17:56:52 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/10/18 00:33:01 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_list		*ft_lstnew(void const *content, size_t c_size)
 	}
 	else
 	{
-		list->content = ft_strinit((char *)content);
+		list->content = (void*)malloc(c_size);
+		ft_memmove(list->content, (void *)content, c_size);
 		list->content_size = c_size;
 	}
 	list->next = NULL;
