@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 14:23:05 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/05 17:40:49 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/11/03 17:54:47 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 ** end of the linked list.
 */
 
-#include <stdlib.h>
 #include "../libft.h"
 
 void	ft_lstend(t_list **list, void *content, size_t c_size)
