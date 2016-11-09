@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/03 17:56:11 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/11/09 13:18:43 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_btree
+{
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}					t_btree;
 
 typedef struct		s_block
 {
@@ -199,5 +207,18 @@ unsigned int		ft_hash_djbtwo(char *str, int len);
 unsigned int		ft_hash_sdbm(char *str, int len);
 unsigned long int	adler_thirtytwo(const void *str, unsigned int len);
 unsigned int		ft_hash_little(char *str, int len);
+
+/*
+** Btree
+*/
+void				ft_btree_print_preorder(t_btree *node);
+void				ft_btree_print_inorder(t_btree *node);
+void				ft_btree_print_postorder(t_btree *node);
+void 				ft_btreecmp_rev(t_btree **tree, void const *content,
+						size_t c_size);
+void 				ft_btreecmp(t_btree **tree, void const *content,
+						size_t c_size);
+t_btree				*ft_btreenew(void const *content, size_t c_size);
+
 
 #endif

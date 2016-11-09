@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/11/03 17:56:19 by tbouder          ###   ########.fr        #
+#    Updated: 2016/11/09 13:19:09 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,9 @@ FT_STR		= 	$(wildcard ft_str/*.c)
 FT_DBSTR	= 	$(wildcard ft_dbstr/*.c)
 FT_MATH		= 	$(wildcard ft_math/*.c)
 FT_HASH		= 	$(wildcard ft_hash/*.c)
+FT_BTREE	= 	$(wildcard ft_btree/*.c)
 LIBFT		=	$(FT_IS) $(FT_LEN) $(FT_LST) $(FT_MEM) $(FT_NB) $(FT_PRINT) \
-				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH)
+				$(FT_STR) $(FT_DBSTR) $(FT_MATH) $(FT_HASH) $(FT_BTREE)
 
 ################################################################################
 #	GET_NEXT_LINE

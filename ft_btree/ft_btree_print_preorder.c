@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dbstrdel.c                                      :+:      :+:    :+:   */
+/*   ft_btree_print_preorder.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/02 14:52:38 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/09 13:12:02 by tbouder          ###   ########.fr       */
+/*   Created: 2016/11/09 13:15:43 by tbouder           #+#    #+#             */
+/*   Updated: 2016/11/09 13:17:12 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_dbstrdel() function desallocs **str
-*/
-
 #include "../libft.h"
 
-void		ft_dbstrdel(char **str)
+void		ft_btree_print_preorder(t_btree *node)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
+	if (node)
 	{
-		ft_strdel(&str[i]);
-		i++;
+		ft_printf("%s\n", node->content);
+		ft_btree_print_preorder(node->left);
+		ft_btree_print_preorder(node->right);
 	}
-	free(str);
 }

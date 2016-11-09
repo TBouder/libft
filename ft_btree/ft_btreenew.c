@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dbstrdel.c                                      :+:      :+:    :+:   */
+/*   ft_btreenew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/02 14:52:38 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/09 13:12:02 by tbouder          ###   ########.fr       */
+/*   Created: 2016/11/09 13:11:52 by tbouder           #+#    #+#             */
+/*   Updated: 2016/11/09 13:14:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_dbstrdel() function desallocs **str
-*/
-
 #include "../libft.h"
 
-void		ft_dbstrdel(char **str)
+t_btree		*ft_btreenew(void const *content, size_t c_size)
 {
-	int		i;
+	t_btree		*btree;
 
-	i = 0;
-	while (str[i])
+	if (!(btree = (t_btree *)malloc(sizeof(t_btree))))
+		return (NULL);
+	if (content == NULL)
 	{
-		ft_strdel(&str[i]);
-		i++;
+		btree->content = NULL;
+		btree->content_size = 0;
 	}
-	free(str);
+	else
+	{
+		btree->content = (void*)malloc(c_size);
+		ft_memmove(btree->content, (void *)content, c_size);
+		btree->content_size = c_size;
+	}
+	btree->left = NULL;
+	btree->right = NULL;
+	return (btree);
 }
