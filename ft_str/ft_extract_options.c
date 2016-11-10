@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btreedel.c                                      :+:      :+:    :+:   */
+/*   ft_extract_options.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:11:54 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/10 11:50:30 by tbouder          ###   ########.fr       */
+/*   Created: 2016/11/10 13:32:00 by tbouder           #+#    #+#             */
+/*   Updated: 2016/11/10 14:24:59 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_btreedel() function remove and free the current tree.
+** The ft_extract_flags() function put TRUE for each activ flags
 */
 
 #include "../libft.h"
 
-void ft_btreedel(t_btree *tree)
+int			ft_extract_options(char **av, t_options *options)
 {
-	if (tree)
+	int		i;
+	int		j;
+	int		k;
+	int		value;
+
+	k = 0;
+	while (k <= 122)
+		options->flags[k++] = FALSE;
+	i = 1;
+	while (av[i] && av[i][0] == '-' && ft_isalnum(av[i][1]))
 	{
-		ft_btreedel(tree->left);
-		ft_btreedel(tree->right);
-		tree->content_size = 0;
-		tree->left = NULL;
-		tree->right = NULL;
-		free(tree->content);
-		free(tree);
-		tree = NULL;
+		j = 1;
+		while (av[i][j] != '\0' && ft_isalnum(av[i][j]))
+		{
+			value = av[i][j];
+			options->flags[value] = TRUE;
+			j++;
+		}
+		i++;
 	}
+	return (i);
 }
