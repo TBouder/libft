@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/10 14:04:56 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/11/20 18:33:50 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ int					ft_nbrsmallest(int *nbr, int len);
 int					ft_nbrlargest(int *nbr, int len);
 int					ft_next_prime(int nb);
 int					*ft_nbrnew(size_t size);
+void				ft_nbrinit(int *tab, size_t size);
 int					ft_nbrcmp(int nb1, int nb2);
 
 /*
