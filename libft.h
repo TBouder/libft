@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/20 18:33:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2016/11/21 09:42:40 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,17 +220,16 @@ unsigned int		ft_hash_little(char *str, int len);
 void				ft_btree_print_preorder(t_btree *node);
 void				ft_btree_print_inorder(t_btree *node);
 void				ft_btree_print_postorder(t_btree *node);
-void 				ft_btreecmp_rev(t_btree **tree, void const *content,
+void				ft_btreecmp_rev(t_btree **tree, void const *content,
 						size_t c_size);
-void 				ft_btreecmp(t_btree **tree, void const *content,
+void				ft_btreecmp(t_btree **tree, void const *content,
 						size_t c_size);
 t_btree				*ft_btreenew(void const *content, size_t c_size);
-void 				ft_btreedel(t_btree *tree);
+void				ft_btreedel(t_btree *tree);
 
 /*
 ** Others (Flags in str)
 */
 int					ft_extract_options(char **av, t_options *options);
-
 
 #endif
