@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:32:20 by tbouder           #+#    #+#             */
-/*   Updated: 2016/02/24 12:47:20 by Tbouder          ###   ########.fr       */
+/*   Created: 2015/11/23 15:33:45 by tbouder           #+#    #+#             */
+/*   Updated: 2017/01/06 15:55:15 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** The ft_putendl() function prints the string str to STDIN followed by a \n.
+** The ft_putendl() function prints the string str to the output stream
+** pointed to by fd followed by a \n.
 */
 
 #include "../libft.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Tbouder <Tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 19:47:06 by Tbouder           #+#    #+#             */
-/*   Updated: 2016/02/20 23:56:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/06 15:34:55 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ double		ft_factorial(double nb)
 {
 	if (nb < 0)
 		return (0);
-	if (nb == 1)
+	if (nb == 1.0)
 		return (nb);
 	return (nb * ft_factorial(nb - 1));
 }

@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:21:57 by tbouder           #+#    #+#             */
-/*   Updated: 2016/01/08 15:22:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/06 15:30:48 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 ** is identical to a call to malloc() for size bytes.
 */
 
-#include <stdlib.h>
 #include "../libft.h"
 
 void	*ft_realloc(void *ptr, size_t size)

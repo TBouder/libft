@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:02:58 by tbouder           #+#    #+#             */
-/*   Updated: 2016/11/21 09:42:40 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/06 15:32:29 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				ft_print_memory(const void *addr, size_t size);
+void				*ft_realloc(void *ptr, size_t size);
 
 /*
 ** Len

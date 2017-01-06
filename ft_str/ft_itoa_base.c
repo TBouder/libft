@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:19:12 by tbouder           #+#    #+#             */
-/*   Updated: 2016/03/28 22:35:11 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/06 15:34:36 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void			ft_convert_base(long long n, int base, char *s, int *index)
 {
 	char	*str;
 
-	str = "0123456789ABCDEF";
+	str = (char *)"0123456789ABCDEF";
 	if (n < base)
 	{
 		s[*index] = str[n];

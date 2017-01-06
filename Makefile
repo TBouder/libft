@@ -6,7 +6,7 @@
 #    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/05 20:24:05 by tbouder           #+#    #+#              #
-#    Updated: 2016/11/24 16:40:25 by tbouder          ###   ########.fr        #
+#    Updated: 2017/01/06 15:28:03 by tbouder          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,12 @@ NAME 		= 	libft.a
 
 CC			= 	gcc
 CFLAGS		= 	-Wall -Werror -Wextra -g
+CFLAGS_EXT	=	-Wwrite-strings -Wstrict-prototypes -Wunreachable-code -Wno-missing-braces  -Wno-missing-field-initializers \
+				-Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Werror-implicit-function-declaration -Wmain \
+				-Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized \
+				-Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow \
+				-Wbad-function-cast -Wsign-compare -Waggregate-return -Wmissing-prototypes -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline
+
 OCLINT		=	oclint
 OFLAGS		=	-enable-global-analysis -rc SHORT_VARIABLE_NAME=1 \
 				-rc LONG_LINE=80 -rc CYCLOMATIC_COMPLEXITY=25 -disable-rule \
@@ -68,7 +74,7 @@ JUNCK		=	$(wildcard .DS_Store */.DS_Store */*/.DS_Store *.gch \
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(HEADER) $(SRC)
+	$(CC) $(CFLAGS) $(CFLAGS_EXT) -c $(HEADER) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
